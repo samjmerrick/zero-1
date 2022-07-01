@@ -3,6 +3,7 @@
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax'
 import Nav from '../components/nav'
 import Typewriter from 'typewriter-effect';
+import Logo from '../components/logo';
 
 
 
@@ -11,10 +12,18 @@ export default function Home() {
     <div className="bg-slate-900 text-white ">
       <Nav />
       <ParallaxProvider>
-        <section id='home' className='h-screen flex items-center'>
-          <div className='w-full h-1/2  absolute bottom-0'>
-            <div className='bg-slate-800 skew-y-12 h-3/4' />
+        <section id='home' className='h-screen flex items-center '>
+          <div className='absolute w-screen flex flex-row justify-center'>
+            <Parallax speed={25}>
+              <Logo color='#1e293b' type='zero' size={600} />
+            </Parallax>
+            <Parallax speed={10}>
+              <Logo color='#1e293b' type='one' size={600} />
+            </Parallax>
+
           </div>
+
+
           <div className='px-10'>
             <Parallax speed={10}>
               <h1 className=" grow">
