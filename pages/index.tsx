@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="bg-slate-900 text-white ">
       <Nav />
-      <section className='flex flex-col h-screen'>
+      <section id='home' className='flex flex-col h-screen'>
         <div className=' flex flex-grow items-center'>
           <div className='px-10'>
             <h1 className=" grow">
@@ -32,12 +32,22 @@ export default function Home() {
           </a>
         </div>
 
-
-
       </section>
-      <section id="about" className='h-screen flex items-center'>
-        <h1 className=" grow">
-          and other stuff
+      <section id='about' className='h-screen flex items-center'>
+        <h1 className="grow">
+          About
+        </h1>
+      </section>
+
+      <section id='projects' className='h-screen flex items-center'>
+        <h1 className="grow">
+          Projects
+        </h1>
+      </section>
+
+      <section id='contact' className='h-screen flex items-center'>
+        <h1 className="grow">
+          Contact
         </h1>
       </section>
 
