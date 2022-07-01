@@ -1,3 +1,30 @@
 @tailwind base;
+
+@layer base {
+    h1 {
+        @apply text-6xl font-bold py-8;
+    }
+
+    h2 {
+        @apply text-4xl font-bold py-4;
+    }
+
+    h3 {
+        @apply text-2xl font-bold py-2;
+    }
+
+    p {
+        @apply text-lg
+    }
+
+    a {
+        @apply text-white;
+    }
+
+    a:hover {
+        @apply text-green-400;
+    }
+}
+
 @tailwind components;
 @tailwind utilities;
