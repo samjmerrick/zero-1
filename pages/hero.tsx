@@ -2,6 +2,7 @@ import { Parallax } from "react-scroll-parallax"
 import Logo from "../components/logo"
 import { Page, Content } from "../components/page"
 import Typewriter from 'typewriter-effect';
+import ScrollDown from "../components/scrolldown";
 
 function Hero() {
     return (
@@ -38,13 +39,7 @@ function Hero() {
                 </Parallax>
             </Content>
 
-            <div className='absolute right-0 bottom-0 p-10'>
-                <a href='#about'>
-                    <p>
-                        ↓ Scroll to learn more
-                    </p>
-                </a>
-            </div>
+            <ScrollDown label='Scroll to learn more' id='#about' />
         </Page>
     )
 }
