@@ -5,23 +5,16 @@ import Nav from '../components/nav'
 import { Page, Content } from '../components/page';
 import About from './about';
 import Hero from './hero';
+import Projects from './projects';
 
 export default function Home() {
   return (
-    <div className="bg-slate-900 text-white ">
+    <div className="bg-slate-900 text-white">
       <Nav />
       <ParallaxProvider>
         <Hero />
         <About />
-
-        <Page id='projects'>
-          <Content>
-            <h1 >
-              Projects
-            </h1>
-          </Content>
-        </Page>
-
+        <Projects />
         <Page id='contact'>
           <Content>
             <h1 >
