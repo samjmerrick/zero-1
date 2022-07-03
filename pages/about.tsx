@@ -38,7 +38,7 @@ function About() {
                     <p>We believe in the power of agile methodologies and human-centered design; our process represents the best of both.</p>
                 </div>
 
-                <div className='flex flex-col lg:flex-row lg:space-x-10 '>
+                <div className='flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10 '>
                     <Card
                         icon={mdiHeadDotsHorizontal}
                         title='1. Strategy'
