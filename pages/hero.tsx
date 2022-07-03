@@ -7,13 +7,9 @@ import ScrollDown from "../components/scrolldown";
 function Hero() {
     return (
         <Page id='home'>
-            <div className='absolute w-screen flex flex-row justify-center'>
-                <Parallax speed={25}>
-                    <Logo color='#1e293b' type='zero' size={600} />
-                </Parallax>
-                <Parallax speed={10}>
-                    <Logo color='#1e293b' type='one' size={600} />
-                </Parallax>
+            <div className='absolute flex flex-row h-4/6 w-screen  justify-center '>
+                <Logo color='#1e293b' type='zero' />
+                <Logo color='#1e293b' type='one' />
             </div>
 
             <Content>
