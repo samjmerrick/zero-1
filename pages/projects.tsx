@@ -1,23 +1,17 @@
 import { Page, Content } from "../components/page"
-import Image from 'next/image'
 import ScrollDown from "../components/scrolldown";
-
 
 function Project(props: {
     title: string,
     caption: string,
     imagePath: string,
 }) {
-    let size = 300;
-
     return (
-        <div className=' bg-slate-800 rounded-lg p-10'>
-            <Image
+        <div className=' bg-slate-800 rounded-lg p-10 max-w-md min-w-[66%] md:min-w-[50%] lg:min-w-[33%] xl:min-w-[25%]'>
+            <img
                 src={props.imagePath}
                 title={props.title}
-                width={size}
-                height={size}
-                className='rounded-lg'
+                className='rounded-lg w-full'
             />
             <h2>{props.title}</h2>
             <p className=''>{props.caption}</p>
@@ -33,8 +27,8 @@ function Projects() {
                 <h2>
                     Projects
                 </h2>
-                <div className="flex flex-nowrap space-x-10  overflow-x-auto no-scrollbar">
 
+                <div className="flex flex-nowrap space-x-10 overflow-x-auto no-scrollbar">
                     <Project
                         title='Tend'
                         caption='Tend is a mindfulness and meditation app aimed at a Gen-Z audience'
@@ -55,10 +49,9 @@ function Projects() {
                         caption='HandDeco is a handmade and custom embroidery start-up operating in Switzerland.'
                         imagePath='/HandDeco.jpeg'
                     />
-
-
-
                 </div>
+
+
 
             </Content>
             <ScrollDown label='Contact' id='#contact' />
