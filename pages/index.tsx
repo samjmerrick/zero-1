@@ -1,11 +1,9 @@
-
-
 import { ParallaxProvider } from 'react-scroll-parallax'
 import Nav from '../components/nav'
-import { Page, Content } from '../components/page';
-import About from './about';
 import Hero from './hero';
+import About from './about';
 import Projects from './projects';
+import Contact from './contact';
 
 export default function Home() {
   return (
@@ -15,14 +13,7 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
-        <Page id='contact'>
-          <Content>
-            <h1 >
-              Contact
-            </h1>
-          </Content>
-        </Page>
-
+        <Contact />
       </ParallaxProvider>
     </div>
   )
