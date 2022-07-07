@@ -1,17 +1,11 @@
 import { Parallax } from "react-scroll-parallax"
-import Logo from "../components/logo"
-import { Page, Content } from "../components/page"
+import { PageFull, Content } from "../components/page"
 import Typewriter from 'typewriter-effect';
 import ScrollDown from "../components/scrolldown";
 
 function Hero() {
     return (
-        <Page id='home'>
-            <div className='absolute flex flex-row h-4/6 w-screen  justify-center '>
-                <Logo color='#1e293b' type='zero' />
-                <Logo color='#1e293b' type='one' />
-            </div>
-
+        <PageFull id='home'>
             <Content>
                 <Parallax speed={10}>
                     <h1 className=" grow">
@@ -19,24 +13,21 @@ function Hero() {
                     </h1>
                 </Parallax>
                 <Parallax speed={0}>
-                    <div className='text-3xl flex flex-row'>
-                        We create&nbsp;
-
+                    <div className='text-3xl inline'>
                         <Typewriter
                             options={{
-                                strings: ['mobile apps', 'responsive websites', 'shopify stores', 'personal portfolios'],
+                                strings: ['We build mobile apps', 'We design responsive websites', 'We create and manage ecommerce stores', 'We conduct user research', 'We shape the future'],
                                 loop: true,
                                 autoStart: true,
                                 delay: 20,
-                                deleteSpeed: 20,
+                                deleteSpeed: 10,
                             }}
                         />
                     </div>
                 </Parallax>
             </Content>
-
             <ScrollDown label='Scroll to learn more' id='#about' />
-        </Page>
+        </PageFull>
     )
 }
 
