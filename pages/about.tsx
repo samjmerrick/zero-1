@@ -4,7 +4,7 @@ import ScrollDown from "../components/scrolldown"
 import Icon from '@mdi/react'
 import { mdiHeadDotsHorizontal, mdiPencilRuler, mdiCodeBracesBox } from '@mdi/js'
 
-function Card(
+function Service(
     props: {
         icon: string,
         title: string,
@@ -30,33 +30,32 @@ function About() {
             <Content>
                 <div>
                     <h2>About</h2>
-                    <p>We are a digital product design and development agency based in London, UK</p>
+                    <p>We're a full stack product design and development agency based in London, UK</p>
                 </div>
 
                 <div>
-                    <h2>Process</h2>
-                    <p>We believe in the power of agile methodologies and human-centered design; our process represents the best of both.</p>
+                    <h2>Services</h2>
+
                 </div>
 
                 <div className='flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10 '>
-                    <Card
+                    <Service
                         icon={mdiHeadDotsHorizontal}
-                        title='1. Strategy'
-                        description='We start every project with deep customer and competitor research'
+                        title='Strategy'
+                        description='We consult on Product Vision, Strategy and Roadmaps using leading Product Management methodologies.'
                     />
-                    <Card
+                    <Service
                         icon={mdiPencilRuler}
-                        title='2. Prototype'
-                        description='We prototype ideas in hours and days to test our assumptions'
+                        title='UX Design'
+                        description="We prototype ideas in hours and days covering entire end-to-end experiences, not just pretty UI."
                     />
-                    <Card
+                    <Service
                         icon={mdiCodeBracesBox}
-                        title='3. Develop'
-                        description='We develop in rapid increments to facilitate customer and client feedback'
+                        title='Development'
+                        description='We develop in rapid increments by leveraging agile best practices, allowing for ample customer and client feedback.'
                     />
                 </div>
             </Content>
-            <ScrollDown label='Projects' id='#projects' />
         </Page>
     )
 }

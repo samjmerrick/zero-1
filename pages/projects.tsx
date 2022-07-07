@@ -1,5 +1,4 @@
 import { Page, Content } from "../components/page"
-import ScrollDown from "../components/scrolldown";
 
 function Project(props: {
     title: string,
@@ -18,7 +17,6 @@ function Project(props: {
         </div>
     )
 }
-
 
 function Projects() {
     return (
@@ -50,11 +48,7 @@ function Projects() {
                         imagePath='/HandDeco.jpeg'
                     />
                 </div>
-
-
-
             </Content>
-            <ScrollDown label='Contact' id='#contact' />
         </Page>
     )
 }

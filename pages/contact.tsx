@@ -40,7 +40,7 @@ function Contact() {
                     Contact
                 </h1>
                 <p>
-                    Interested in working with us on the next big product? Fill out this form and we'll get back to you in 1-2 business days
+                    Interested in working with us on the next big product? Let us know some details and we'll get back to you as soon as we can!
                 </p>
                 <form
                     action="https://script.google.com/macros/s/AKfycbzeqJfpQc3ckStHuiF2bOGZJxEj8QC0z_k56HmUn3RvxKxVNH0-ncpOFQPIMvrHIHYMYQ/exec"
