@@ -37,7 +37,6 @@ function Hero() {
                                 'We design responsive websites',
                                 'We create and manage ecommerce stores',
                                 'We conduct user research',
-
                             ],
                             loop: true,
                             autoStart: true,
