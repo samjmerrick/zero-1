@@ -28,32 +28,27 @@ function About() {
     return (
         <Page id='about'>
             <Content>
-                <div>
-                    <h2>About</h2>
-                    <p>We're a full stack product design and development agency based in London, UK</p>
-                </div>
+                <div className="flex flex-col items-center justify-center space-y-10">
 
-                <div>
-                    <h2>Services</h2>
+                    <p className="text-2xl ">We are a full stack digital <b>design</b> and <b>development</b> agency based in London, UK.</p>
 
-                </div>
-
-                <div className='flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10 '>
-                    <Service
-                        icon={mdiHeadDotsHorizontal}
-                        title='Strategy'
-                        description='We consult on Product Vision, Strategy and Roadmaps using leading Product Management methodologies.'
-                    />
-                    <Service
-                        icon={mdiPencilRuler}
-                        title='UX Design'
-                        description="We prototype ideas in hours and days covering entire end-to-end experiences, not just pretty UI."
-                    />
-                    <Service
-                        icon={mdiCodeBracesBox}
-                        title='Development'
-                        description='We develop in rapid increments by leveraging agile best practices, allowing for ample customer and client feedback.'
-                    />
+                    <div className='flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10 max-w-7xl '>
+                        <Service
+                            icon={mdiHeadDotsHorizontal}
+                            title='Strategy'
+                            description='We help you to craft a vision, strategy and roadmap using leading product management processes.'
+                        />
+                        <Service
+                            icon={mdiPencilRuler}
+                            title='UX Design'
+                            description="We prototype ideas in hours and days, considering the entire end-to-end experience, not just pretty UI."
+                        />
+                        <Service
+                            icon={mdiCodeBracesBox}
+                            title='Development'
+                            description='We deliver in rapid vertical slices using agile best practices, allowing for ample customer and client feedback.'
+                        />
+                    </div>
                 </div>
             </Content>
         </Page>

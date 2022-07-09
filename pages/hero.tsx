@@ -36,7 +36,13 @@ function Hero() {
                     <div className='text-4xl inline'>
                         <Typewriter
                             options={{
-                                strings: ['We build mobile apps', 'We design responsive websites', 'We create and manage ecommerce stores', 'We conduct user research', 'We shape the future'],
+                                strings: [
+                                    'We build mobile apps',
+                                    'We design responsive websites',
+                                    'We create and manage ecommerce stores',
+                                    'We conduct user research',
+
+                                ],
                                 loop: true,
                                 autoStart: true,
                                 delay: 20,

@@ -17,7 +17,8 @@ if (typeof window !== 'undefined') {
             }
 
             document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+                behavior: 'smooth',
+                block: 'center',
             });
         });
     });

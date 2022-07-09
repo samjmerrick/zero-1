@@ -1,6 +1,6 @@
 function Content({ children }) {
     return (
-        <div className='px-10 my-20 w-full space-y-8  relative'>
+        <div className='px-10 my-20 w-full space-y-8'>
             {children}
         </div>
     )
@@ -8,7 +8,7 @@ function Content({ children }) {
 
 function Page({ children, id }) {
     return (
-        <section id={id} className=' w-screen relative flex items-center'>
+        <section id={id} className='w-screen flex'>
             {children}
         </section>
     )
@@ -16,7 +16,7 @@ function Page({ children, id }) {
 
 function PageFull({ children, id }) {
     return (
-        <section id={id} className=' w-screen h-screen relative flex items-center'>
+        <section id={id} className='w-screen h-screen flex items-center'>
             {children}
         </section>
     )
