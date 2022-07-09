@@ -45,7 +45,7 @@ function Contact() {
                     <form
                         action="https://script.google.com/macros/s/AKfycbzeqJfpQc3ckStHuiF2bOGZJxEj8QC0z_k56HmUn3RvxKxVNH0-ncpOFQPIMvrHIHYMYQ/exec"
                         method="post"
-                        className="flex flex-col w-full xl:w-1/3"
+                        className="flex flex-col w-full md:w-1/2 xl:w-1/3"
                         id="contact-form"
                     >
                         <label htmlFor="name">
