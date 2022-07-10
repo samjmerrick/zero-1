@@ -27,7 +27,7 @@ function Hero() {
             <Content>
 
                 <h1 className=" grow">
-                    Digital products from Zero to One.
+                    Digital products from Zero to One
                 </h1>
                 <div className='text-4xl inline'>
                     <Typewriter

@@ -30,7 +30,7 @@ function About() {
             <Content>
                 <div className="flex flex-col items-center justify-center space-y-10">
 
-                    <p className="text-2xl ">We are a full stack digital <b>design</b> and <b>development</b> agency based in London, UK.</p>
+                    <p className="text-2xl ">We are a full stack digital <b>design</b> and <b>development</b> agency based in London, UK</p>
 
                     <div className='flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10 max-w-7xl '>
                         <Service
