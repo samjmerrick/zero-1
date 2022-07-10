@@ -40,7 +40,7 @@ function Contact() {
                     <h1 >
                         Contact
                     </h1>
-                    <p>Want to work with us on the next exciting product? Let us know some details and we'll get back to you as soon as we can!
+                    <p>Want to work with us on the next exciting product? Fill in the details or email at <a className='font-bold text-green-600 ' href='mailto:hello@zero-1.studio'>hello@zero-1.studio</a>
                     </p>
                     <form
                         action="https://script.google.com/macros/s/AKfycbzeqJfpQc3ckStHuiF2bOGZJxEj8QC0z_k56HmUn3RvxKxVNH0-ncpOFQPIMvrHIHYMYQ/exec"
