@@ -40,7 +40,7 @@ function Nav() {
                 />
             </button>
 
-            <div className="text-md pt-6 md:pt-0 md:space-x-4 space-y-4 md:space-y-0 hidden md:inline w-full md:w-auto " id='menu'>
+            <div className="text-lg pt-6 md:pt-0 md:space-x-4 space-y-4 pr-2 md:space-y-0 hidden md:inline w-full md:w-auto " id='menu'>
                 <a href="#about" className="block md:inline-block text-center">
                     About
                 </a>

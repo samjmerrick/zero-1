@@ -30,23 +30,23 @@ function About() {
             <Content>
                 <div className="flex flex-col items-center justify-center space-y-10">
 
-                    <p className="text-2xl ">We are a full stack digital <b>design</b> and <b>development</b> agency based in London, UK</p>
+                    <p className="text-2xl ">We are a full stack digital design and development agency based in London</p>
 
                     <div className='flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10 max-w-7xl '>
                         <Service
                             icon={mdiHeadDotsHorizontal}
                             title='Strategy'
-                            description='We help you to craft a vision, strategy and roadmap using leading product management processes.'
+                            description='Craft your vision, strategy and roadmap using leading product management practices'
                         />
                         <Service
                             icon={mdiPencilRuler}
                             title='UX Design'
-                            description="We prototype ideas in hours and days, considering the entire end-to-end experience, not just pretty UI."
+                            description="Prototype ideas in hours and days, considering the entire end-to-end experience, not just pretty UI"
                         />
                         <Service
                             icon={mdiCodeBracesBox}
                             title='Development'
-                            description='We deliver in rapid vertical slices using agile best practices, allowing for ample customer and client feedback.'
+                            description='Deliver in rapid vertical slices using agile best practices, allowing for ample customer and client feedback'
                         />
                     </div>
                 </div>
