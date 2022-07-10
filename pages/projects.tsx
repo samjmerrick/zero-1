@@ -37,18 +37,7 @@ function Projects() {
                 </h2>
 
                 <div className="flex flex-row flex-nowrap space-x-10 overflow-x-auto no-scrollbar">
-                    <Project
-                        title='Virgin Red'
-                        caption='Virgin Red is a loyalty and rewards offering for customers of the Virgin Group.'
-                        imagePath='/VirginRed.png'
-                        url='https://www.virgin.com/virgin-red'
-                    />
-                    <Project
-                        title='Student Beans'
-                        caption='Student Beans is a market leading student discount and rewards platform.'
-                        imagePath='/StudentBeans.png'
-                        url='https://www.studentbeans.com/uk'
-                    />
+
                     <Project
                         title='Tend'
                         caption='Tend is a mindfulness and meditation app aimed at a Gen-Z audience'
@@ -60,6 +49,18 @@ function Projects() {
                         caption='HandDeco is a handmade and custom embroidery start-up operating in Switzerland.'
                         imagePath='/HandDeco.jpeg'
                         url='https://www.handdeco.com/'
+                    />
+                    <Project
+                        title='Virgin Red'
+                        caption='Virgin Red is a loyalty and rewards offering for customers of the Virgin Group.'
+                        imagePath='/VirginRed.png'
+                        url='https://www.virgin.com/virgin-red'
+                    />
+                    <Project
+                        title='Student Beans'
+                        caption='Student Beans is a market leading student discount and rewards platform.'
+                        imagePath='/StudentBeans.png'
+                        url='https://www.studentbeans.com/uk'
                     />
                 </div>
             </Content>
