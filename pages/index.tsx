@@ -3,7 +3,9 @@ import Hero from './hero';
 import About from './about';
 import Projects from './projects';
 import Contact from './contact';
+
 import Head from 'next/head';
+import Script from 'next/script'
 
 export default function Home() {
   return (
@@ -17,6 +19,19 @@ export default function Home() {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DM4ZKX9JBJ"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-DM4ZKX9JBJ');
+          `}
+        </Script>
       </Head>
       <Nav />
       <Hero />
