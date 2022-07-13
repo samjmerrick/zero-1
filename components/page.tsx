@@ -1,6 +1,6 @@
 function Content({ children }) {
     return (
-        <div className='px-10 my-20 w-full flex flex-col space-y-8 relative'>
+        <div className='relative py-5 px-5 md:px-10 mt-20 w-full flex flex-col space-y-8'>
             {children}
         </div>
     )

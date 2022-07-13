@@ -11,7 +11,7 @@ function Service(
         description: string,
     }) {
     return (
-        <div className='bg-slate-800 lg:w-1/3 flex flex-col items-center rounded-lg p-10'>
+        <div className='bg-slate-800 flex flex-col items-center rounded-lg p-10'>
             <Icon
                 path={props.icon}
                 title={props.title}
@@ -32,7 +32,7 @@ function About() {
 
                     <p className="text-2xl ">We are a full stack digital design and development agency based in London</p>
 
-                    <div className='flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10 max-w-7xl '>
+                    <div className='flex flex-col space-y-5 md:space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10 max-w-7xl '>
                         <Service
                             icon={mdiHeadDotsHorizontal}
                             title='Strategy'

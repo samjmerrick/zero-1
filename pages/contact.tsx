@@ -36,11 +36,11 @@ function Contact() {
     return (
         <Page id='contact'>
             <Content>
-                <div className="flex flex-col items-center justify-center space-y-10">
-                    <h1 >
+                <div className="flex flex-col items-center justify-center space-y-5">
+                    <h2>
                         Contact
-                    </h1>
-                    <p>Want to work with us on the next exciting product? Fill in the details or email at <a className='font-bold text-green-600 ' href='mailto:hello@zero-1.studio'>hello@zero-1.studio</a>
+                    </h2>
+                    <p className="text-center">Want to work with us on the next exciting product? Fill in the details or email at <a className='font-bold text-green-600 ' href='mailto:hello@zero-1.studio'>hello@zero-1.studio</a>
                     </p>
                     <form
                         action="https://script.google.com/macros/s/AKfycbzeqJfpQc3ckStHuiF2bOGZJxEj8QC0z_k56HmUn3RvxKxVNH0-ncpOFQPIMvrHIHYMYQ/exec"

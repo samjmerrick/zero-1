@@ -26,10 +26,10 @@ function Hero() {
             />
             <Content>
 
-                <h1 className=" grow">
+                <h2 className="text-4xl md:text-6xl">
                     Digital products from Zero to One
-                </h1>
-                <div className='text-4xl inline'>
+                </h2>
+                <div className='text-2xl md:text-4xl inline'>
                     <Typewriter
                         options={{
                             strings: [

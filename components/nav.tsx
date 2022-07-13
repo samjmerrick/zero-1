@@ -18,7 +18,7 @@ if (typeof window !== 'undefined') {
 
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth',
-                block: 'center',
+                block: screen.width > 768 ? 'center' : 'start',
             });
         });
     });

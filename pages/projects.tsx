@@ -14,7 +14,7 @@ function Project(props: {
 
     return (
         <div
-            className=' bg-slate-800 rounded-lg p-10 max-w-md min-w-[66%] md:min-w-[50%] lg:min-w-[25%] cursor-pointer '
+            className=' bg-slate-800 rounded-lg p-10 max-w-md min-w-[90%] sm:min-w-[66%] md:min-w-[50%] lg:min-w-[25%] cursor-pointer '
             onClick={() => openUrl(props.url)}
         >
             <img
@@ -36,7 +36,7 @@ function Projects() {
                     Showcase
                 </h2>
 
-                <div className="flex flex-row flex-nowrap space-x-10 overflow-x-auto no-scrollbar">
+                <div className=" flex flex-row space-x-5 md:space-x-10 no-scrollbar">
 
                     <Project
                         title='Tend'
