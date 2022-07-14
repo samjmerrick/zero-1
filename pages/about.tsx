@@ -11,7 +11,7 @@ function Service(
         description: string,
     }) {
     return (
-        <div className='bg-slate-800 flex flex-col items-center rounded-lg p-10'>
+        <div className='bg-slate-800 flex flex-col items-center rounded-lg p-10 lg:w-1/3'>
             <Icon
                 path={props.icon}
                 title={props.title}
