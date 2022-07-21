@@ -8,6 +8,8 @@
   "dependencies": {
     "@mdi/js": "^6.9.96",
     "@mdi/react": "^1.6.0",
+    "@mdx-js/loader": "^2.1.2",
+    "@next/mdx": "^12.2.2",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
