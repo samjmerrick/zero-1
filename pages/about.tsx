@@ -1,4 +1,4 @@
-import { Content, Page } from "../components/page"
+import { Content, Section } from "../components/page"
 import ScrollDown from "../components/scrolldown"
 
 import Icon from '@mdi/react'
@@ -26,7 +26,7 @@ function Service(
 
 function About() {
     return (
-        <Page id='about'>
+        <Section id='about'>
             <Content>
                 <div className="flex flex-col items-center justify-center space-y-10">
 
@@ -51,7 +51,7 @@ function About() {
                     </div>
                 </div>
             </Content>
-        </Page>
+        </Section>
     )
 }
 

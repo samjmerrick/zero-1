@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { PageFull, Content } from "../components/page"
+import { SectionFull, Content } from "../components/page"
 import Typewriter from 'typewriter-effect';
 import ScrollDown from "../components/scrolldown";
 
@@ -18,7 +18,7 @@ function Hero() {
     }, []);
 
     return (
-        <PageFull id='home'>
+        <SectionFull id='home'>
             <Particles
                 options={Options}
                 init={customInit}
@@ -48,7 +48,7 @@ function Hero() {
 
             </Content>
             <ScrollDown label='Scroll to learn more' id='#about' />
-        </PageFull>
+        </SectionFull>
     )
 }
 

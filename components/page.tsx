@@ -1,3 +1,4 @@
+
 function Content({ children }) {
     return (
         <div className='relative py-5 px-5 md:px-10 mt-20 w-full flex flex-col space-y-8 '>
@@ -6,7 +7,7 @@ function Content({ children }) {
     )
 }
 
-function Page({ children, id }) {
+function Section({ children, id }) {
     return (
         <section id={id} className='w-full '>
             {children}
@@ -14,7 +15,7 @@ function Page({ children, id }) {
     )
 }
 
-function PageFull({ children, id }) {
+function SectionFull({ children, id }) {
     return (
         <section id={id} className='w-full h-screen flex items-center '>
             {children}
@@ -22,4 +23,4 @@ function PageFull({ children, id }) {
     )
 }
 
-export { Page, PageFull, Content };
+export { Section, SectionFull, Content };

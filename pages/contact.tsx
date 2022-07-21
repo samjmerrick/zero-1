@@ -1,4 +1,4 @@
-import { Page, Content } from "../components/page"
+import { Section, Content } from "../components/page"
 
 
 
@@ -34,7 +34,7 @@ if (typeof window !== "undefined") {
 
 function Contact() {
     return (
-        <Page id='contact'>
+        <Section id='contact'>
             <Content>
                 <div className="flex flex-col items-center justify-center space-y-5">
                     <h2>
@@ -91,7 +91,7 @@ function Contact() {
                     </form>
                 </div>
             </Content>
-        </Page>
+        </Section>
     )
 }
 

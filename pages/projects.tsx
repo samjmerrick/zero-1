@@ -1,5 +1,5 @@
 import Icon from "@mdi/react";
-import { Page, Content } from "../components/page"
+import { Section, Content } from "../components/page"
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 
 function Project(props: {
@@ -49,7 +49,7 @@ function Projects() {
     }
 
     return (
-        <Page id='projects'>
+        <Section id='projects'>
             <Content>
                 <h2 className="text-center">
                     Showcase
@@ -90,7 +90,7 @@ function Projects() {
                 </div>
 
             </Content>
-        </Page>
+        </Section>
     )
 }
 
