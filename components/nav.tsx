@@ -12,16 +12,16 @@ if (typeof window !== 'undefined') {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
-            if (menu.classList.contains('w-full')) { // if the menu is on mobile
-                menu.classList.add('hidden');
-            }
-
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth',
                 block: screen.width > 768 ? 'center' : 'start',
             });
         });
     });
+
+    if (menu.classList.contains('w-full')) { // if the menu is on mobile
+        menu.classList.add('hidden');
+    }
 
     button.addEventListener('click', () => { menu.classList.toggle('hidden'); });
 }
@@ -44,7 +44,7 @@ function Nav() {
                 <a href="#about" className="block md:inline-block text-center">
                     About
                 </a>
-                <a href="#projects" className="block md:inline-block text-center">
+                <a href="/#projects" className="block md:inline-block text-center">
                     Projects
                 </a>
                 <a href="#contact" className="block md:inline-block text-center">
