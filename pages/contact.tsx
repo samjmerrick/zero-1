@@ -31,7 +31,7 @@ if (typeof window !== "undefined") {
 function Contact() {
     return (
         <section id='contact' className='w-full'>
-            <div className='relative py-5 px-5 md:px-10 mt-20 w-2/3 flex flex-col space-y-8 '>
+            <div className='relative py-5  mt-20 flex flex-col space-y-8 '>
                 <div className="flex flex-col items-center justify-center space-y-5">
                     <h2>
                         Contact
@@ -41,7 +41,7 @@ function Contact() {
                     <form
                         action="https://script.google.com/macros/s/AKfycbzeqJfpQc3ckStHuiF2bOGZJxEj8QC0z_k56HmUn3RvxKxVNH0-ncpOFQPIMvrHIHYMYQ/exec"
                         method="post"
-                        className="flex flex-col w-full md:w-1/2 xl:w-1/3"
+                        className="flex flex-col w-full"
                         id="contact-form"
                     >
                         <label htmlFor="name">

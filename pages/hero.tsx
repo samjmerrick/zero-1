@@ -24,9 +24,9 @@ function Hero() {
                 init={customInit}
                 className='h-full'
             />
-            <div className='relative py-5 px-5 md:px-10 mt-20 w-2/3 flex flex-col space-y-8 '>
+            <div className='relative flex flex-col space-y-8 '>
 
-                <h2 className="text-4xl md:text-7xl ">
+                <h2 className="text-4xl md:text-5xl ">
                     We help businesses create digital products, from Zero to One
                 </h2>
                 <div className='text-2xl md:text-4xl inline'>

@@ -49,7 +49,7 @@ function Projects() {
 
     return (
         <section id='projects' className='w-full'>
-            <div className='relative py-5 px-5 md:px-10 mt-20 w-2/3 flex flex-col space-y-8 '>
+            <div className='relative py-5 mt-20 flex flex-col space-y-8 '>
                 <h2 className="text-center">
                     Showcase
                 </h2>
