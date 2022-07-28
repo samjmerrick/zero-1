@@ -1,29 +1,21 @@
-import Nav from '../components/nav'
 import Hero from './hero';
 import About from './about';
 import Projects from './projects';
 import Contact from './contact';
 
-import Head from 'next/head';
+import { Page } from '../components/page';
+
+const meta = {
+  title: 'Digital design and development agency'
+}
 
 export default function Home() {
   return (
-    <div className="bg-slate-900 text-white">
-      <Head>
-        <title>Digital design and development agency | Zero 1 Studio</title>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
-      </Head>
-      <Nav />
+    <Page meta={meta}>
       <Hero />
       <About />
       <Projects />
       <Contact />
-    </div>
+    </Page>
   )
 }

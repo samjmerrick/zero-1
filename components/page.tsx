@@ -15,7 +15,7 @@ function Page({ children, meta }) {
                 <meta name="theme-color" content="#ffffff" />
             </Head>
             <Nav />
-            <div className="bg-slate-900 text-white w-full h-screen">
+            <div className="bg-slate-900 text-white w-full h-full">
 
                 <div className='container w-full md:max-w-4xl mx-auto pt-20 space-y-4 px-5'>
                     {children}
@@ -24,6 +24,5 @@ function Page({ children, meta }) {
         </>
     )
 }
-
 
 export { Page };
