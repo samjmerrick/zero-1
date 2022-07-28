@@ -1,6 +1,3 @@
-import { Content, Section } from "../components/page"
-import ScrollDown from "../components/scrolldown"
-
 import Icon from '@mdi/react'
 import { mdiHeadDotsHorizontal, mdiPencilRuler, mdiCodeBracesBox } from '@mdi/js'
 
@@ -26,8 +23,9 @@ function Service(
 
 function About() {
     return (
-        <Section id='about'>
-            <Content>
+
+        <section id='about' className='w-full'>
+            <div className='relative py-5 px-5 md:px-10 mt-20 w-2/3 flex flex-col space-y-8 '>
                 <div className="flex flex-col items-center justify-center space-y-10">
 
                     <p className="text-2xl ">We are a full stack digital design and development agency based in London</p>
@@ -50,8 +48,8 @@ function About() {
                         />
                     </div>
                 </div>
-            </Content>
-        </Section>
+            </div>
+        </section>
     )
 }
 

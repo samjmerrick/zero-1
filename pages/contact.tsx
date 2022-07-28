@@ -1,7 +1,3 @@
-import { Section, Content } from "../components/page"
-
-
-
 if (typeof window !== "undefined") {
     window.addEventListener("load", function () {
         const form = document.getElementById('contact-form') as HTMLFormElement;
@@ -34,8 +30,8 @@ if (typeof window !== "undefined") {
 
 function Contact() {
     return (
-        <Section id='contact'>
-            <Content>
+        <section id='contact' className='w-full'>
+            <div className='relative py-5 px-5 md:px-10 mt-20 w-2/3 flex flex-col space-y-8 '>
                 <div className="flex flex-col items-center justify-center space-y-5">
                     <h2>
                         Contact
@@ -90,8 +86,8 @@ function Contact() {
                         </button>
                     </form>
                 </div>
-            </Content>
-        </Section>
+            </div>
+        </section>
     )
 }
 

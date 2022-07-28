@@ -1,5 +1,4 @@
 import Icon from "@mdi/react";
-import { Section, Content } from "../components/page"
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 
 function Project(props: {
@@ -49,8 +48,8 @@ function Projects() {
     }
 
     return (
-        <Section id='projects'>
-            <Content>
+        <section id='projects' className='w-full'>
+            <div className='relative py-5 px-5 md:px-10 mt-20 w-2/3 flex flex-col space-y-8 '>
                 <h2 className="text-center">
                     Showcase
                 </h2>
@@ -89,8 +88,8 @@ function Projects() {
                     </button>
                 </div>
 
-            </Content>
-        </Section>
+            </div>
+        </section>
     )
 }
 

@@ -18,13 +18,13 @@ function Hero() {
     }, []);
 
     return (
-        <SectionFull id='home'>
+        <section id='home' className='w-full h-screen flex items-center'>
             <Particles
                 options={Options}
                 init={customInit}
                 className='h-full'
             />
-            <Content>
+            <div className='relative py-5 px-5 md:px-10 mt-20 w-2/3 flex flex-col space-y-8 '>
 
                 <h2 className="text-4xl md:text-7xl ">
                     We help businesses create digital products, from Zero to One
@@ -46,9 +46,9 @@ function Hero() {
                     />
                 </div>
 
-            </Content>
+            </div>
             <ScrollDown label='Scroll to learn more' id='#about' />
-        </SectionFull>
+        </section>
     )
 }
 
