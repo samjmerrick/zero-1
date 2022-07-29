@@ -2,7 +2,7 @@
 import { mdiHeadDotsHorizontal, mdiPencilRuler, mdiCodeBracesBox } from '@mdi/js'
 import IconCard from '../components/IconCard'
 import ColumnLayout from '../components/ColumnLayout'
-import Section from './Section'
+import Section from '../components/Section'
 
 function About() {
     return (

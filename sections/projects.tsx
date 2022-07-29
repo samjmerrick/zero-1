@@ -1,7 +1,7 @@
 
 import Carousel from "../components/Carousel";
 import ImageCard from "../components/ImageCard";
-import Section from "./Section";
+import Section from "../components/Section";
 
 function Projects() {
     return (

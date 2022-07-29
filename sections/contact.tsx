@@ -1,5 +1,5 @@
 import ContactForm from '../components/ContactForm'
-import Section from './Section'
+import Section from '../components/Section'
 
 function Contact() {
     return (
