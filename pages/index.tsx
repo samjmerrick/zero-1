@@ -1,6 +1,6 @@
 import Hero from './hero';
-import About from '../components/sections/about.mdx';
-import Projects from './projects';
+import About from '../components/sections/about';
+import Projects from '../components/sections/projects';
 import Contact from './contact';
 
 import { Page } from '../components/page';
@@ -13,10 +13,7 @@ export default function Home() {
   return (
     <Page meta={meta}>
       <Hero />
-      <section id='about' className='text-center space-y-8'>
-        <About />
-      </section>
-
+      <About />
       <Projects />
       <Contact />
     </Page>
