@@ -2,6 +2,7 @@ import Logo from '../components/logo'
 import React from 'react';
 import { mdiMenu } from '@mdi/js';
 import Icon from '@mdi/react';
+import Link from 'next/link';
 
 if (typeof window !== 'undefined') {
 
@@ -29,9 +30,9 @@ if (typeof window !== 'undefined') {
 function Nav() {
     return (
         <nav className='fixed flex flex-wrap w-screen top-0 z-50 h-50 justify-between items-center bg-slate-800 md:bg-slate-900 p-6'>
-            <a href='#home' className='max-w-[66%]'>
-                <Logo />
-            </a>
+            <Link href='/#home'>
+                <a className='max-w-[66%]'><Logo /></a>
+            </Link>
 
             <button id='menu-button'>
                 <Icon
@@ -41,15 +42,16 @@ function Nav() {
             </button>
 
             <div className="text-lg pt-6 md:pt-0 md:space-x-4 space-y-4 pr-2 md:space-y-0 hidden md:inline w-full md:w-auto " id='menu'>
-                <a href="#about" className="block md:inline-block text-center">
+
+                <Link href="/#About" className="block md:inline-block text-center">
                     About
-                </a>
-                <a href="/#projects" className="block md:inline-block text-center">
+                </Link>
+                <Link href="/#Projects" className="block md:inline-block text-center">
                     Projects
-                </a>
-                <a href="#contact" className="block md:inline-block text-center">
+                </Link>
+                <Link href="/#Contact" className="block md:inline-block text-center">
                     Contact
-                </a>
+                </Link>
             </div>
         </nav>
     )

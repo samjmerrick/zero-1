@@ -1,5 +1,6 @@
 
 import Icon from '@mdi/react'
+import Link from 'next/link'
 
 function IconCard(
     props: {
@@ -15,8 +16,7 @@ function IconCard(
                 size={2.5}
             />
             <h3>{props.title}</h3>
-
-            <a href='/services/ux-design'>Learn more</a>
+            <Link href='/services/ux-design'>Learn more</Link>
         </div>
     )
 }

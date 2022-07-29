@@ -6,7 +6,7 @@ import Section from '../components/Section'
 
 function About() {
     return (
-        <Section id='about' title='Services'>
+        <Section id='About' title='Services'>
             <ColumnLayout>
                 <IconCard
                     icon={mdiHeadDotsHorizontal}
