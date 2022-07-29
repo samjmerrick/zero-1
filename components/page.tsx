@@ -15,7 +15,7 @@ function Page({ children, meta }) {
                 <meta name="theme-color" content="#ffffff" />
             </Head>
             <Nav />
-            <div className="bg-slate-900 text-white w-full h-full">
+            <div className="bg-slate-900 text-white w-full min-h-screen pt-20">
 
                 <div className='container w-full md:max-w-6xl mx-auto space-y-4 px-5'>
                     {children}

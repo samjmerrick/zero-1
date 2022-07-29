@@ -17,7 +17,7 @@ function Hero() {
     }, []);
 
     return (
-        <section id='home' className='w-full h-screen flex items-center'>
+        <section id='home' className='w-full h-screen flex items-center -mt-20'>
             <Particles
                 // @ts-expect-error
                 options={Options}
