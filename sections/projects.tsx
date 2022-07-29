@@ -1,7 +1,7 @@
 
-import Carousel from "../Carousel";
-import ImageCard from "../ImageCard";
-import Section from "./section";
+import Carousel from "../components/Carousel";
+import ImageCard from "../components/ImageCard";
+import Section from "./Section";
 
 function Projects() {
     return (
