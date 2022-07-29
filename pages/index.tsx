@@ -1,4 +1,4 @@
-import Hero from './hero';
+import Hero from '../sections/hero';
 import About from '../sections/about';
 import Projects from '../sections/projects';
 import Contact from '../sections/contact';

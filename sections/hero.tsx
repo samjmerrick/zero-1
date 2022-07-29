@@ -1,5 +1,4 @@
-// @ts-nocheck
-import { SectionFull, Content } from "../components/page"
+
 import Typewriter from 'typewriter-effect';
 import ScrollDown from "../components/scrolldown";
 
@@ -20,6 +19,7 @@ function Hero() {
     return (
         <section id='home' className='w-full h-screen flex items-center'>
             <Particles
+                // @ts-expect-error
                 options={Options}
                 init={customInit}
                 className='h-full'
