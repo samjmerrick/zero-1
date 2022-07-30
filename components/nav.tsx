@@ -29,7 +29,7 @@ if (typeof window !== 'undefined') {
 
 function Nav() {
     return (
-        <nav className='fixed flex flex-wrap w-screen top-0 z-50 h-50 justify-between items-center bg-slate-800 md:bg-slate-900 p-6'>
+        <nav className='fixed flex flex-wrap w-screen top-0 px-10 z-50 h-50 justify-between items-center bg-slate-800 md:bg-slate-900 p-6'>
             <Link href='/#home'>
                 <a className='max-w-[66%]'><Logo /></a>
             </Link>
