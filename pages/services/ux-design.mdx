@@ -1,8 +1,14 @@
 
 import { Page } from '../../components/page'
 
+import { mdiPencilRuler } from '@mdi/js'
+import ColumnLayout from '../../components/ColumnLayout'
+import ImageCard from '../../components/ImageCard'
+import Container from '../../components/Container'
+
 export const meta = {
-title: 'Something',
+    title: 'UX Design',
+    icon: mdiPencilRuler,
 }
 
 # UX Design
@@ -15,4 +21,12 @@ We prototype ideas in hours and days, considering the entire end-to-end experien
 - Two
 - Three
 
-export default ({ children }) => <Page meta={meta}>{children}</Page>
+<ColumnLayout>
+
+<ImageCard />
+<ImageCard />
+
+</ColumnLayout>
+
+
+export default ({ children }) => <Page meta={meta}><Container>{children}</Container></Page>

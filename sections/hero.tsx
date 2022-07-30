@@ -8,6 +8,7 @@ import { Engine } from "tsparticles-engine";
 import React, { useCallback } from "react";
 
 import Options from "../components/particles.json"
+import Container from '../components/Container';
 
 function Hero() {
     // this customizes the component tsParticles installation
@@ -24,29 +25,31 @@ function Hero() {
                 init={customInit}
                 className='h-full'
             />
-            <div className='relative flex flex-col space-y-8 '>
+            <Container>
+                <div className='relative flex flex-col space-y-8 '>
 
-                <h2 className="text-4xl md:text-5xl ">
-                    We help businesses build digital products, from Zero to One
-                </h2>
-                <div className='text-2xl md:text-4xl inline'>
-                    <Typewriter
-                        options={{
-                            strings: [
-                                'We build mobile apps',
-                                'We design responsive websites',
-                                'We create and manage ecommerce stores',
-                                'We conduct user research',
-                            ],
-                            loop: true,
-                            autoStart: true,
-                            delay: 20,
-                            deleteSpeed: 10,
-                        }}
-                    />
+                    <h2 className="text-4xl md:text-5xl ">
+                        We help businesses build digital products, from Zero to One
+                    </h2>
+                    <div className='text-2xl md:text-4xl inline'>
+                        <Typewriter
+                            options={{
+                                strings: [
+                                    'We build mobile apps',
+                                    'We design responsive websites',
+                                    'We create and manage ecommerce stores',
+                                    'We conduct user research',
+                                ],
+                                loop: true,
+                                autoStart: true,
+                                delay: 20,
+                                deleteSpeed: 10,
+                            }}
+                        />
+                    </div>
+
                 </div>
-
-            </div>
+            </Container>
             <ScrollDown label='Scroll to learn more' id='#about' />
         </section>
     )
