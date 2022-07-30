@@ -12,7 +12,7 @@ function ImageCard(props: {
 
     return (
         <div
-            className=' bg-slate-800 rounded-lg p-10 max-w-md min-w-[90%] sm:min-w-[66%] md:min-w-[50%] lg:min-w-[40%] xl:min-w-[25%] cursor-pointer '
+            className=' bg-slate-800 hover:bg-slate-700 rounded-lg p-10 max-w-md min-w-[90%] sm:min-w-[66%] md:min-w-[50%] lg:min-w-[40%] xl:min-w-[25%] cursor-pointer '
             onClick={() => openUrl(props.url)}
         >
             <img

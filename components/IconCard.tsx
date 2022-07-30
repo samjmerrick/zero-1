@@ -9,15 +9,17 @@ function IconCard(
         description: string,
     }) {
     return (
-        <div className='bg-slate-800 flex flex-col items-center rounded-lg p-10 lg:w-1/3 text-center'>
-            <Icon
-                path={props.icon}
-                title={props.title}
-                size={2.5}
-            />
-            <h3>{props.title}</h3>
-            <Link href='/services/ux-design'>Learn more</Link>
-        </div>
+        <Link href='/services/ux-design'>
+            <div className='bg-slate-800 hover:bg-slate-700 flex flex-col items-center rounded-lg p-10 lg:w-1/3 text-center cursor-pointer'>
+                <Icon
+                    path={props.icon}
+                    title={props.title}
+                    size={2.5}
+                />
+                <h3>{props.title}</h3>
+                Learn more
+            </div>
+        </Link>
     )
 }
 
