@@ -38,6 +38,7 @@ function Nav() {
                 <Icon
                     path={mdiMenu}
                     className='h-8 w-8 md:hidden'
+                    color='white'
                 />
             </button>
 
