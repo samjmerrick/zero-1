@@ -18,10 +18,13 @@ function Footer() {
                             hello@zero-1.studio
                         </a>
                     </p>
+                    <div>
+                        <p className="text-white">
+                            © Zero 1 Studio 2022
+                        </p>
+                        <a href="https://storyset.com/work">Work illustrations by Storyset</a>
+                    </div>
 
-                    <p className="text-white">
-                        © Zero 1 Studio 2022
-                    </p>
                 </div>
             </Container>
         </footer>

@@ -1,28 +1,31 @@
 
 import Typewriter from 'typewriter-effect';
 import React from "react";
-
 import Container from '../components/Container';
 import Section from '../components/Section';
+import ColumnLayout from '../components/ColumnLayout';
+
 
 function Hero() {
 
     return (
-        <Section id='home'>
-            <Container>
-                <div className='relative flex flex-col space-y-8 '>
 
-                    <h2 className="text-6xl md:text-5xl ">
-                        We build digital products, from Zero to One.
-                    </h2>
+        <Container>
+            <ColumnLayout>
+                <div className='flex flex-col space-y-8 pt-20 lg:w-1/2'>
+                    <h1 className="text-6xl md:text-6xl ">
+                        We build digital products
+                    </h1>
                     <div className='text-2xl md:text-4xl inline'>
                         <Typewriter
                             options={{
                                 strings: [
-                                    'We build mobile apps',
-                                    'We design responsive websites',
-                                    'We create and manage ecommerce stores',
-                                    'We conduct user research',
+                                    'Mobile apps',
+                                    'Responsive websites',
+                                    'E-commerce stores',
+                                    'WordPress blogs',
+                                    'Landing pages',
+                                    'Corporate portals',
                                 ],
                                 loop: true,
                                 autoStart: true,
@@ -33,8 +36,12 @@ function Hero() {
                     </div>
 
                 </div>
-            </Container>
-        </Section>
+
+                <img src={'/prototype.png'} className='lg:w-1/2' />
+            </ColumnLayout>
+
+        </Container>
+
     )
 }
 
