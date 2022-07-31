@@ -14,6 +14,8 @@ function Page({ children, meta }) {
                 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
                 <meta name="msapplication-TileColor" content="#da532c" />
                 <meta name="theme-color" content="#ffffff" />
+                <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' />
+                <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' />
             </Head>
             <Nav />
             <div className="w-full min-h-screen pt-20">

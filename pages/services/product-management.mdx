@@ -1,16 +1,40 @@
 import { Page } from '../../components/page'
 import Container from '../../components/Container'
+import Image from 'next/image'
 
 export const meta = {
     title: 'Product Management',
 }
 
+<div className='max-w-lg'>
+    ![Product Management](/ProductManagement.svg)
+</div>
+
 # Product Management
 
-Good products need excellent Product Managers. 
+Product Management is all about building a deep understanding of a Product and its users. 
 
-Product Management is where it all starts.
+It is first and fore
+
+- Why does the product exist?
+- Who does the product exist for?
+- What business outcomes does the product drive?
+- What is the product roadmap?
+
+### The Four Big Risks
+
+- Value risk (whether customers will buy it or users will choose to use it)
+- Usability risk (whether users can figure out how to use it)
+- Feasibility risk (whether our engineers can build what we need with the time, skills and technology we have)
+- Business viability risk (whether this solution also works for the various aspects of our business)
 
 
 
-export default ({ children }) => <Page meta={meta}><Container>{children}</Container></Page>
+It's impossible to build a good product without great product management.
+
+
+[UX Design](/services/ux-design)
+
+
+
+export default ({ children }) => <Page meta={meta}><Container><article>{children}</article></Container></Page>

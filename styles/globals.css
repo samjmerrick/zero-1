@@ -28,6 +28,13 @@
     body {
         @apply bg-slate-900 text-white
     }
+    article {
+        @apply prose prose-2xl prose-invert
+    }
+
+    html {
+        font-family: Open Sans, system-ui, sans-serif;
+    }
 }
 
 @tailwind components;
