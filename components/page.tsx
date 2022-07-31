@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Nav from './nav'
+import Footer from './Footer'
 
 function Page({ children, meta }) {
     return (
@@ -18,6 +19,7 @@ function Page({ children, meta }) {
             <div className="bg-slate-900 text-white w-full min-h-screen pt-40">
                 {children}
             </div>
+            <Footer />
         </>
     )
 }

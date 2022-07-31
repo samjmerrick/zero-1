@@ -3,6 +3,7 @@ import React from 'react';
 import { mdiMenu } from '@mdi/js';
 import Icon from '@mdi/react';
 import Link from 'next/link';
+import Container from './Container';
 
 if (typeof window !== 'undefined') {
 
@@ -29,31 +30,35 @@ if (typeof window !== 'undefined') {
 
 function Nav() {
     return (
-        <nav className='fixed flex flex-wrap w-screen top-0 px-10 z-50 h-50 justify-between items-center bg-slate-800 md:bg-slate-900 p-6'>
-            <Link href='/#home'>
-                <a className='max-w-[66%]'><Logo /></a>
-            </Link>
+        <nav className='fixed  w-full top-0 z-50 py-5 bg-slate-800 md:bg-slate-900 '>
+            <Container>
+                <div className='flex justify-between items-center'>
+                    <Link href='/#home'>
+                        <a className='max-w-[66%]'><Logo /></a>
+                    </Link>
 
-            <button id='menu-button'>
-                <Icon
-                    path={mdiMenu}
-                    className='h-8 w-8 md:hidden'
-                    color='white'
-                />
-            </button>
+                    <button id='menu-button'>
+                        <Icon
+                            path={mdiMenu}
+                            className='h-8 w-8 md:hidden'
+                            color='white'
+                        />
+                    </button>
 
-            <div className="text-lg pt-6 md:pt-0 md:space-x-4 space-y-4 pr-2 md:space-y-0 hidden md:inline w-full md:w-auto " id='menu'>
+                    <div className="text-lg pt-6 md:pt-0 md:space-x-4 space-y-4 pr-2 md:space-y-0 hidden md:inline w-full md:w-auto " id='menu'>
 
-                <Link href="/#About" className="block md:inline-block text-center">
-                    About
-                </Link>
-                <Link href="/#Projects" className="block md:inline-block text-center">
-                    Projects
-                </Link>
-                <Link href="/#Contact" className="block md:inline-block text-center">
-                    Contact
-                </Link>
-            </div>
+                        <Link href="/#About" className="block md:inline-block text-center">
+                            About
+                        </Link>
+                        <Link href="/#Projects" className="block md:inline-block text-center">
+                            Projects
+                        </Link>
+                        <Link href="/#Contact" className="block md:inline-block text-center">
+                            Contact
+                        </Link>
+                    </div>
+                </div>
+            </Container>
         </nav>
     )
 }
