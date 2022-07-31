@@ -17,7 +17,7 @@ function IconCard(
                     size={2.5}
                 />
                 <h3>{props.title}</h3>
-                Learn more
+                <p className='text-base'>{props.description}</p>
             </div>
         </Link>
     )

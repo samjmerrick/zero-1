@@ -14,17 +14,17 @@ function About() {
                     <IconCard
                         icon={mdiHeadDotsHorizontal}
                         title='Product Management'
-                        description='Craft your vision, strategy and roadmap using leading product management practices'
+                        description='Vision, strategy and roadmaps centered on outcomes'
                     />
                     <IconCard
                         icon={mdiPencilRuler}
                         title='UX Design'
-                        description="Prototype ideas in hours and days, considering the entire end-to-end experience, not just pretty UI"
+                        description="Prototype experiences in hours and days (not just pretty UI)"
                     />
                     <IconCard
                         icon={mdiCodeBracesBox}
                         title='Software Development'
-                        description='Deliver in rapid vertical slices using agile best practices, allowing for ample customer and client feedback'
+                        description='Develop in rapid vertical slices following agile methodologies'
                     />
                 </ColumnLayout>
             </Container>
