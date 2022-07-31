@@ -7,8 +7,9 @@ import Container from '../components/Container'
 
 function About() {
     return (
-        <Section id='About' title='Services'>
+        <Section id='About'>
             <Container>
+                <h2>Our Services</h2>
                 <ColumnLayout>
                     <IconCard
                         icon={mdiHeadDotsHorizontal}

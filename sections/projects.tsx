@@ -5,7 +5,8 @@ import Section from "../components/Section";
 
 function Projects() {
     return (
-        <Section id='Projects' title='Showcase'>
+        <Section id='Projects'>
+            <h2 className="text-center">Showcase</h2>
             <Carousel>
                 <ImageCard
                     title='Tend'
