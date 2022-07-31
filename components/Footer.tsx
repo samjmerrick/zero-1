@@ -4,7 +4,7 @@ import Container from "./Container";
 
 function Footer() {
     return (
-        <footer className="py-10 bg-slate-900 ">
+        <footer className="py-10">
             <Container>
                 <div className="flex justify-between items-center">
                     <p className="flex flex-row items-center space-x-3">

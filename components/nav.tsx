@@ -30,7 +30,7 @@ if (typeof window !== 'undefined') {
 
 function Nav() {
     return (
-        <nav className='w-full top-0 z-50 py-5 bg-slate-900'>
+        <nav className='w-full top-0 z-50 py-5'>
             <Container>
                 <div className='flex justify-between items-center'>
                     <Link href='/#home'>
