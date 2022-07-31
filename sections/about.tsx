@@ -15,16 +15,19 @@ function About() {
                         icon={mdiHeadDotsHorizontal}
                         title='Product Management'
                         description='Vision, strategy and roadmaps centered on outcomes'
+                        url='/services/product-management'
                     />
                     <IconCard
                         icon={mdiPencilRuler}
                         title='UX Design'
                         description="Prototype experiences in hours and days (not just pretty UI)"
+                        url='/services/ux-design'
                     />
                     <IconCard
                         icon={mdiCodeBracesBox}
                         title='Software Development'
                         description='Develop in rapid vertical slices following agile methodologies'
+                        url='/services/software-development'
                     />
                 </ColumnLayout>
             </Container>

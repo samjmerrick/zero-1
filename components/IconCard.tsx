@@ -7,9 +7,10 @@ function IconCard(
         icon: string,
         title: string,
         description: string,
+        url: string,
     }) {
     return (
-        <Link href='/services/ux-design'>
+        <Link href={props.url}>
             <div className='bg-slate-800 hover:bg-slate-700 flex flex-col items-center rounded-lg p-10 lg:w-1/3 text-center cursor-pointer'>
                 <Icon
                     path={props.icon}
