@@ -1,15 +1,10 @@
-
 import Typewriter from 'typewriter-effect';
 import React from "react";
 import Container from '../components/Container';
-import Section from '../components/Section';
 import ColumnLayout from '../components/ColumnLayout';
 
-
 function Hero() {
-
     return (
-
         <Container>
             <ColumnLayout>
                 <div className='flex flex-col space-y-8 pt-20 lg:w-1/2'>
@@ -37,11 +32,9 @@ function Hero() {
 
                 </div>
 
-                <img src={'/prototype.png'} className='lg:w-1/2' />
+                <img src={'/illustrations/hero.svg'} className='lg:w-1/2' />
             </ColumnLayout>
-
         </Container>
-
     )
 }
 
