@@ -13,6 +13,7 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "tw-elements": "^1.0.0-alpha12",
     "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
