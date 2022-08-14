@@ -7,10 +7,11 @@
   },
   "dependencies": {
     "@mdi/js": "^6.9.96",
-    "@mdi/react": "^1.6.0",
+    "@mdi/react": "^1.6.1",
     "@mdx-js/loader": "^2.1.2",
-    "@next/mdx": "^12.2.2",
-    "next": "latest",
+    "@next/mdx": "^12.2.5",
+    "@types/mdx": "^2.0.2",
+    "next": "^12.2.5",
     "react": "latest",
     "react-dom": "latest",
     "tw-elements": "^1.0.0-alpha12",
@@ -18,11 +19,11 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.4",
-    "@types/node": "^18.0.3",
-    "@types/react": "^18.0.15",
-    "autoprefixer": "^10.4.7",
-    "postcss": "^8.4.14",
-    "tailwindcss": "^3.1.4",
+    "@types/node": "^18.7.3",
+    "@types/react": "^18.0.17",
+    "autoprefixer": "^10.4.8",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8",
     "typescript": "^4.7.4"
   }
 }
