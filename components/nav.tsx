@@ -1,4 +1,3 @@
-import Logo from '../components/logo'
 import React from 'react';
 import { mdiMenu } from '@mdi/js';
 import Icon from '@mdi/react';
@@ -34,7 +33,9 @@ function Nav() {
             <Container>
                 <div className='flex justify-between items-center'>
                     <Link href='/#home'>
-                        <a className='max-w-[66%]'><Logo /></a>
+                        <a className='w-72'>
+                            <img src={"/logos/logo_inline.svg"} />
+                        </a>
                     </Link>
 
                     <button id='menu-button'>
