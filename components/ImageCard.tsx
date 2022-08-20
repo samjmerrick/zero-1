@@ -1,9 +1,7 @@
 function ImageCard(props: {
-    title: string,
-    caption: string,
     imagePath: string,
     url: string,
-
+    children: React.ReactNode,
 }) {
 
     function openUrl(url: string) {
@@ -12,16 +10,33 @@ function ImageCard(props: {
 
     return (
         <div
-            className=' bg-slate-800 hover:bg-slate-700 rounded-lg p-10 max-w-md min-w-[90%] sm:min-w-[66%] md:min-w-[50%] lg:min-w-[40%] xl:min-w-[25%] cursor-pointer '
+            className=' 
+            bg-slate-800 
+            hover:bg-slate-700 
+                rounded-lg 
+                p-5 
+                md:p-8
+                w-full 
+                flex 
+                flex-col
+                md:flex-row 
+                md:space-x-10
+                items-center
+                cursor-pointer
+                '
             onClick={() => openUrl(props.url)}
         >
             <img
                 src={props.imagePath}
-                title={props.title}
-                className='rounded-lg w-full'
+                className='
+                rounded-lg 
+                md:w-1/2 
+                md:h-1/2
+                '
             />
-            <h2>{props.title}</h2>
-            <p className=''>{props.caption}</p>
+            <div>
+                {props.children}
+            </div>
         </div>
     )
 }
