@@ -34,9 +34,12 @@ function ContactForm() {
         <form
             action="https://script.google.com/macros/s/AKfycbzeqJfpQc3ckStHuiF2bOGZJxEj8QC0z_k56HmUn3RvxKxVNH0-ncpOFQPIMvrHIHYMYQ/exec"
             method="post"
-            className="flex flex-col w-full max-w-2xl"
+            className="flex flex-col w-full max-w-2xl space-y-4"
             id="contact-form"
         >
+            <div className="text-center">
+                <h2>Get in touch</h2>
+            </div>
             <label htmlFor="name">
                 Your Name
             </label>
@@ -44,7 +47,7 @@ function ContactForm() {
                 type="text"
                 id="Name"
                 name="Name"
-                placeholder="Barry Allen"
+                placeholder="e.g. Barry Allen"
                 required
                 className="p-3 mb-5 mt-1 bg-slate-800 rounded-lg"
             />
@@ -65,7 +68,7 @@ function ContactForm() {
             <textarea
                 id="Message"
                 name="Message"
-                placeholder="My exciting product idea.."
+                placeholder="Message here please!"
                 rows={4}
                 required
                 className="p-3 mb-5  mt-1 bg-slate-800 rounded-lg resize-none"
