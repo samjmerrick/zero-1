@@ -7,37 +7,37 @@ function Projects() {
         <Section id='Projects'>
             <Container>
                 <h2 className="text-center">Recent work</h2>
-                <ImageCard
-                    imagePath='/projects/StudentBeans.jpg'
-                    url='https://www.studentbeans.com/blog/uk'
+                <div
+                    className="flex flex-col space-y-8"
                 >
-                    <h2>Student Beans Blog</h2>
-                    <p>Student Beans is a market leading student discount and rewards platform in the UK.</p>
-                    <br />
-                    <p>We worked on the development and launch of their new blog, providing expertise on UX and SEO best practices.</p>
-                </ImageCard>
-                <ImageCard
-                    imagePath='/projects/Tend.jpg'
-                    url='https://www.thetendapp.com/'
-                >
-                    <h2>Tend</h2>
-                    <p>Tend is a mindfulness and meditation app aimed at a Gen-Z audience.</p>
-                </ImageCard>
-                <ImageCard
-                    imagePath='/projects/HandDeco.jpg'
-                    url='https://www.handdeco.com/'
-                >
-                    <h2>HandDeco</h2>
-                    <p>HandDeco is a handmade and custom embroidery start-up operating in Switzerland.</p>
-                </ImageCard>
-                <ImageCard
-                    imagePath='/VirginRed.png'
-                    url='https://www.virgin.com/virgin-red'
-                >
-                    <h2>Virgin Red</h2>
-                    <p>Virgin Red is a loyalty and rewards offering for customers of the Virgin Group.</p>
-                </ImageCard>
-
+                    <ImageCard
+                        imagePath='/projects/Tend.jpg'
+                        url='https://www.thetendapp.com/'
+                    >
+                        <h2>Tend (Active Now)</h2>
+                        <p>Tend is a mindfulness and meditation app, backed by social media influencer Jade Bowler (@unjadedjade).</p>
+                        <br />
+                        <p>We are currently building their mobile apps (iOS / Android) and landing pages.</p>
+                    </ImageCard>
+                    <ImageCard
+                        imagePath='/projects/StudentBeans.jpg'
+                        url='https://www.studentbeans.com/blog/uk'
+                    >
+                        <h2>Student Beans Blog</h2>
+                        <p>Student Beans is a market leading student discount and rewards platform in the UK.</p>
+                        <br />
+                        <p>We developed and launched their new blog, which grew their SEO traffic by ~200% year-on-year.</p>
+                    </ImageCard>
+                    <ImageCard
+                        imagePath='/projects/HandDeco.jpg'
+                        url='https://www.handdeco.com/'
+                    >
+                        <h2>HandDeco</h2>
+                        <p>HandDeco is a handmade and custom embroidery start-up operating in Switzerland.</p>
+                        <br />
+                        <p>We overhauled their e-commerce store. The new site has seen sales increase by ~150%</p>
+                    </ImageCard>
+                </div>
             </Container>
         </Section >
     )

@@ -4,7 +4,7 @@ function Section(props: {
     children: React.ReactNode,
 }) {
     return (
-        <section id={props.id} className='space-y-8 py-20'>
+        <section id={props.id} className='space-y-8 py-12'>
             {props.children}
         </section>
     )
