@@ -1,5 +1,5 @@
 
-import { mdiHeadDotsHorizontal, mdiPencilRuler, mdiCodeBracesBox } from '@mdi/js'
+import { mdiHeadDotsHorizontal, mdiRocketLaunch, mdiHumanGreeting, mdiFinance, mdiPencilRuler, mdiCodeBracesBox } from '@mdi/js'
 import IconCard from '../components/IconCard'
 import ColumnLayout from '../components/ColumnLayout'
 import Section from '../components/Section'
@@ -9,25 +9,23 @@ function About() {
     return (
         <Section id='About'>
             <Container>
-                <h2>Our Expertise</h2>
+                <h2>What makes us different?</h2>
                 <ColumnLayout>
                     <IconCard
-                        icon={mdiHeadDotsHorizontal}
-                        title='Product Management'
-                        description='Vision, strategy and roadmaps centered on outcomes'
-                        url='/services/product-management'
+                        icon={mdiRocketLaunch}
+                        title='Startup Focused'
+                        description="We focus on early stage startups, so we know the challenges and how best to rise to them"
                     />
                     <IconCard
-                        icon={mdiPencilRuler}
-                        title='UX Design'
-                        description="Prototype experiences in hours and days (not just pretty UI)"
-                        url='/services/ux-design'
+                        icon={mdiHumanGreeting}
+                        title='User Centered'
+                        description="We keep users at the heart of our products, testing rapidly and frequently with real people"
+
                     />
                     <IconCard
-                        icon={mdiCodeBracesBox}
-                        title='Software Development'
-                        description='Develop in rapid vertical slices following agile methodologies'
-                        url='/services/software-development'
+                        icon={mdiFinance}
+                        title='Outcome Oriented'
+                        description="We deliver more than services, we collaborate to define and deliver commercial results"
                     />
                 </ColumnLayout>
             </Container>

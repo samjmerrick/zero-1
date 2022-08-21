@@ -12,7 +12,7 @@ function Hero() {
                         Digital experiences from Zero to One
                     </h1>
                     <p className='text-2xl' >
-                        We specialise in creating early stage digital products, such as mobile apps and websites.
+                        We build websites and mobile apps for startups, from zero finance to Series A
                     </p>
                 </div>
 
