@@ -9,7 +9,7 @@ function About() {
     return (
         <Section id='About'>
             <Container>
-                <h2>Our Services</h2>
+                <h2>Our Expertise</h2>
                 <ColumnLayout>
                     <IconCard
                         icon={mdiHeadDotsHorizontal}

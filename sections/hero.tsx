@@ -7,32 +7,16 @@ function Hero() {
     return (
         <Container>
             <ColumnLayout>
-                <div className='flex flex-col space-y-8 pt-20 lg:w-1/2'>
+                <div className='flex flex-col space-y-8 pt-20 lg:w-3/5'>
                     <h1 className="text-6xl md:text-6xl ">
-                        We build digital products
+                        Digital experiences from Zero to One
                     </h1>
-                    <div className='text-2xl md:text-4xl inline'>
-                        <Typewriter
-                            options={{
-                                strings: [
-                                    'Mobile apps',
-                                    'Responsive websites',
-                                    'E-commerce stores',
-                                    'WordPress blogs',
-                                    'Landing pages',
-                                    'Corporate portals',
-                                ],
-                                loop: true,
-                                autoStart: true,
-                                delay: 20,
-                                deleteSpeed: 10,
-                            }}
-                        />
-                    </div>
-
+                    <p className='text-2xl' >
+                        We specialise in creating early stage digital products, such as mobile apps and websites.
+                    </p>
                 </div>
 
-                <img src={'/illustrations/hero.svg'} className='lg:w-1/2' />
+                <img src={'/illustrations/hero.svg'} className='lg:w-2/5' />
             </ColumnLayout>
         </Container>
     )
