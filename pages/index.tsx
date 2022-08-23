@@ -2,6 +2,7 @@ import Hero from '../sections/hero';
 import About from '../sections/about';
 import Projects from '../sections/projects';
 import Contact from '../sections/contact';
+import Tech from '../sections/tech';
 
 import { Page } from '../components/page';
 
@@ -16,6 +17,7 @@ export default function Home() {
       <About />
       <Projects />
       <Contact />
+      <Tech />
     </Page>
   )
 }
