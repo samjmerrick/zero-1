@@ -1,5 +1,8 @@
+import { StaticImageData } from "next/image";
+import Image from "next/future/image";
+
 function ImageCard(props: {
-    imagePath: string,
+    image: StaticImageData,
     url: string,
     children: React.ReactNode,
 }) {
@@ -10,9 +13,9 @@ function ImageCard(props: {
 
     return (
         <div
-            className=' 
-            bg-slate-800 
-            hover:bg-slate-700 
+            className='
+                bg-slate-800 
+                hover:bg-slate-700 
                 rounded-lg 
                 p-5 
                 md:p-8
@@ -22,17 +25,12 @@ function ImageCard(props: {
                 md:flex-row 
                 md:space-x-10
                 items-center
-                cursor-pointer
-                '
+                cursor-pointer'
             onClick={() => openUrl(props.url)}
         >
-            <img
-                src={props.imagePath}
-                className='
-                rounded-lg 
-                md:w-1/2 
-                md:h-1/2
-                '
+            <Image
+                src={props.image}
+                className='rounded-lg md:w-1/2 md:h-1/2'
             />
             <div>
                 {props.children}

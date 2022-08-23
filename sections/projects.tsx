@@ -3,6 +3,10 @@ import ImageCard from "../components/ImageCard";
 import Section from "../components/Section";
 import Label from "../components/Label";
 
+import Tend from "../public/projects/Tend.jpg"
+import StudentBeans from "../public/projects/StudentBeans.jpg"
+import HandDeco from "../public/projects/HandDeco.jpg"
+
 function Projects() {
     return (
         <Section id='Projects'>
@@ -12,7 +16,7 @@ function Projects() {
                     className="flex flex-col space-y-8"
                 >
                     <ImageCard
-                        imagePath='/projects/Tend.jpg'
+                        image={Tend}
                         url='https://www.thetendapp.com/'
                     >
                         <h2>Tend <Label>Active Now</Label></h2>
@@ -21,7 +25,7 @@ function Projects() {
                         <p>We are currently building the Tend mobile apps (iOS / Android) and landing pages.</p>
                     </ImageCard>
                     <ImageCard
-                        imagePath='/projects/StudentBeans.jpg'
+                        image={StudentBeans}
                         url='https://www.studentbeans.com/blog/uk'
                     >
                         <h2>Student Beans Blog</h2>
@@ -30,7 +34,7 @@ function Projects() {
                         <p>We developed and launched their new blog, which grew their SEO traffic by ~200% year-on-year.</p>
                     </ImageCard>
                     <ImageCard
-                        imagePath='/projects/HandDeco.jpg'
+                        image={HandDeco}
                         url='https://www.handdeco.com/'
                     >
                         <h2>HandDeco</h2>
