@@ -14,18 +14,18 @@ function About() {
                     <IconCard
                         icon={mdiRocketLaunch}
                         title='Startup Focused'
-                        description="We focus on early stage startups, so we know the challenges and how best to rise to them"
+                        description="Our focus on startups gives us deep experience on how best to solve their problems."
                     />
                     <IconCard
                         icon={mdiHumanGreeting}
                         title='User Centered'
-                        description="We keep users at the heart of our products, testing rapidly and frequently with real people"
+                        description="We keep users at the heart of our products, testing rapidly and frequently with real people."
 
                     />
                     <IconCard
                         icon={mdiFinance}
                         title='Outcome Oriented'
-                        description="We deliver more than services, we collaborate to define and deliver commercial results"
+                        description="We deliver more than just a product. We collaborate, define and deliver commercial results."
                     />
                 </ColumnLayout>
             </Container>
