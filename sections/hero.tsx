@@ -9,10 +9,10 @@ function Hero() {
             <ColumnLayout>
                 <div className='flex flex-col space-y-8 pt-20 lg:w-3/5'>
                     <h1 className="text-6xl md:text-6xl ">
-                        Digital experiences from Zero to One
+                        Digital products from Zero to One
                     </h1>
                     <p className='text-2xl' >
-                        We build websites and mobile apps for startups, from zero finance to Series A
+                        We are a team of creative technologists that build early stage digital products.
                     </p>
                 </div>
 

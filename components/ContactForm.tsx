@@ -18,8 +18,8 @@ function ContactForm() {
             id="contact-form"
         >
             <div className="text-center">
-                <h2>Book a free consultation</h2>
-                <p>We love to talk about ideas, intro chats with our team are completely free!</p>
+                <h2>Ready to build something <em>epic</em>?</h2>
+                <p>Book a free intro chat with our team, we'd love to talk about your ideas</p>
             </div>
             <Cal calLink="sam-zero-1/intro" style={{ width: "100%", height: "100%", overflow: "hidden" }} />
 

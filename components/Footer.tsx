@@ -14,7 +14,7 @@ function Footer() {
                             size={1.5}
                         />
 
-                        <a className=' text-green-600 font-bold ' href='mailto:hello@zero-1.studio'>
+                        <a href='mailto:hello@zero-1.studio'>
                             hello@zero-1.studio
                         </a>
                     </p>

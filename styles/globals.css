@@ -22,7 +22,7 @@
     }
 
     a:hover {
-        @apply text-green-400;
+        @apply text-blue-400;
     }
 
     body {
@@ -34,6 +34,10 @@
 
     html {
         font-family: Open Sans, system-ui, sans-serif;
+    }
+    em {
+        @apply text-blue-500 not-italic font-extrabold
+
     }
 }
 
