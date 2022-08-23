@@ -6,7 +6,7 @@ import Container from './Container';
 
 if (typeof window !== 'undefined') {
 
-    const menu = document.querySelector('#menu');
+    const mobilemenu = document.querySelector('#mobile-menu');
     const button = document.querySelector('#menu-button');
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -20,11 +20,7 @@ if (typeof window !== 'undefined') {
         });
     });
 
-    if (menu.classList.contains('w-full')) { // if the menu is on mobile
-        menu.classList.add('hidden');
-    }
-
-    button.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+    button.addEventListener('click', () => { mobilemenu.classList.toggle('hidden'); });
 }
 
 function Nav() {
@@ -46,7 +42,38 @@ function Nav() {
                         />
                     </button>
 
-                    <div className="text-lg pt-6 md:pt-0 md:space-x-4 space-y-4 pr-2 md:space-y-0 hidden md:inline w-full md:w-auto " id='menu'>
+                    <div className="
+                            pr-2 
+                            pt-6 
+                            md:pt-0 
+                            hidden 
+                            md:flex
+                            flex-row
+                            text-lg 
+                            space-x-4"
+                        id='menu'>
+
+                        <Link href="/#Projects" className="block md:inline-block text-center">
+                            Projects
+                        </Link>
+                        <Link href="/#Contact" className="block md:inline-block text-center">
+                            Contact
+                        </Link>
+                    </div>
+
+                </div>
+
+                <div
+                    id="mobile-menu" className="hidden md:hidden bg-slate-800 rounded-md text-lg">
+                    <div className='
+                        flex
+                        flex-col
+                        w-full
+                        text-center
+                        space-y-4
+                        py-5
+                    '
+                    >
                         <Link href="/#Projects" className="block md:inline-block text-center">
                             Projects
                         </Link>

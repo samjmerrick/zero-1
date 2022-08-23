@@ -18,7 +18,7 @@ function Page({ children, meta }) {
                 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' />
             </Head>
             <Nav />
-            <div className="w-full min-h-screen pt-20">
+            <div className="w-full min-h-screen md:pt-20">
                 {children}
             </div>
             <Footer />

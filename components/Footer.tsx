@@ -6,7 +6,7 @@ function Footer() {
     return (
         <footer className="py-10">
             <Container>
-                <div className="flex justify-between items-center">
+                <div className="flex flex-col md:flex-row space-y-5 text-center justify-between items-center">
                     <p className="flex flex-row items-center space-x-3">
                         <Icon
                             path={mdiEmailOutline}
