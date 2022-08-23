@@ -1,6 +1,7 @@
 import Container from "../components/Container"
 import ImageCard from "../components/ImageCard";
 import Section from "../components/Section";
+import Label from "../components/Label";
 
 function Projects() {
     return (
@@ -14,10 +15,10 @@ function Projects() {
                         imagePath='/projects/Tend.jpg'
                         url='https://www.thetendapp.com/'
                     >
-                        <h2>Tend (Active Now)</h2>
+                        <h2>Tend <Label>Active Now</Label></h2>
                         <p>Tend is a mindfulness and meditation app, backed by social media influencer Jade Bowler (@unjadedjade).</p>
                         <br />
-                        <p>We are currently building their mobile apps (iOS / Android) and landing pages.</p>
+                        <p>We are currently building the Tend mobile apps (iOS / Android) and landing pages.</p>
                     </ImageCard>
                     <ImageCard
                         imagePath='/projects/StudentBeans.jpg'
