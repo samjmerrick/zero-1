@@ -1,12 +1,12 @@
-import Hero from '../sections/hero';
-import About from '../sections/about';
-import Contact from '../sections/contact';
-import Tech from '../sections/tech';
-import Projects from '../sections/projects';
-
+import Hero from '../components/sections/hero';
+import About from '../components/sections/about';
+import Contact from '../components/sections/contact';
+import Tech from '../components/sections/tech';
+import Projects from '../components/sections/projects';
 import { Page } from '../components/page';
-import { getSortedProjectsData } from "../api/getSortedProjectsData"
+import Container from '../components/Container';
 
+import { getSortedProjectsData } from "../api/getSortedProjectsData"
 
 const meta = {
   title: 'Digital design and development agency'
@@ -15,11 +15,13 @@ const meta = {
 export default function Home({ allProjectsData }) {
   return (
     <Page meta={meta}>
-      <Hero />
-      <About />
-      <Projects allProjectsData={allProjectsData} />
-      <Contact />
-      <Tech />
+      <Container>
+        <Hero />
+        <About />
+        <Projects allProjectsData={allProjectsData} />
+        <Contact />
+        <Tech />
+      </Container>
     </Page>
   )
 }
