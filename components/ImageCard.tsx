@@ -30,6 +30,8 @@ function ImageCard(props: {
         >
             <Image
                 src={props.image}
+                width={600}
+                height={500}
                 className='rounded-lg md:w-1/2 md:h-1/2'
             />
             <div>
