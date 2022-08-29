@@ -6,12 +6,8 @@ const projectsDirectory = path.join(process.cwd(), 'data/projects');
 
 export function getSortedProjectsData() {
 
-    console.log(projectsDirectory);
-
     // Get file names under /posts
     const fileNames = fs.readdirSync(projectsDirectory);
-
-    console.log(fileNames);
 
     const allPostsData = fileNames.map((fileName) => {
         // Remove ".mdx" from file name to get id
