@@ -14,16 +14,14 @@ function ImageCard(props: {
     return (
         <div
             className='
-                bg-slate-800 
-                hover:bg-slate-700 
+                bg-slate-800     
+                hover:bg-opacity-75    
                 rounded-lg 
-                p-5 
-                md:p-8
                 w-full 
                 flex 
                 flex-col
                 md:flex-row 
-                md:space-x-10
+                md:space-x-5
                 items-center
                 cursor-pointer'
             onClick={() => openUrl(props.url)}
@@ -34,7 +32,7 @@ function ImageCard(props: {
                 height={500}
                 className='rounded-lg md:w-1/2 md:h-1/2'
             />
-            <div>
+            <div className='p-5'>
                 {props.children}
             </div>
         </div>
