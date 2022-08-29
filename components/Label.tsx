@@ -4,11 +4,11 @@ function Label(
     }
 ) {
     return (
-        <div
-            className="p-2 mr-2 bg-slate-600 rounded-lg inline text-sm align-middle whitespace-nowrap"
+        <span
+            className="p-2 mr-2 bg-slate-600 rounded-lg inline text-sm font-bold align-middle whitespace-nowrap"
         >
             {props.children}
-        </div>
+        </span>
     )
 }
 
