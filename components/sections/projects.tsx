@@ -14,7 +14,8 @@ function Projects({ allProjectsData }) {
                         image={image}
                         url={url}
                     >
-                        <h2>{title} {tags.map(tag => <Label>{tag}</Label>)}</h2>
+                        <h2>{title}</h2>
+                        <p className='h-12'>{tags.map(tag => <Label>{tag}</Label>)}</p>
                         <p>{summary}</p>
                         <br />
                         <p>{summary2}</p>
