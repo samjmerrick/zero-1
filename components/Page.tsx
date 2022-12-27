@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Nav from './nav'
 import Footer from './Footer'
+import Nav from './nav';
 
 function Page({ children, meta }) {
     return (
