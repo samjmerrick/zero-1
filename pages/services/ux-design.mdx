@@ -1,26 +1,26 @@
+import { Page } from "../../components/Page";
+import Container from "../../components/Container";
 
-import { Page } from '../../components/page'
-import Container from '../../components/Container'
-
-import Card from '../../components/Card'
-import Icon from '@mdi/react'
-import { mdiImageFilterHdr,mdiSquareOffOutline, mdiCellphoneLink, mdiHumanGreeting } from '@mdi/js';
-
+import Card from "../../components/Card";
+import Icon from "@mdi/react";
+import {
+  mdiImageFilterHdr,
+  mdiSquareOffOutline,
+  mdiCellphoneLink,
+  mdiHumanGreeting,
+} from "@mdi/js";
 
 export const meta = {
-    title: 'UX Design'
-}
+  title: "UX Design",
+};
 
-<div className='max-w-md'>
-    ![UX Design](/illustrations/ux-design.svg)
-</div>
+<div className="max-w-md">![UX Design](/illustrations/ux-design.svg)</div>
 
 # UX Design
 
 ### What is UX design?
 
 Our UX design team craft beautiful and intuitive experiences that solve real user needs.
-
 
 ### Our Competencies
 
@@ -40,11 +40,12 @@ This gives us the flexibility to take a step back before committing to a set sty
 
 #### <Icon path={mdiCellphoneLink} size={2} /> Prototyping
 
-We create end-to-end experiences using low-code or no-code solutions. 
+We create end-to-end experiences using low-code or no-code solutions.
 
 This allows us to check the effectiveness of the product in a mock environment, before commmitting to costly development.
 
 **Our prototyping stack**
+
 - Figma
 - Adobe XD
 - Bubble.io
@@ -64,6 +65,7 @@ We conduct user research at every opportunity, using leading techniques that avo
 This ensures that the experiences we create solve real user needs. As a result, our products are useful, usable and desirable.
 
 **Our research methods**
+
 - Surveys
 - Depth interviews
 - Focus groups
@@ -73,5 +75,6 @@ This ensures that the experiences we create solve real user needs. As a result, 
 
 </Card>
 
+export default ({ children }) => <Page meta={meta}><Container><article>{children}</article></Container></Page
 
-export default ({ children }) => <Page meta={meta}><Container><article>{children}</article></Container></Page>
+>
