@@ -1,11 +1,11 @@
 import { getSortedProjectsData } from "../api/getSortedProjectsData";
 
 import Container from "../components/Container";
-import Hero from "../components/sections/hero";
-import About from "../components/sections/about";
-import Projects from "../components/sections/projects";
-import Contact from "../components/sections/contact";
-import { Page } from "../components/page";
+import { Page } from "../components/Page";
+import About from "../sections/About";
+import Contact from "../sections/Contact";
+import Hero from "../sections/Hero";
+import Projects from "../sections/Projects";
 
 const meta = {
   title: "Digital design and development agency",

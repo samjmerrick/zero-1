@@ -1,6 +1,6 @@
-import ImageCard from "../ImageCard";
-import Section from "../Section";
-import Label from "../Label";
+import ImageCard from "../components/ImageCard";
+import Section from "../components/Section";
+import Label from "../components/Label";
 
 function Projects({ allProjectsData }) {
   return (

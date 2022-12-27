@@ -1,5 +1,5 @@
 import React from "react";
-import ColumnLayout from "../ColumnLayout";
+import ColumnLayout from "../components/ColumnLayout";
 
 function Hero() {
   return (
