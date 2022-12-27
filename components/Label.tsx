@@ -1,15 +1,9 @@
-function Label(
-    props: {
-        children: React.ReactNode,
-    }
-) {
-    return (
-        <span
-            className="p-2 mr-2 bg-slate-600 rounded-lg inline text-sm font-bold align-middle whitespace-nowrap"
-        >
-            {props.children}
-        </span>
-    )
+function Label(props: { children: React.ReactNode }) {
+  return (
+    <span className="mr-2 inline whitespace-nowrap rounded-lg bg-zinc-200 p-2 align-middle text-sm font-bold">
+      {props.children}
+    </span>
+  );
 }
 
-export default Label
+export default Label;

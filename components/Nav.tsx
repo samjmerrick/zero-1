@@ -1,90 +1,85 @@
-import React from 'react';
-import { mdiMenu } from '@mdi/js';
-import Icon from '@mdi/react';
-import Link from 'next/link';
-import Container from './Container';
+import React from "react";
+import { mdiMenu } from "@mdi/js";
+import Icon from "@mdi/react";
+import Link from "next/link";
+import Container from "./Container";
 
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
+  const mobilemenu = document.querySelector("#mobile-menu");
+  const button = document.querySelector("#menu-button");
 
-    const mobilemenu = document.querySelector('#mobile-menu');
-    const button = document.querySelector('#menu-button');
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth',
-                block: screen.width > 768 ? 'center' : 'start',
-            });
-        });
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+        block: screen.width > 768 ? "center" : "start",
+      });
     });
+  });
 
-    button.addEventListener('click', () => { mobilemenu.classList.toggle('hidden'); });
+  button.addEventListener("click", () => {
+    mobilemenu.classList.toggle("hidden");
+  });
 }
 
 function Nav() {
-    return (
-        <nav className='w-full top-0 z-50 py-5 '>
-            <Container>
-                <div className='flex justify-between items-center'>
-                    <Link href='/#home'>
-                        <a className='w-72'>
-                            <img src={"/logos/logo_inline.svg"} />
-                        </a>
-                    </Link>
+  return (
+    <nav className="top-0 z-50 w-full py-5 ">
+      <Container>
+        <div className="flex items-center justify-between">
+          <Link href="/#home">
+            <a className="w-72">
+              <img src={"/logos/logo_inline.svg"} />
+            </a>
+          </Link>
 
-                    <button id='menu-button'>
-                        <Icon
-                            path={mdiMenu}
-                            className='h-8 w-8 md:hidden'
-                            color='white'
-                        />
-                    </button>
+          <button id="menu-button">
+            <Icon path={mdiMenu} className="h-8 w-8 md:hidden" />
+          </button>
 
-                    <div className="
-                            pr-2 
-                            pt-6 
-                            md:pt-0 
-                            hidden 
-                            md:flex
-                            flex-row
-                            text-lg 
-                            space-x-4"
-                        id='menu'>
+          <div
+            className="hidden flex-row space-x-4 pt-6 pr-2 text-lg md:flex md:pt-0"
+            id="menu"
+          >
+            <Link
+              href="/#Projects"
+              className="block text-center md:inline-block"
+            >
+              Projects
+            </Link>
+            <Link
+              href="/#Contact"
+              className="block text-center md:inline-block"
+            >
+              Contact
+            </Link>
+          </div>
+        </div>
 
-                        <Link href="/#Projects" className="block md:inline-block text-center">
-                            Projects
-                        </Link>
-                        <Link href="/#Contact" className="block md:inline-block text-center">
-                            Contact
-                        </Link>
-                    </div>
-
-                </div>
-
-                <div
-                    id="mobile-menu" className="hidden md:hidden bg-slate-800 rounded-md text-lg">
-                    <div className='
-                        flex
-                        flex-col
-                        w-full
-                        text-center
-                        space-y-4
-                        py-5
-                    '
-                    >
-                        <Link href="/#Projects" className="block md:inline-block text-center">
-                            Projects
-                        </Link>
-                        <Link href="/#Contact" className="block md:inline-block text-center">
-                            Contact
-                        </Link>
-                    </div>
-                </div>
-            </Container>
-        </nav>
-    )
+        <div
+          id="mobile-menu"
+          className="hidden rounded-md bg-zinc-200 text-lg md:hidden"
+        >
+          <div className="flex w-full flex-col space-y-4 py-5 text-center">
+            <Link
+              href="/#Projects"
+              className="block text-center md:inline-block"
+            >
+              Projects
+            </Link>
+            <Link
+              href="/#Contact"
+              className="block text-center md:inline-block"
+            >
+              Contact
+            </Link>
+          </div>
+        </div>
+      </Container>
+    </nav>
+  );
 }
 
-export default Nav
+export default Nav;
