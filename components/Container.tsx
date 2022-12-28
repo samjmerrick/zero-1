@@ -1,10 +1,9 @@
-
 function Container({ children }) {
-    return (
-        <div className='container w-full md:max-w-6xl mx-auto space-y-4 px-5'>
-            {children}
-        </div>
-    )
+  return (
+    <div className="container mx-auto w-full space-y-4 px-5 md:max-w-7xl">
+      {children}
+    </div>
+  );
 }
 
-export default Container
+export default Container;
