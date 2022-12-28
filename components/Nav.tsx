@@ -40,10 +40,10 @@ function Nav() {
             className="hidden flex-row space-x-4 pt-6 pr-2 text-lg md:flex md:pt-0"
             id="menu"
           >
-            <a href="/#Projects" className="block text-center md:inline-block">
+            <a href="#Projects" className="block text-center md:inline-block">
               Projects
             </a>
-            <a href="/#Contact" className="block text-center md:inline-block">
+            <a href="#Contact" className="block text-center md:inline-block">
               Contact
             </a>
           </div>
