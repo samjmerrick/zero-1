@@ -14,7 +14,7 @@ function Nav() {
 
         document.querySelector(this.getAttribute("href")).scrollIntoView({
           behavior: "smooth",
-          block: screen.width > 768 ? "center" : "start",
+          block: screen.width > 768 ? "start" : "start",
         });
       });
     });
