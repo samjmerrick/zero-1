@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { mdiMenu } from "@mdi/js";
 import Icon from "@mdi/react";
-import Link from "next/link";
 import Container from "./Container";
 
 function Nav() {
@@ -29,11 +28,9 @@ function Nav() {
     <nav className="top-0 z-50 w-full bg-slate-200 py-5">
       <Container>
         <div className="flex items-center justify-between">
-          <Link href="/#home">
-            <a className="w-40">
-              <img src={"/logos/logo_inline.svg"} />
-            </a>
-          </Link>
+          <a className="w-40" href="/#home">
+            <img src={"/logos/logo_inline.svg"} />
+          </a>
 
           <button id="menu-button">
             <Icon path={mdiMenu} className="h-8 w-8 md:hidden" />
@@ -43,18 +40,12 @@ function Nav() {
             className="hidden flex-row space-x-4 pt-6 pr-2 text-lg md:flex md:pt-0"
             id="menu"
           >
-            <Link
-              href="/#Projects"
-              className="block text-center md:inline-block"
-            >
+            <a href="/#Projects" className="block text-center md:inline-block">
               Projects
-            </Link>
-            <Link
-              href="/#Contact"
-              className="block text-center md:inline-block"
-            >
+            </a>
+            <a href="/#Contact" className="block text-center md:inline-block">
               Contact
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -63,18 +54,12 @@ function Nav() {
           className="hidden rounded-md bg-zinc-200 text-lg md:hidden"
         >
           <div className="flex w-full flex-col space-y-4 py-5 text-center">
-            <Link
-              href="/#Projects"
-              className="block text-center md:inline-block"
-            >
+            <a href="/#Projects" className="block text-center md:inline-block">
               Projects
-            </Link>
-            <Link
-              href="/#Contact"
-              className="block text-center md:inline-block"
-            >
+            </a>
+            <a href="/#Contact" className="block text-center md:inline-block">
               Contact
-            </Link>
+            </a>
           </div>
         </div>
       </Container>
