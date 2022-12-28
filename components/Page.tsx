@@ -38,7 +38,7 @@ function Page({ children, meta }) {
         />
       </Head>
       <Nav />
-      <div className="min-h-screen w-full md:pt-20">{children}</div>
+      <div className="min-h-screen w-full">{children}</div>
       <Footer />
     </>
   );

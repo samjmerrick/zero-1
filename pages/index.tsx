@@ -14,8 +14,8 @@ const meta = {
 export default function Home({ allProjectsData }) {
   return (
     <Page meta={meta}>
+      <Hero />
       <Container>
-        <Hero />
         <About />
         <Projects allProjectsData={allProjectsData} />
         <Contact />
