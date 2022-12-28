@@ -1,36 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { mdiMenu } from "@mdi/js";
 import Icon from "@mdi/react";
 import Link from "next/link";
 import Container from "./Container";
 
-if (typeof window !== "undefined") {
-  const mobilemenu = document.querySelector("#mobile-menu");
-  const button = document.querySelector("#menu-button");
+function Nav() {
+  useEffect(() => {
+    const mobilemenu = document.querySelector("#mobile-menu");
+    const button = document.querySelector("#menu-button");
 
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
 
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
-        behavior: "smooth",
-        block: screen.width > 768 ? "center" : "start",
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
+          block: screen.width > 768 ? "center" : "start",
+        });
       });
+    });
+
+    button.addEventListener("click", () => {
+      mobilemenu.classList.toggle("hidden");
     });
   });
 
-  button.addEventListener("click", () => {
-    mobilemenu.classList.toggle("hidden");
-  });
-}
-
-function Nav() {
   return (
-    <nav className="top-0 z-50 w-full py-5 ">
+    <nav className="top-0 z-50 w-full bg-slate-200 py-5">
       <Container>
         <div className="flex items-center justify-between">
           <Link href="/#home">
-            <a className="w-72">
+            <a className="w-40">
               <img src={"/logos/logo_inline.svg"} />
             </a>
           </Link>
