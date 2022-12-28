@@ -4,9 +4,9 @@ import Container from "../components/Container";
 
 function Hero() {
   return (
-    <div className=" relative bg-slate-200 py-20 md:py-32 lg:py-40 xl:py-48 2xl:py-60">
+    <div className=" relative flex flex-col space-y-4 bg-slate-200 py-10 sm:py-20 md:flex-row md:py-32 lg:py-40 xl:py-48 2xl:py-60">
       <Container>
-        <div className="flex w-1/2 flex-col space-y-8">
+        <div className="flex w-full flex-col space-y-8 md:w-1/2">
           <h1 className="text-4xl md:text-5xl ">
             Digital experiences from Zero to One
           </h1>
@@ -35,7 +35,7 @@ function Hero() {
         src={
           "https://gojilabs.com/wp-content/uploads/2022/12/27_May_06-copy-1-1621x1370.png"
         }
-        className=" max-w-1/2 absolute right-0 top-0 h-full"
+        className=" relative  right-0 top-0 h-full md:absolute"
       />
     </div>
   );
