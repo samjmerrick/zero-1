@@ -21,7 +21,7 @@ export default function BlogCard(props: { matter: BlogFrontmatter }) {
             {formatDate(matter.date) ?? "date"}
           </p>
 
-          <h3 className="py-2 text-2xl font-bold">{title}</h3>
+          <h3 className="py-2 text-2xl font-bold">{matter.title}</h3>
 
           <p>{matter.summary}</p>
           <p className=" text-xs  hover:text-blue-700">
