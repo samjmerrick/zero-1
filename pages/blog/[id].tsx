@@ -1,21 +1,21 @@
-import Layout from "../../components/Container";
+import Container from "../../components/Container";
 import { getAllPostIds, getPostData } from "../../api/posts";
-import Head from "next/head";
+import { Page } from "../../components/Page";
 
 export default function Post({ postData }) {
   return (
-    <Layout>
-      <Head>
-        <title>{postData.title}</title>
-      </Head>
-      {postData.title}
-      <br />
-      {postData.id}
-      <br />
-      {postData.date}
-      <br />
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-    </Layout>
+    <Page meta={{ title: postData.title }}>
+      <Container>
+        <div className="prose prose-xl mx-auto">
+          <p className="text-sm text-zinc-500">{postData.date}</p>
+          <h1>{postData.title}</h1>
+          <img src={postData.image} className="rounded-md border" />
+
+          <br />
+          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </div>
+      </Container>
+    </Page>
   );
 }
 
