@@ -8,21 +8,15 @@ function Nav() {
     const mobilemenu = document.querySelector("#mobile-menu");
     const button = document.querySelector("#menu-button");
 
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth",
-          block: screen.width > 768 ? "start" : "start",
-        });
-      });
-    });
-
     button.addEventListener("click", () => {
       mobilemenu.classList.toggle("hidden");
     });
   });
+
+  const navigation = [
+    { name: "Home", href: "/" },
+    { name: "Blog", href: "/blog" },
+  ];
 
   return (
     <nav className="top-0 z-50 w-full bg-slate-200 py-5">
@@ -40,12 +34,11 @@ function Nav() {
             className="hidden flex-row space-x-4 pt-6 pr-2 text-lg md:flex md:pt-0"
             id="menu"
           >
-            <a href="#Projects" className="block text-center md:inline-block">
-              Projects
-            </a>
-            <a href="#Contact" className="block text-center md:inline-block">
-              Contact
-            </a>
+            {navigation.map((nav) => (
+              <a href={nav.href} className="block text-center md:inline-block">
+                {nav.name}
+              </a>
+            ))}
           </div>
         </div>
 
@@ -54,12 +47,11 @@ function Nav() {
           className="hidden rounded-md bg-zinc-200 text-lg md:hidden"
         >
           <div className="flex w-full flex-col space-y-4 py-5 text-center">
-            <a href="/#Projects" className="block text-center md:inline-block">
-              Projects
-            </a>
-            <a href="/#Contact" className="block text-center md:inline-block">
-              Contact
-            </a>
+            {navigation.map((nav) => (
+              <a href={nav.href} className="block text-center md:inline-block">
+                {nav.name}
+              </a>
+            ))}
           </div>
         </div>
       </Container>

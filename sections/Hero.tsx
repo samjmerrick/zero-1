@@ -1,8 +1,20 @@
-import React from "react";
-import ColumnLayout from "../components/ColumnLayout";
+import React, { useEffect } from "react";
 import Container from "../components/Container";
 
 function Hero() {
+  useEffect(() => {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
+          block: screen.width > 768 ? "start" : "start",
+        });
+      });
+    });
+  });
+
   return (
     <div className=" relative flex flex-col space-y-4 bg-slate-200 py-10 sm:py-20 md:py-32 lg:flex-row lg:py-40 xl:py-48 2xl:py-60">
       <Container>
