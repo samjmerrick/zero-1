@@ -19,7 +19,7 @@ function Hero() {
     <div className=" relative flex flex-col space-y-4 bg-slate-200 py-10 sm:py-20 md:py-32 lg:flex-row lg:py-40 xl:py-48 2xl:py-60">
       <Container>
         <div className="flex w-full flex-col space-y-8 lg:w-1/2">
-          <h1 className="text-4xl md:text-5xl ">
+          <h1 className="text-4xl font-semibold md:text-5xl ">
             Digital experiences from Zero to One
           </h1>
           <p className="text-xl">

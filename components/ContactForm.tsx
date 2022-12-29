@@ -17,8 +17,9 @@ function ContactForm() {
       id="contact-form"
     >
       <div className="text-center">
-        <h2>
-          Ready to create something <em>epic</em>?
+        <h2 className="py-4 text-4xl font-bold">
+          Ready to create something{" "}
+          <em className="font-extrabold not-italic text-blue-500">epic</em>?
         </h2>
         <p>
           We'd love to meet you and speak about your project. Book in an intro

@@ -1,38 +1,12 @@
 @tailwind base;
 
 @layer base {
-  h1 {
-    @apply py-4 text-6xl font-bold;
-  }
-
-  h2 {
-    @apply py-4 text-4xl font-bold;
-  }
-
-  h3 {
-    @apply py-2 text-2xl font-bold;
-  }
-
-  p {
-    @apply text-lg;
-  }
-
-  nav a {
-    @apply text-zinc-900;
-  }
-
   body {
     @apply bg-zinc-100 text-zinc-900;
-  }
-  article {
-    @apply prose prose-xl prose-invert;
   }
 
   html {
     font-family: Open Sans, system-ui, sans-serif;
-  }
-  em {
-    @apply font-extrabold not-italic text-blue-500;
   }
 }
 

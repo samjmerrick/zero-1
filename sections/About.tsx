@@ -6,7 +6,7 @@ import Section from "../components/Section";
 function About() {
   return (
     <Section id="About">
-      <h2>Why choose us?</h2>
+      <h2 className="py-4 text-4xl font-bold">Why choose us?</h2>
       <ColumnLayout>
         <IconCard
           icon={mdiRocketLaunch}
