@@ -6,9 +6,9 @@ export default function Post({ postData }) {
   return (
     <Page meta={{ title: postData.title }}>
       <Container>
-        <div className="prose prose-xl mx-auto">
+        <div className="prose prose-xl mx-auto pt-10">
           <p className="text-sm text-zinc-500">{postData.date}</p>
-          <h1>{postData.title}</h1>
+          <h1 className="text-4xl">{postData.title}</h1>
           <img src={postData.image} className="rounded-md border" />
 
           <br />
