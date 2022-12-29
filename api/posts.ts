@@ -58,7 +58,7 @@ export function getAllSortedPostData() {
     return {
       id,
       ...matterResult.data,
-    };
+    } as BlogFrontmatter;
   });
 
   // @ts-ignore
