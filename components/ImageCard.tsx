@@ -28,7 +28,7 @@ function ImageCard(props: {
         src={props.image}
         width={600}
         height={500}
-        className="rounded-l-lg md:h-1/2 md:w-1/2"
+        className="rounded-t-lg md:h-1/2 md:w-1/2 md:rounded-l-lg md:rounded-r-none"
         alt=""
       />
       <div className="p-5">{props.children}</div>
