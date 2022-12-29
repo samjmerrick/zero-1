@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { mdiMenu } from "@mdi/js";
 import Icon from "@mdi/react";
 import Container from "./Container";
+import { useRouter } from "next/router";
 
 function Nav() {
   useEffect(() => {
@@ -18,8 +19,14 @@ function Nav() {
     { name: "Blog", href: "/blog" },
   ];
 
+  const router = useRouter();
+  const isHome = router.pathname == "/";
+
   return (
-    <nav className="top-0 z-50 w-full bg-slate-200 py-5">
+    <nav
+      className={`
+        ${isHome ? "bg-slate-200" : "bg-transparent"} top-0 z-50 w-full py-5`}
+    >
       <Container>
         <div className="flex items-center justify-between">
           <a className="w-40" href="/#home">
