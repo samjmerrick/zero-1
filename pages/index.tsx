@@ -1,5 +1,5 @@
 import { getSortedProjectsData } from "../api/getSortedProjectsData";
-import { getSortedBlogData } from "../api/getSortedBlogData";
+import { getAllSortedPostData } from "../api/posts";
 
 import Container from "../components/Container";
 import { Page } from "../components/Page";
@@ -30,7 +30,7 @@ export default function Home({ allProjectsData, allBlogData }) {
 
 export async function getStaticProps() {
   const allProjectsData = getSortedProjectsData();
-  const allBlogData = getSortedBlogData();
+  const allBlogData = getAllSortedPostData();
   return {
     props: {
       allProjectsData,
