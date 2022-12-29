@@ -1,24 +1,17 @@
-import React, { useEffect } from "react";
-import { mdiMenu } from "@mdi/js";
+import React, { useState } from "react";
+import { mdiMenu, mdiClose } from "@mdi/js";
 import Icon from "@mdi/react";
 import Container from "./Container";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
 function Nav() {
-  useEffect(() => {
-    const mobilemenu = document.querySelector("#mobile-menu");
-    const button = document.querySelector("#menu-button");
-
-    button.addEventListener("click", () => {
-      mobilemenu.classList.toggle("hidden");
-    });
-  });
-
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Blog", href: "/blog" },
   ];
+
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const router = useRouter();
   const isHome = router.pathname == "/";
@@ -26,16 +19,19 @@ function Nav() {
   return (
     <nav
       className={`
-        ${isHome ? "bg-slate-200" : "bg-transparent"} top-0 z-50 w-full py-5`}
+        ${isHome ? "bg-slate-200" : "bg-transparent"} top-0 z-10 w-full py-5`}
     >
       <Container>
         <div className="flex items-center justify-between">
-          <Link href="/#home">
+          <Link href="/">
             <img src={"/logos/logo_inline.svg"} className="w-40" />
           </Link>
 
-          <button id="menu-button">
-            <Icon path={mdiMenu} className="h-8 w-8 md:hidden" />
+          <button id="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
+            <Icon
+              path={!menuOpen ? mdiMenu : mdiClose}
+              className="h-8 w-8 md:hidden"
+            />
           </button>
 
           <div
@@ -45,7 +41,11 @@ function Nav() {
             {navigation.map((nav) => (
               <Link
                 href={nav.href}
-                className="block text-center md:inline-block"
+                className={`${
+                  router.pathname == nav.href
+                    ? "underline underline-offset-2"
+                    : null
+                } block text-center md:inline-block`}
               >
                 {nav.name}
               </Link>
@@ -55,12 +55,15 @@ function Nav() {
 
         <div
           id="mobile-menu"
-          className="hidden rounded-md bg-zinc-200 text-lg md:hidden"
+          className={`${
+            !menuOpen ? "hidden" : null
+          } absolute left-2 right-2 z-20  rounded-md bg-zinc-50 text-lg shadow-sm md:hidden`}
         >
-          <div className="flex w-full flex-col space-y-4 py-5 text-center">
+          <div className="flex  flex-col space-y-4 py-5 text-center">
             {navigation.map((nav) => (
               <Link
                 href={nav.href}
+                onClick={() => setMenuOpen(false)}
                 className="block text-center md:inline-block"
               >
                 {nav.name}
