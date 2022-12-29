@@ -20,7 +20,6 @@ function ImageCard(props: {
                 items-center 
                 rounded-lg
                 bg-zinc-50 
-
                 md:flex-row
                 md:space-x-5"
       onClick={() => openUrl(props.url)}
@@ -29,7 +28,7 @@ function ImageCard(props: {
         src={props.image}
         width={600}
         height={500}
-        className="rounded-lg md:h-1/2 md:w-1/2"
+        className="rounded-l-lg md:h-1/2 md:w-1/2"
       />
       <div className="p-5">{props.children}</div>
     </div>

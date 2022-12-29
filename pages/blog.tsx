@@ -8,7 +8,7 @@ export default function Blog({ allBlogData }) {
   return (
     <Page meta={{ title: "Blog" }}>
       <Container>
-        <h2 className="pt-20 text-center">Latest Articles</h2>
+        <h2 className="py-20 text-center">Latest Articles</h2>
         <div className=" grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {allBlogData.map(({ id, title, summary, tags, image }) => (
             <div className=" rounded-md bg-zinc-50">
