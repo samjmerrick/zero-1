@@ -23,7 +23,12 @@ export default function Blog({ allBlogData }) {
                   ))}
                 </p>
                 <p>{summary}</p>
-                <Link href={`/blog/${id}`}>Read More</Link>
+                <Link
+                  href={`/blog/${id}`}
+                  className=" text-xs  hover:text-blue-700"
+                >
+                  <span className="underline">Read More</span> →
+                </Link>
               </div>
             </div>
           ))}
