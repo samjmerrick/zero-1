@@ -3,6 +3,7 @@ import { mdiMenu } from "@mdi/js";
 import Icon from "@mdi/react";
 import Container from "./Container";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 function Nav() {
   useEffect(() => {
@@ -29,9 +30,9 @@ function Nav() {
     >
       <Container>
         <div className="flex items-center justify-between">
-          <a className="w-40" href="/#home">
-            <img src={"/logos/logo_inline.svg"} />
-          </a>
+          <Link href="/#home">
+            <img src={"/logos/logo_inline.svg"} className="w-40" />
+          </Link>
 
           <button id="menu-button">
             <Icon path={mdiMenu} className="h-8 w-8 md:hidden" />
@@ -42,9 +43,12 @@ function Nav() {
             id="menu"
           >
             {navigation.map((nav) => (
-              <a href={nav.href} className="block text-center md:inline-block">
+              <Link
+                href={nav.href}
+                className="block text-center md:inline-block"
+              >
                 {nav.name}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -55,9 +59,12 @@ function Nav() {
         >
           <div className="flex w-full flex-col space-y-4 py-5 text-center">
             {navigation.map((nav) => (
-              <a href={nav.href} className="block text-center md:inline-block">
+              <Link
+                href={nav.href}
+                className="block text-center md:inline-block"
+              >
                 {nav.name}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
