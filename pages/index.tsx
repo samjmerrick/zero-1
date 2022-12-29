@@ -1,5 +1,4 @@
 import { getSortedProjectsData } from "../api/getSortedProjectsData";
-import { getAllSortedPostData } from "../api/posts";
 
 import Container from "../components/Container";
 import { Page } from "../components/Page";
@@ -7,22 +6,19 @@ import About from "../sections/About";
 import Contact from "../sections/Contact";
 import Hero from "../sections/Hero";
 import Projects from "../sections/Projects";
-import Blog from "../sections/Blog";
 
 const meta = {
   title: "Digital design and development agency",
 };
 
-export default function Home({ allProjectsData, allBlogData }) {
+export default function Home({ allProjectsData }) {
   return (
     <Page meta={meta}>
       <Hero />
       <Container>
         <About />
         <Projects allProjectsData={allProjectsData} />
-
         <Contact />
-        <Blog allBlogData={allBlogData} />
       </Container>
     </Page>
   );
@@ -30,11 +26,9 @@ export default function Home({ allProjectsData, allBlogData }) {
 
 export async function getStaticProps() {
   const allProjectsData = getSortedProjectsData();
-  const allBlogData = getAllSortedPostData();
   return {
     props: {
       allProjectsData,
-      allBlogData,
     },
   };
 }
