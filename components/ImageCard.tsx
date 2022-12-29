@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import Image from "next/future/image";
+import Image from "next/image";
 
 function ImageCard(props: {
   image: StaticImageData;
@@ -29,6 +29,7 @@ function ImageCard(props: {
         width={600}
         height={500}
         className="rounded-l-lg md:h-1/2 md:w-1/2"
+        alt=""
       />
       <div className="p-5">{props.children}</div>
     </div>
