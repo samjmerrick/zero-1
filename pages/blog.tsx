@@ -13,24 +13,26 @@ export default function Blog({ allBlogData }) {
         </h2>
         <div className=" grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {allBlogData.map(({ id, title, summary, tags, image }) => (
-            <div className=" rounded-md bg-zinc-50">
-              <img src={image} className="rounded-t-md" />
-              <div className="py-3 px-6">
-                <h3 className="py-2 text-2xl font-bold">{title}</h3>
-                <p className="h-12">
-                  {tags.map((tag) => (
-                    <Label>{tag}</Label>
-                  ))}
-                </p>
-                <p>{summary}</p>
-                <Link
-                  href={`/blog/${id}`}
-                  className=" text-xs  hover:text-blue-700"
-                >
-                  <span className="underline">Read More</span> →
-                </Link>
+            <Link href={`/blog/${id}`}>
+              <div className=" rounded-md bg-zinc-50">
+                <img src={image} className="rounded-t-md" />
+                <div className="py-3 px-6">
+                  <h3 className="py-2 text-2xl font-bold">{title}</h3>
+                  <p className="h-12">
+                    {tags.map((tag) => (
+                      <Label>{tag}</Label>
+                    ))}
+                  </p>
+                  <p>{summary}</p>
+                  <Link
+                    href={`/blog/${id}`}
+                    className=" text-xs  hover:text-blue-700"
+                  >
+                    <span className="underline">Read More</span> →
+                  </Link>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </Container>
