@@ -13,14 +13,15 @@ function ImageCard(props: {
   return (
     <div
       className="
-                flex  
-                w-full    
-                cursor-pointer 
+                grid
+                w-full
+                cursor-pointer    
+                grid-cols-1 
                 flex-col 
                 items-center 
                 rounded-lg
                 bg-zinc-50 
-                md:flex-row
+                md:grid-cols-2
                 md:space-x-5"
       onClick={() => openUrl(props.url)}
     >
@@ -28,10 +29,10 @@ function ImageCard(props: {
         src={props.image}
         width={600}
         height={500}
-        className="rounded-t-lg md:h-1/2 md:w-1/2 md:rounded-l-lg md:rounded-r-none"
+        className="rounded-t-lg bg-white md:rounded-l-lg md:rounded-r-none"
         alt=""
       />
-      <div className="p-5">{props.children}</div>
+      <div className="p-5 md:p-2">{props.children}</div>
     </div>
   );
 }

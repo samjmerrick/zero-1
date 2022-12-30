@@ -5,7 +5,7 @@ import Label from "components/Label";
 function Projects({ projects }) {
   return (
     <Section id="Projects">
-      <h2 className="py-4 text-center text-4xl font-bold">Recent Projects</h2>
+      <h2 className="py-4 text-center text-4xl font-bold">Our Work</h2>
       <div className="flex flex-col space-y-8">
         {projects.map(({ title, summary, summary2, tags, url, image }) => (
           <ImageCard image={image} url={url}>
