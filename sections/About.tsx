@@ -1,7 +1,7 @@
 import { mdiRocketLaunch, mdiHumanGreeting, mdiFinance } from "@mdi/js";
-import IconCard from "../components/IconCard";
-import ColumnLayout from "../components/ColumnLayout";
-import Section from "../components/Section";
+import IconCard from "components/IconCard";
+import ColumnLayout from "components/ColumnLayout";
+import Section from "components/Section";
 
 function About() {
   return (

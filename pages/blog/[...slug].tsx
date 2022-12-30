@@ -1,6 +1,6 @@
-import Container from "../../components/Container";
-import { Page } from "../../components/Page";
-import { formatSlug, getFileBySlug, getFiles } from "../../lib/mdx";
+import Container from "components/Container";
+import { Page } from "components/Page";
+import { formatSlug, getFileBySlug, getFiles } from "lib/mdx";
 
 export async function getStaticPaths() {
   const posts = getFiles("blog");

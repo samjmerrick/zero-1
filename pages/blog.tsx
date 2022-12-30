@@ -1,7 +1,7 @@
-import BlogCard from "../components/BlogCard";
-import Container from "../components/Container";
-import { Page } from "../components/Page";
-import { getAllFilesFrontMatter } from "../lib/mdx";
+import BlogCard from "components/BlogCard";
+import Container from "components/Container";
+import { Page } from "components/Page";
+import { getAllFilesFrontMatter } from "lib/mdx";
 
 export default function Blog(props: { posts: BlogFrontmatter[] }) {
   return (

@@ -1,4 +1,4 @@
-import AutoCarousel from "../components/AutoCarousel";
+import AutoCarousel from "components/AutoCarousel";
 
 function Tech() {
   return (
