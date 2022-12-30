@@ -7,4 +7,5 @@ type BlogFrontmatter = {
   summary2: string;
   image: string;
   slug: string;
+  readingTime: string;
 };

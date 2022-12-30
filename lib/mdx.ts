@@ -1,6 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
+import readingTime from "reading-time";
 import { remark } from "remark";
 import html from "remark-html";
 import getAllFilesRecursively from "./utils/files";
@@ -62,7 +63,10 @@ export async function getFileBySlug(type: string, slug: string) {
 
   return {
     contentHtml,
-    ...frontMatter.data,
+    frontMatter: {
+      readingTime: readingTime(contentHtml).text,
+      ...frontMatter.data,
+    } as BlogFrontmatter,
   };
 }
 

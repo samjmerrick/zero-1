@@ -26,12 +26,18 @@ export async function getStaticProps({ params }) {
 
 export default function Post({ post }) {
   return (
-    <Page meta={{ title: post.title }}>
+    <Page meta={{ title: post.frontMatter.title }}>
       <Container>
         <div className="prose prose-xl mx-auto pt-10">
-          <p className="text-sm text-zinc-500">{post.date}</p>
-          <h1 className="text-4xl">{post.title}</h1>
-          <img src={post.image} className="rounded-md border" />
+          <div className="flex flex-row space-x-2 text-sm text-zinc-500">
+            <p className="">{post.frontMatter.date}</p>
+            <p> | </p>
+            <p className="">{post.frontMatter.readingTime}</p>
+          </div>
+
+          <h1 className="text-4xl">{post.frontMatter.title}</h1>
+
+          <img src={post.frontMatter.image} className="rounded-md border" />
 
           <br />
           <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
