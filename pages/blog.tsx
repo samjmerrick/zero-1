@@ -1,9 +1,9 @@
-import { getAllSortedPostData } from "../api/posts";
 import BlogCard from "../components/BlogCard";
 import Container from "../components/Container";
 import { Page } from "../components/Page";
+import { getAllFilesFrontMatter } from "../lib/mdx";
 
-export default function Blog(props: { allBlogData: BlogFrontmatter[] }) {
+export default function Blog(props: { posts: BlogFrontmatter[] }) {
   return (
     <Page meta={{ title: "Blog" }}>
       <Container>
@@ -11,7 +11,7 @@ export default function Blog(props: { allBlogData: BlogFrontmatter[] }) {
           Latest Articles
         </h2>
         <div className=" grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {props.allBlogData.map((data) => (
+          {props.posts.map((data) => (
             <BlogCard matter={data} />
           ))}
         </div>
@@ -21,10 +21,7 @@ export default function Blog(props: { allBlogData: BlogFrontmatter[] }) {
 }
 
 export async function getStaticProps() {
-  const allBlogData = getAllSortedPostData();
-  return {
-    props: {
-      allBlogData,
-    },
-  };
+  const posts = (await getAllFilesFrontMatter("blog")) as BlogFrontmatter[];
+
+  return { props: { posts } };
 }

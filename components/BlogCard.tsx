@@ -17,7 +17,7 @@ export default function BlogCard(props: { matter: BlogFrontmatter }) {
 
   return (
     <Link
-      href={`/blog/${matter.id}`}
+      href={`/blog/${matter.slug}`}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
