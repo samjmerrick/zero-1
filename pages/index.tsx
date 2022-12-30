@@ -1,7 +1,6 @@
-import { getSortedProjectsData } from "../api/getSortedProjectsData";
-
 import Container from "../components/Container";
 import { Page } from "../components/Page";
+import { getAllFilesFrontMatter } from "../lib/mdx";
 import About from "../sections/About";
 import Contact from "../sections/Contact";
 import Hero from "../sections/Hero";
@@ -11,13 +10,13 @@ const meta = {
   title: "Digital design and development agency",
 };
 
-export default function Home({ allProjectsData }) {
+export default function Home({ projects }) {
   return (
     <Page meta={meta}>
       <Hero />
       <Container>
         <About />
-        <Projects allProjectsData={allProjectsData} />
+        <Projects projects={projects} />
         <Contact />
       </Container>
     </Page>
@@ -25,10 +24,10 @@ export default function Home({ allProjectsData }) {
 }
 
 export async function getStaticProps() {
-  const allProjectsData = getSortedProjectsData();
+  const projects = await getAllFilesFrontMatter("projects");
   return {
     props: {
-      allProjectsData,
+      projects,
     },
   };
 }
