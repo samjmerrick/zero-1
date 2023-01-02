@@ -1,60 +1,26 @@
 @tailwind base;
 
 @layer base {
-    h1 {
-        @apply text-6xl font-bold py-4;
-    }
+  body {
+    @apply bg-zinc-100 text-zinc-900;
+  }
 
-    h2 {
-        @apply text-4xl font-bold py-4;
-    }
-
-    h3 {
-        @apply text-2xl font-bold py-2;
-    }
-
-    p {
-        @apply text-lg
-    }
-
-    a {
-        @apply text-blue-300;
-    }
-    nav a {
-        @apply text-white;
-    }
-
-    a:hover {
-        @apply text-blue-400;
-    }
-
-    body {
-        @apply bg-slate-900 text-slate-200
-    }
-    article {
-        @apply prose prose-xl prose-invert
-    }
-
-    html {
-        font-family: Open Sans, system-ui, sans-serif;
-    }
-    em {
-        @apply text-blue-500 not-italic font-extrabold
-
-    }
+  html {
+    font-family: Open Sans, system-ui, sans-serif;
+  }
 }
 
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
-    /* Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-    .no-scrollbar {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }

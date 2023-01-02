@@ -1,36 +1,33 @@
-import Hero from '../components/sections/hero';
-import About from '../components/sections/about';
-import Contact from '../components/sections/contact';
-import Tech from '../components/sections/tech';
-import Projects from '../components/sections/projects';
-import { Page } from '../components/page';
-import Container from '../components/Container';
-
-import { getSortedProjectsData } from "../api/getSortedProjectsData"
+import Container from "components/Container";
+import { Page } from "components/Page";
+import { getAllFilesFrontMatter } from "lib/mdx";
+import About from "sections/About";
+import Contact from "sections/Contact";
+import Hero from "sections/Hero";
+import Projects from "sections/Projects";
 
 const meta = {
-  title: 'Digital design and development agency'
-}
+  title: "Digital design and development agency",
+};
 
-export default function Home({ allProjectsData }) {
+export default function Home({ projects }) {
   return (
     <Page meta={meta}>
+      <Hero />
       <Container>
-        <Hero />
         <About />
-        <Projects allProjectsData={allProjectsData} />
+        <Projects projects={projects} />
         <Contact />
-        <Tech />
       </Container>
     </Page>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const allProjectsData = getSortedProjectsData();
+  const projects = await getAllFilesFrontMatter("projects");
   return {
     props: {
-      allProjectsData,
+      projects,
     },
   };
 }
