@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { title } from "process";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { useState } from "react";
+import Image from "next/image";
 
 dayjs.extend(relativeTime);
 
@@ -22,7 +22,13 @@ export default function BlogCard(props: { matter: BlogFrontmatter }) {
       onMouseLeave={() => setHover(false)}
     >
       <div className=" rounded-md bg-zinc-50">
-        <img src={matter.image} className="rounded-t-md" />
+        <Image
+          src={matter.image}
+          className="rounded-t-md"
+          alt={matter.title}
+          width={600}
+          height={500}
+        />
         <div className="py-3 px-6">
           <p className="text-sm text-zinc-500" id="articleDate">
             {formatDate(matter.date) ?? "date"}

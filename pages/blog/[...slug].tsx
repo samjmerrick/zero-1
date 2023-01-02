@@ -1,6 +1,7 @@
 import Container from "components/Container";
 import { Page } from "components/Page";
 import { formatSlug, getFileBySlug, getFiles } from "lib/mdx";
+import Image from "next/image";
 
 export async function getStaticPaths() {
   const posts = getFiles("blog");
@@ -37,7 +38,13 @@ export default function Post({ post }) {
 
           <h1 className="text-4xl">{post.frontMatter.title}</h1>
 
-          <img src={post.frontMatter.image} className="rounded-md border" />
+          <Image
+            src={post.frontMatter.image}
+            className="rounded-md border"
+            height={600}
+            width={1000}
+            alt={post.frontMatter.summary}
+          />
 
           <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
         </div>
