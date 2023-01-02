@@ -30,7 +30,7 @@ export default function BlogCard(props: { matter: BlogFrontmatter }) {
 
           <h3 className="py-2 text-2xl font-bold">{matter.title}</h3>
 
-          <p>{matter.summary}</p>
+          <p className="pb-2">{matter.summary}</p>
           <p className={`text-xs ${hover ? " text-blue-700" : null}`}>
             <span className="underline">Read More</span> →
           </p>

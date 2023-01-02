@@ -28,7 +28,7 @@ export default function Post({ post }) {
   return (
     <Page meta={{ title: post.frontMatter.title }}>
       <Container>
-        <div className="prose prose-xl mx-auto pt-10">
+        <div className="prose-xl prose mx-auto pt-10">
           <div className="flex flex-row space-x-2 text-sm text-zinc-500">
             <p className="">{post.frontMatter.date}</p>
             <p> | </p>
@@ -39,7 +39,6 @@ export default function Post({ post }) {
 
           <img src={post.frontMatter.image} className="rounded-md border" />
 
-          <br />
           <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
         </div>
       </Container>

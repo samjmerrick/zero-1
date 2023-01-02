@@ -4,7 +4,6 @@ type BlogFrontmatter = {
   tags: string[];
   draft: boolean;
   summary: string;
-  summary2: string;
   image: string;
   slug: string;
   readingTime: string;
