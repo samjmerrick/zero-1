@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function IconCard(props: { icon: string; title: string; description: string }) {
   return (
-    <div className="flex flex-col items-center rounded-lg bg-zinc-50 p-10 text-center lg:w-1/3">
+    <div className="flex flex-col items-center rounded-lg bg-zinc-50 p-10 text-center md:w-1/3">
       <Icon
         path={props.icon}
         title={props.title}
