@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Container from "components/Container";
+import Image from "next/image";
 
 function Hero() {
   useEffect(() => {
@@ -43,7 +44,13 @@ function Hero() {
             </div>
           </div>
 
-          <img src={"/illustrations/hero.png"} className="max-h-[50rem] " />
+          <Image
+            src={"/illustrations/hero.png"}
+            className="fit max-h-[50rem] object-contain  "
+            alt="Zero 1 hero image"
+            width={919}
+            height={1370}
+          />
         </div>
       </Container>
     </div>

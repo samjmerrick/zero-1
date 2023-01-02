@@ -4,6 +4,7 @@ import Icon from "@mdi/react";
 import Container from "./Container";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from "next/image";
 
 function Nav() {
   const navigation = [
@@ -24,7 +25,13 @@ function Nav() {
       <Container>
         <div className="flex items-center justify-between">
           <Link href="/">
-            <img src={"/logos/logo_inline.svg"} className="w-40" />
+            <Image
+              src={"/logos/logo_inline.svg"}
+              className="w-40"
+              width={300}
+              height={200}
+              alt="Zero 1 Logo"
+            />
           </Link>
 
           <button id="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
