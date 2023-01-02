@@ -10,18 +10,18 @@ function About() {
       <ColumnLayout>
         <IconCard
           icon={mdiRocketLaunch}
-          title="Startup Focused"
-          description="Our focus on startups gives us deep experience on how best to solve their problems."
+          title="Zero to One"
+          description="We focus on early stage products, giving us a deep understanding of the risks and challenges in the space."
         />
         <IconCard
           icon={mdiHumanGreeting}
-          title="User Centered"
-          description="We keep users at the heart of our products, testing rapidly and frequently with real people."
+          title="User Centric"
+          description="We keep users at the heart of our processes, testing rapidly and frequently with real people."
         />
         <IconCard
           icon={mdiFinance}
           title="Outcome Oriented"
-          description="We deliver more than just a product. We collaborate, define and deliver commercial results."
+          description="We don't only build products, we partner with you to identify and deliver commercial results."
         />
       </ColumnLayout>
     </Section>
