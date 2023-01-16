@@ -4,6 +4,7 @@ import path from "path";
 import readingTime from "reading-time";
 import { remark } from "remark";
 import html from "remark-html";
+import remarkGfm from "remark-gfm";
 import getAllFilesRecursively from "./utils/files";
 
 const root = process.cwd();
@@ -58,6 +59,7 @@ export async function getFileBySlug(type: string, slug: string) {
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
     .use(html)
+    .use(remarkGfm)
     .process(frontMatter.content);
   const contentHtml = processedContent.toString();
 
