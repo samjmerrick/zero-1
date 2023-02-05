@@ -1,8 +1,6 @@
 import Container from "components/Container";
 import { Page } from "components/Page";
 import { getAllFilesFrontMatter } from "lib/mdx";
-import About from "sections/About";
-import Contact from "sections/Contact";
 import Hero from "sections/Hero";
 import Projects from "sections/Projects";
 
@@ -15,9 +13,7 @@ export default function Home({ projects }) {
     <Page meta={meta}>
       <Hero />
       <Container>
-        <About />
         <Projects projects={projects} />
-        <Contact />
       </Container>
     </Page>
   );
