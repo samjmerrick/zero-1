@@ -3,6 +3,7 @@ import { mdiMenu, mdiClose } from "@mdi/js";
 import Icon from "@mdi/react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
 import Container from "components/Container";
 import Logo from "components/Logo";
@@ -17,8 +18,7 @@ function Nav() {
 
   return (
     <nav
-      className={`
-        ${isHome ? "bg-neutral-900" : "bg-transparent"} top-0 z-10 w-full py-5`}
+      className={twMerge("top-0 z-10 w-full py-5", isHome && "bg-neutral-900")}
     >
       <Container>
         <div className="flex items-center justify-between">
@@ -31,7 +31,10 @@ function Nav() {
           <button id="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
             <Icon
               path={!menuOpen ? mdiMenu : mdiClose}
-              className={`h-8 w-8 md:hidden ${isHome && "text-neutral-300"}`}
+              className={twMerge(
+                "h-8 w-8 md:hidden",
+                isHome && "text-neutral-300"
+              )}
             />
           </button>
 
@@ -42,15 +45,23 @@ function Nav() {
             {navigation.map((nav) => (
               <Link
                 href={nav.href}
-                className={`block text-center text-neutral-400 transition-colors hover:text-neutral-300 md:inline-block ${
-                  router.pathname == nav.href && "text-white"
-                } `}
+                className={twMerge(
+                  "block text-center transition-colors hover:text-neutral-300 md:inline-block",
+                  isHome
+                    ? "text-neutral-200 hover:text-neutral-300"
+                    : "text-neutral-900 hover:text-neutral-800"
+                )}
               >
                 {nav.name}
               </Link>
             ))}
             <a
-              className="cursor-pointer rounded-lg bg-neutral-800 py-2 px-5 text-lg font-bold text-white transition-colors hover:bg-neutral-700"
+              className={twMerge(
+                "cursor-pointer rounded-lg  py-2 px-5 text-lg font-semibold transition-colors ",
+                isHome
+                  ? "bg-neutral-800 text-white hover:bg-neutral-700"
+                  : "bg-neutral-200 text-neutral-700 hover:bg-neutral-300"
+              )}
               href="mailto:hello@zero-1.studio"
             >
               Contact
@@ -60,11 +71,12 @@ function Nav() {
 
         <div
           id="mobile-menu"
-          className={`${
-            !menuOpen ? "hidden" : null
-          } absolute left-2 right-2 z-20  rounded-md bg-zinc-50 text-lg shadow-sm md:hidden`}
+          className={twMerge(
+            "absolute left-2 right-2 z-20 rounded-md bg-zinc-50 text-lg shadow-sm md:hidden",
+            !menuOpen && "hidden"
+          )}
         >
-          <div className="flex  flex-col space-y-4 py-5 text-center">
+          <div className="flex flex-col space-y-4 py-5 text-center">
             {navigation.map((nav) => (
               <Link
                 href={nav.href}
