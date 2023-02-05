@@ -13,14 +13,19 @@ function ImageCard(props: {
   return (
     <div
       className="
+   
                 grid
-                w-full
-                cursor-pointer    
+                w-full    
+                cursor-pointer 
                 grid-cols-1 
                 flex-col 
-                items-center 
-                rounded-lg
-                bg-neutral-50 
+                items-center
+                rounded-lg 
+                bg-neutral-50
+                shadow-md
+                transition-all
+                hover:-translate-y-0.5
+                hover:shadow-xl
                 md:grid-cols-2
                 md:space-x-5"
       onClick={() => openUrl(props.url)}
