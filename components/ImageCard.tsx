@@ -20,7 +20,7 @@ function ImageCard(props: {
                 flex-col 
                 items-center 
                 rounded-lg
-                bg-zinc-50 
+                bg-neutral-50 
                 md:grid-cols-2
                 md:space-x-5"
       onClick={() => openUrl(props.url)}

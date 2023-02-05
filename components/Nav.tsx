@@ -72,7 +72,7 @@ function Nav() {
         <div
           id="mobile-menu"
           className={twMerge(
-            "absolute left-2 right-2 z-20 rounded-md bg-zinc-50 text-lg shadow-sm md:hidden",
+            "absolute left-2 right-2 z-20 rounded-md bg-neutral-50 text-lg shadow-sm md:hidden",
             !menuOpen && "hidden"
           )}
         >

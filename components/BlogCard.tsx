@@ -21,7 +21,7 @@ export default function BlogCard(props: { matter: BlogFrontmatter }) {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <div className=" rounded-md bg-zinc-50">
+      <div className=" rounded-md bg-neutral-50">
         <Image
           src={matter.image}
           className="rounded-t-md"
@@ -30,7 +30,7 @@ export default function BlogCard(props: { matter: BlogFrontmatter }) {
           height={500}
         />
         <div className="py-3 px-6">
-          <p className="text-sm text-zinc-500" id="articleDate">
+          <p className="text-sm text-neutral-500" id="articleDate">
             {formatDate(matter.date) ?? "date"}
           </p>
 

@@ -2,7 +2,7 @@
 
 @layer base {
   body {
-    @apply bg-zinc-100 text-zinc-900;
+    @apply bg-neutral-100 text-neutral-900;
   }
 
   html {

@@ -30,7 +30,7 @@ export default function Post({ post }) {
     <Page meta={{ title: post.frontMatter.title }}>
       <Container>
         <div className="prose-xl prose mx-auto pt-10">
-          <div className="flex flex-row space-x-2 text-sm text-zinc-500">
+          <div className="flex flex-row space-x-2 text-sm text-neutral-500">
             <p className="">{post.frontMatter.date}</p>
             <p> | </p>
             <p className="">{post.frontMatter.readingTime}</p>
