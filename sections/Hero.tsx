@@ -22,7 +22,7 @@ function Hero() {
   };
 
   return (
-    <div className="bg-neutral-900 py-40 md:py-60">
+    <div className="bg-neutral-900 py-20 sm:py-40 md:py-60">
       <Container>
         <div className="flex flex-col space-y-10 ">
           <AnimatedTitle>
