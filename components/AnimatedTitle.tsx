@@ -15,7 +15,7 @@ export default function AnimatedTitle(
     }),
   };
 
-  const child: Variants = {
+  const wordAnimation: Variants = {
     hidden: {
       opacity: 0,
       y: `0.25em`,
@@ -40,11 +40,26 @@ export default function AnimatedTitle(
       animate="visible"
       variants={container}
     >
-      {React.Children.map(props.children, (letter, index) => (
-        <motion.span key={index} variants={child}>
-          {letter}
-        </motion.span>
-      ))}
+      {React.Children.map(props.children, (child, index) => {
+        if (typeof child == "string") {
+          return child.split(" ").map((word, wordIndex) => (
+            <>
+              <motion.span
+                key={wordIndex}
+                variants={wordAnimation}
+                className="whitespace-preline"
+              >
+                {`${word} `}
+              </motion.span>
+            </>
+          ));
+        }
+        return (
+          <motion.span key={index} variants={wordAnimation}>
+            {child}
+          </motion.span>
+        );
+      })}
     </motion.h2>
   );
 }

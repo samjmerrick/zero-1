@@ -14,9 +14,9 @@ function Hero() {
       opacity: 1,
       y: `0em`,
       transition: {
-        duration: 1,
+        duration: 2,
         ease: [0.2, 0.65, 0.3, 0.9],
-        delay: 1.5,
+        delay: 2,
       },
     },
   };
@@ -25,12 +25,12 @@ function Hero() {
     <div className="bg-neutral-900 py-40 md:py-60">
       <Container>
         <div className="flex flex-col space-y-10 ">
-          <AnimatedTitle className="max-w-[1100px]">
-            Innovative{" "}
+          <AnimatedTitle>
             <span className="bg-gradient-to-r from-sky-400 to-purple-600 bg-clip-text text-transparent">
-              digital experiences
+              Digital experiences
             </span>
-            , from <span>Zero</span> to One.
+            , <br />
+            from Zero to One.
           </AnimatedTitle>
 
           <motion.p
