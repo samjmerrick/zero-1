@@ -37,9 +37,11 @@ function Page({ children, meta }) {
           rel="stylesheet"
         />
       </Head>
-      <Nav />
-      <div className="min-h-screen w-full">{children}</div>
-      <Footer />
+      <div className="flex min-h-screen w-full flex-col">
+        <Nav />
+        <div className="flex-grow">{children}</div>
+        <Footer />
+      </div>
     </>
   );
 }
