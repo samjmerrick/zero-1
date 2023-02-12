@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 
-import Container from "components/Container";
+import Container from "components/layout/Container";
 import Logo from "components/Logo";
 import { motion } from "framer-motion";
 

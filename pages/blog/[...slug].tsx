@@ -1,5 +1,5 @@
-import Container from "components/Container";
-import { Page } from "components/Page";
+import Container from "components/layout/Container";
+import { Page } from "components/layout/Page";
 import { formatSlug, getFileBySlug, getFiles } from "lib/mdx";
 import Image from "next/image";
 

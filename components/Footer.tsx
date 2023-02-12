@@ -1,6 +1,6 @@
 import Icon from "@mdi/react";
 import { mdiEmailOutline } from "@mdi/js";
-import Container from "./Container";
+import Container from "./layout/Container";
 import { useEffect } from "react";
 
 function Footer() {

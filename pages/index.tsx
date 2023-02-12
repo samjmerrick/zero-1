@@ -1,8 +1,8 @@
-import Container from "components/Container";
-import { Page } from "components/Page";
+import Container from "components/layout/Container";
+import { Page } from "components/layout/Page";
 import { getAllFilesFrontMatter } from "lib/mdx";
-import Hero from "sections/Hero";
-import Projects from "sections/Projects";
+import Hero from "components/home/Hero";
+import Projects from "components/home/Projects";
 
 const meta = {
   title: "Digital design and development agency",

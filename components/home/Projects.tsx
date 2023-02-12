@@ -1,10 +1,9 @@
-import ImageCard from "components/ImageCard";
-import Section from "components/Section";
+import ImageCard from "components/layout/ImageCard";
 import Label from "components/Label";
 
 function Projects({ projects }) {
   return (
-    <Section id="Projects">
+    <section id="Projects" className="space-y-8 py-12">
       <div className="flex flex-col space-y-8">
         {projects.map(({ title, summary, summary2, tags, url, image }) => (
           <ImageCard image={image} url={url}>
@@ -20,7 +19,7 @@ function Projects({ projects }) {
           </ImageCard>
         ))}
       </div>
-    </Section>
+    </section>
   );
 }
 

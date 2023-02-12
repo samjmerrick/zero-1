@@ -1,6 +1,6 @@
 import Button from "components/Button";
-import Container from "components/Container";
-import { Page } from "components/Page";
+import Container from "components/layout/Container";
+import { Page } from "components/layout/Page";
 import Steps from "components/forms/Steps";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
