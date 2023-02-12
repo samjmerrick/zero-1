@@ -2,7 +2,7 @@ import Button from "components/Button";
 import Container from "components/Container";
 import { Page } from "components/Page";
 import Steps from "components/forms/Steps";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import Input from "components/forms/Input";
 import Options from "components/forms/Options";
@@ -10,8 +10,27 @@ import OutlineButton from "components/OutlineButton";
 
 function ProjectCalculator() {
   const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState<
+    { question: string; answer: string }[]
+  >([]);
+  const [email, setEmail] = useState("");
 
-  const submitForm = () => {};
+  const submitAnswer = (question: string, answer: string) => {
+    if (!answers.find((a) => a.question == question)) {
+      setAnswers([...answers, { question, answer }]);
+    } else {
+      setAnswers(
+        answers.map((item) =>
+          item.question === question ? { question, answer } : item
+        )
+      );
+    }
+    nextStep();
+  };
+
+  const submitForm = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+  };
 
   const steps = [
     <>
@@ -20,23 +39,21 @@ function ProjectCalculator() {
         Estimate the cost of your project with our free quote calculator.
       </Description>
       <div className="pt-5">
-        <Button className="text-center" onClick={() => setStep(1)}>
-          Let's Go!
-        </Button>
+        <Button onClick={() => setStep(1)}>Let's Go!</Button>
       </div>
     </>,
     <>
       <Question>What are you building?</Question>
       <Options
         options={["Mobile App", "Website", "Web App"]}
-        onClick={() => nextStep()}
+        onClick={(ans) => submitAnswer("Type", ans)}
       />
     </>,
     <>
       <Question>How many screens will it need?</Question>
       <Options
         options={["1", "2 - 3", "3 - 5", "5 - 10", "10+"]}
-        onClick={() => nextStep()}
+        onClick={(ans) => submitAnswer("Screens", ans)}
       />
     </>,
     <>
@@ -49,23 +66,25 @@ function ProjectCalculator() {
           "1000 - 10,000",
           "10,000+",
         ]}
-        onClick={() => nextStep()}
+        onClick={(ans) => submitAnswer("Users", ans)}
       />
     </>,
     <>
       <Question>Where should we send your quote?</Question>
-      <div className="py-10">
-        <Input
-          type="email"
-          placeholder="name@example.com"
-          autoComplete="email"
-          className="text-md w-72 py-3"
-        />
-      </div>
-
-      <Button className="mx-auto" onClick={submitForm}>
-        Get my quote
-      </Button>
+      <form onSubmit={submitForm} className="flex flex-col items-center">
+        <div className="py-10">
+          <Input
+            type="email"
+            placeholder="name@example.com"
+            autoComplete="email"
+            className="text-md w-72 py-3"
+            value={email}
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <Button>Get my quote</Button>
+      </form>
     </>,
   ];
 
