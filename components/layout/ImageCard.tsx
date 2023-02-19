@@ -12,21 +12,7 @@ function ImageCard(props: {
 
   return (
     <div
-      className="
-        grid
-        w-full
-        cursor-pointer    
-        grid-cols-1 
-        flex-col 
-        items-center 
-        rounded-lg
-        bg-white
-        shadow-md
-        transition-all
-        hover:-translate-y-0.5
-        hover:shadow-xl
-        md:grid-cols-2  
-                "
+      className="grid w-full cursor-pointer grid-cols-1 items-center rounded-lg bg-white md:grid-cols-2 "
       onClick={() => openUrl(props.url)}
     >
       <Image
@@ -36,7 +22,9 @@ function ImageCard(props: {
         className="rounded-t-lg bg-white md:rounded-l-lg md:rounded-r-none"
         alt=""
       />
-      <div className="p-5 md:p-2">{props.children}</div>
+      <div className=" -translate-x-0 bg-white p-8 shadow-lg md:-translate-x-10 md:p-12 ">
+        {props.children}
+      </div>
     </div>
   );
 }

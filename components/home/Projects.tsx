@@ -7,7 +7,9 @@ function Projects({ projects }) {
       <div className="flex flex-col space-y-8">
         {projects.map(({ title, summary, summary2, tags, url, image }) => (
           <ImageCard key={title} image={image} url={url}>
-            <h2 className="py-4 text-4xl font-bold">{title}</h2>
+            <h2 className="py-4 text-5xl font-bold text-neutral-800">
+              {title}
+            </h2>
             <p className="h-12">
               {tags.map((tag) => (
                 <Label key={tag}>{tag}</Label>
