@@ -20,7 +20,9 @@ export default function Home({ projects }) {
 }
 
 export async function getStaticProps() {
-  const projects = await getAllFilesFrontMatter("projects");
+  const projects = (await getAllFilesFrontMatter(
+    "projects"
+  )) as ProjectFrontMatter[];
   return {
     props: {
       projects,

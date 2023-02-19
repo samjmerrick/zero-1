@@ -19,10 +19,10 @@ function ImageCard(props: {
         src={props.image}
         width={600}
         height={500}
-        className="rounded-t-lg bg-white md:rounded-l-lg md:rounded-r-none"
+        className="rounded-t-lg border-2 bg-white md:rounded-lg "
         alt=""
       />
-      <div className=" -translate-x-0 bg-white p-8 shadow-lg md:-translate-x-10 md:p-12 ">
+      <div className="bg-white p-8 shadow-lg md:-translate-x-10 md:p-12 ">
         {props.children}
       </div>
     </div>
