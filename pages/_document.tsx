@@ -28,11 +28,11 @@ export default function Document() {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
         <link
-          href="https://fonts.googleapis.com/css?family=Open Sans"
+          href="https://fonts.googleapis.com/css2?family=Open Sans:wght@300..800"
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css?family=Montserrat"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900"
           rel="stylesheet"
         />
       </Head>

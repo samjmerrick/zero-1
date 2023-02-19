@@ -33,7 +33,7 @@ export default function AnimatedTitle(
   return (
     <motion.h2
       className={twMerge(
-        "text-6xl font-extrabold text-gray-100 md:text-7xl",
+        "text-6xl font-bold text-gray-100 md:text-7xl",
         props.className
       )}
       initial="hidden"
