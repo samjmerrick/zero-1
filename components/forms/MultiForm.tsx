@@ -70,20 +70,13 @@ function MultiForm(props: { questions: MultiFormQ[] }) {
   return (
     <>
       <OutlineButton
-        className={twMerge(
-          "border-none bg-neutral-100  ",
-          isFirst && "opacity-0"
-        )}
+        className={twMerge("border-none  ", isFirst && "opacity-0")}
         onClick={prevStep}
       >
         ← Back
       </OutlineButton>
-      <div className="flex flex-col">
-        <div className="flex flex-grow flex-col items-center pb-10">
-          {body()}
-        </div>
-
-        <Steps steps={steps.length} currentStep={step} />
+      <div>
+        {body()} <Steps steps={steps.length} currentStep={step} />
       </div>
     </>
   );

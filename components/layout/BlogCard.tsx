@@ -15,7 +15,7 @@ export default function BlogCard(props: { matter: BlogFrontmatter }) {
   return (
     <Link href={`/blog/${matter.slug}`}>
       <div
-        className=" rounded-md bg-neutral-50      shadow-md
+        className=" rounded-md bg-white      shadow-md
                 transition-all
                 hover:-translate-y-0.5
                 hover:shadow-xl"

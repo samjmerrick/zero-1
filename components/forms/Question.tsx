@@ -1,6 +1,6 @@
 const Question = (props) => {
   return (
-    <h1 className="pb-4 text-center text-3xl font-bold">{props.children}</h1>
+    <h1 className="pb-4 text-center text-2xl font-bold">{props.children}</h1>
   );
 };
 

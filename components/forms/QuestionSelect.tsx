@@ -18,12 +18,12 @@ function QuestionSelect(props: {
     <>
       <Question>{props.q.question}</Question>
       <Description>{props.q.description}</Description>
-      <div className="flex w-full flex-col justify-center space-y-2 py-10 md:flex-row md:items-center md:space-y-0 md:space-x-5">
+      <div className="flex w-full flex-col justify-center space-y-2 py-10 md:items-center">
         {props.q.options.map((option) => (
           <button
             key={option}
             className={twMerge(
-              "rounded-md border-2 border-neutral-500 bg-neutral-50 px-2 py-3 text-left transition-colors hover:bg-neutral-200 md:w-32",
+              "rounded-md border border-neutral-500 bg-neutral-100 px-2.5 py-2 text-left  text-neutral-500 transition-colors hover:bg-neutral-200  md:w-60",
               selected == option &&
                 "border-2 bg-neutral-500 text-neutral-100 hover:bg-neutral-600"
             )}
