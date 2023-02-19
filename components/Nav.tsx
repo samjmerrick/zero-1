@@ -45,6 +45,7 @@ function Nav() {
           >
             {navigation.map((nav) => (
               <Link
+                key={nav.name}
                 href={nav.href}
                 className={twMerge(
                   "block text-center transition-colors hover:text-neutral-300 md:inline-block",
@@ -97,6 +98,7 @@ function Nav() {
           <div className="flex h-full flex-col justify-center space-y-20">
             {navigation.map((nav) => (
               <Link
+                key={nav.name}
                 href={nav.href}
                 onClick={() => setMenuOpen(false)}
                 className={twMerge(

@@ -12,7 +12,7 @@ export default function Blog(props: { posts: BlogFrontmatter[] }) {
         </h2>
         <div className=" grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {props.posts.map((data) => (
-            <BlogCard matter={data} />
+            <BlogCard key={data.slug} matter={data} />
           ))}
         </div>
       </Container>
