@@ -19,7 +19,7 @@ function Steps(props: { steps: number; currentStep: number }) {
   };
 
   return (
-    <div className="flex flex-row justify-center space-x-1">{Steps()}</div>
+    <div className="flex flex-row justify-center space-x-1 py-5">{Steps()}</div>
   );
 }
 

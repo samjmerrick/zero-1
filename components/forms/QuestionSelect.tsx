@@ -18,7 +18,7 @@ function QuestionSelect(props: {
     <>
       <Question>{props.q.question}</Question>
       <Description>{props.q.description}</Description>
-      <div className="flex w-full flex-col justify-center space-y-2 py-10 md:items-center">
+      <div className="flex w-full flex-col justify-center space-y-2 py-5 md:items-center">
         {props.q.options.map((option) => (
           <button
             key={option}
