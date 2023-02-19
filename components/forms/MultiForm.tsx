@@ -33,40 +33,39 @@ function MultiForm(props: { questions: MultiFormQ[] }) {
     }
   };
 
-  const submitAnswer = (answer: string) => {
-    const question = s.question;
-    if (!answers.find((a) => a.question == question)) {
+  const saveAnswer = (question: string, answer: string) => {
+    const questionExists = answers.find((a) => a.question === question);
+
+    if (!questionExists) {
       setAnswers([...answers, { question, answer }]);
     } else {
-      setAnswers(
-        answers.map((item) =>
-          item.question === question ? { question, answer } : item
-        )
+      const updatedAnswers = answers.map((a) =>
+        a.question === question ? { question, answer } : a
       );
+      setAnswers(updatedAnswers);
     }
+
     nextStep();
   };
-
-  const s = steps[step];
-  let body = <></>;
 
   useEffect(() => {
     console.log(answers);
   }, [answers]);
 
-  switch (s.type) {
-    case "Email": {
-      body = <QuestionEmail q={s} next={submitAnswer} />;
-      break;
+  const body = () => {
+    const q = steps[step];
+    switch (q.type) {
+      case "Statement": {
+        return <QuestionStatement q={q} nextStep={nextStep} />;
+      }
+      case "Select": {
+        return <QuestionSelect q={q} saveAnswer={saveAnswer} />;
+      }
+      case "Email": {
+        return <QuestionEmail q={q} saveAnswer={saveAnswer} />;
+      }
     }
-    case "Select": {
-      body = <QuestionSelect q={s} next={submitAnswer} />;
-      break;
-    }
-    case "Statement": {
-      body = <QuestionStatement q={s} />;
-    }
-  }
+  };
 
   return (
     <>
@@ -81,10 +80,7 @@ function MultiForm(props: { questions: MultiFormQ[] }) {
       </OutlineButton>
       <div className="flex flex-col">
         <div className="flex flex-grow flex-col items-center pb-10">
-          {body}
-          <div className="pt-5">
-            <Button onClick={() => nextStep()}>{s.actionText ?? "Next"}</Button>
-          </div>
+          {body()}
         </div>
 
         <Steps steps={steps.length} currentStep={step} />
