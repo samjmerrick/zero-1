@@ -5,27 +5,29 @@ import { twMerge } from "tailwind-merge";
 
 function Projects(props: { projects: ProjectFrontMatter[] }) {
   return (
-    <section id="Projects" className="space-y-8 py-12">
-      <div className="flex flex-col space-y-8">
-        {props.projects.map((project) => (
-          <Project project={project} />
+    <section id="Projects" className=" py-20">
+      <div className="flex flex-col space-y-24">
+        {props.projects.map((project, i) => (
+          <Project project={project} position={i} />
         ))}
       </div>
     </section>
   );
 }
 
-function Project(props: { project: ProjectFrontMatter }) {
-  const [hover, setHover] = useState(false);
+function Project(props: { project: ProjectFrontMatter; position: number }) {
   const project = props.project;
 
+  function openUrl(url: string) {
+    window.open(url, "_blank");
+  }
+
   return (
-    <div
-      key={project.title}
-      onMouseOver={() => setHover(true)}
-      onMouseOut={() => setHover(false)}
-    >
-      <ImageCard image={project.image} url={project.url}>
+    <div key={project.title}>
+      <ImageCard
+        image={project.image}
+        cardLocation={props.position % 2 ? "Right" : "Left"}
+      >
         <h2 className="py-4 text-5xl font-bold text-neutral-800">
           {project.title}
         </h2>
@@ -36,15 +38,16 @@ function Project(props: { project: ProjectFrontMatter }) {
         </p>
         <p>{project.summary}</p>
         <br />
-        <p>{project.summary2}</p>
-        <p
-          className={twMerge(
-            "pt-4 text-right text-neutral-400 transition-all",
-            hover && "font-bold text-neutral-900"
-          )}
+        <p className="pb-6">{project.summary2}</p>
+        <a
+          className="group cursor-pointer text-neutral-400 transition-all hover:font-bold hover:text-blue-400"
+          onClick={() => openUrl(project.url)}
         >
-          View →
-        </p>
+          View{" "}
+          <span className="inline-block transition-transform group-hover:translate-x-3">
+            →
+          </span>
+        </a>
       </ImageCard>
     </div>
   );
