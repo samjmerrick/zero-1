@@ -54,7 +54,7 @@ function Project(props: { project: ProjectFrontMatter; position: number }) {
         <br />
         <p className="pb-6">{project.summary2}</p>
         <a
-          className="group cursor-pointer text-neutral-400 transition-all hover:font-bold hover:text-blue-400"
+          className="group cursor-pointer text-neutral-400 transition-all hover:font-semibold hover:text-indigo-500"
           onClick={() => openUrl(project.url)}
         >
           View{" "}
