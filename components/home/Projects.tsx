@@ -1,8 +1,6 @@
 import ImageCard from "components/layout/ImageCard";
 import Label from "components/Label";
-import Button from "components/Button";
-import Icon from "@mdi/react";
-import { mdiSend } from "@mdi/js";
+import ContactButton from "components/ContactButton";
 
 function Projects(props: { projects: ProjectFrontMatter[] }) {
   return (
@@ -24,10 +22,7 @@ function Projects(props: { projects: ProjectFrontMatter[] }) {
             </p>
           </div>
 
-          <Button onClick={() => window.open("mailto:hello@zero-1.studio")}>
-            <Icon className="mr-4 inline-block w-6" path={mdiSend} />
-            Get in touch
-          </Button>
+          <ContactButton />
         </div>
       </div>
     </section>

@@ -11,7 +11,7 @@ export default function AnimatedTitle(
     },
     visible: (i: number = 1) => ({
       opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: i * 0 },
+      transition: { staggerChildren: 0.15, delayChildren: i * 0 },
     }),
   };
 
@@ -33,7 +33,7 @@ export default function AnimatedTitle(
   return (
     <motion.h2
       className={twMerge(
-        "text-6xl font-bold text-gray-100 md:text-7xl",
+        "text-5xl font-bold tracking-tight text-gray-100 sm:text-6xl md:text-7xl",
         props.className
       )}
       initial="hidden"
