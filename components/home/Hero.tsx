@@ -83,7 +83,7 @@ function Hero() {
           >
             See our work
           </a>
-          <ContactButton />
+          <ContactButton color="Light" />
         </motion.div>
       </Container>
     </div>
