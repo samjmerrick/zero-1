@@ -1,10 +1,15 @@
-import { Page } from "components/layout/Page";
 import MultiForm from "components/forms/MultiForm";
 import Container from "components/layout/Container";
+import Metatitle from "utils/metadata";
+import Head from "next/head";
 
 function ProjectCalculator() {
   return (
-    <Page meta={{ title: "Project Calculator" }}>
+    <>
+      <Head>
+        <title>{Metatitle("Project Calculator")}</title>
+      </Head>
+
       <Container>
         <MultiForm
           questions={[
@@ -44,7 +49,7 @@ function ProjectCalculator() {
           ]}
         />
       </Container>
-    </Page>
+    </>
   );
 }
 

@@ -1,11 +1,16 @@
 import BlogCard from "components/layout/BlogCard";
 import Container from "components/layout/Container";
-import { Page } from "components/layout/Page";
 import { getAllFilesFrontMatter } from "lib/mdx";
+import Head from "next/head";
+import Metatitle from "utils/metadata";
 
 export default function Blog(props: { posts: BlogFrontmatter[] }) {
   return (
-    <Page meta={{ title: "Blog" }}>
+    <>
+      <Head>
+        <title>{Metatitle("Blog")}</title>
+      </Head>
+
       <Container>
         <h2 className="py-20 text-center text-4xl font-bold">
           Latest Articles
@@ -16,7 +21,7 @@ export default function Blog(props: { posts: BlogFrontmatter[] }) {
           ))}
         </div>
       </Container>
-    </Page>
+    </>
   );
 }
 

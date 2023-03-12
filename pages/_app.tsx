@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import Script from "next/script";
 import Image from "next/image";
 import { MDXProvider } from "@mdx-js/react";
+import { Page } from "components/layout/Page";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const ResponsiveImage = (props) => (
@@ -29,7 +30,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             `}
       </Script>
       <MDXProvider components={components}>
-        <Component {...pageProps} />
+        <Page>
+          <Component {...pageProps} />
+        </Page>
       </MDXProvider>
     </>
   );

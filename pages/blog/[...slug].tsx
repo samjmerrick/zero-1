@@ -1,7 +1,8 @@
 import Container from "components/layout/Container";
-import { Page } from "components/layout/Page";
 import { formatSlug, getFileBySlug, getFiles } from "lib/mdx";
+import Head from "next/head";
 import Image from "next/image";
+import Metatitle from "utils/metadata";
 
 export async function getStaticPaths() {
   const posts = getFiles("blog");
@@ -27,7 +28,10 @@ export async function getStaticProps({ params }) {
 
 export default function Post({ post }) {
   return (
-    <Page meta={{ title: post.frontMatter.title }}>
+    <>
+      <Head>
+        <title>{Metatitle(post.frontMatter.title)}</title>
+      </Head>
       <Container>
         <div className="prose-xl prose mx-auto pt-10">
           <div className="flex flex-row space-x-2 text-sm text-neutral-500">
@@ -49,6 +53,6 @@ export default function Post({ post }) {
           <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
         </div>
       </Container>
-    </Page>
+    </>
   );
 }
