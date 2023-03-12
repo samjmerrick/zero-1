@@ -66,8 +66,8 @@ function Hero() {
             initial="hidden"
             animate="visible"
           >
-            We work with startups, scale-ups and enterprises to build, ideate
-            and scale world class digital products
+            We work with startups, scale-ups and enterprises to build innovative
+            mobile apps and web experiences.
           </motion.p>
         </div>
 
