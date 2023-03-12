@@ -1,6 +1,7 @@
 import ImageCard from "components/layout/ImageCard";
 import Label from "components/Label";
 import ContactButton from "components/ContactButton";
+import FadeIn from "components/FadeIn";
 
 function Projects(props: { projects: ProjectFrontMatter[] }) {
   return (
@@ -38,31 +39,33 @@ function Project(props: { project: ProjectFrontMatter; position: number }) {
 
   return (
     <div key={project.title}>
-      <ImageCard
-        image={project.image}
-        cardLocation={props.position % 2 ? "Right" : "Left"}
-      >
-        <h2 className="py-4 text-5xl font-bold text-neutral-800">
-          {project.title}
-        </h2>
-        <p className="h-12">
-          {project.tags.map((tag) => (
-            <Label key={tag}>{tag}</Label>
-          ))}
-        </p>
-        <p>{project.summary}</p>
-        <br />
-        <p className="pb-6">{project.summary2}</p>
-        <a
-          className="group cursor-pointer text-neutral-400 transition-all hover:font-semibold hover:text-indigo-500"
-          onClick={() => openUrl(project.url)}
+      <FadeIn>
+        <ImageCard
+          image={project.image}
+          cardLocation={props.position % 2 ? "Right" : "Left"}
         >
-          View{" "}
-          <span className="inline-block transition-transform group-hover:translate-x-3">
-            →
-          </span>
-        </a>
-      </ImageCard>
+          <h2 className="py-4 text-5xl font-bold text-neutral-800">
+            {project.title}
+          </h2>
+          <p className="h-12">
+            {project.tags.map((tag) => (
+              <Label key={tag}>{tag}</Label>
+            ))}
+          </p>
+          <p>{project.summary}</p>
+          <br />
+          <p className="pb-6">{project.summary2}</p>
+          <a
+            className="group cursor-pointer text-neutral-400 transition-all hover:font-semibold hover:text-indigo-500"
+            onClick={() => openUrl(project.url)}
+          >
+            View{" "}
+            <span className="inline-block transition-transform group-hover:translate-x-3">
+              →
+            </span>
+          </a>
+        </ImageCard>
+      </FadeIn>
     </div>
   );
 }
