@@ -14,12 +14,7 @@ export default function BlogCard(props: { matter: BlogFrontmatter }) {
 
   return (
     <Link href={`/blog/${matter.slug}`}>
-      <div
-        className=" rounded-md bg-white      shadow-md
-                transition-all
-                hover:-translate-y-0.5
-                hover:shadow-xl"
-      >
+      <div className=" min-h-full rounded-md bg-white shadow-md transition-all hover:-translate-y-0.5 hover:shadow-xl">
         <Image
           src={matter.image}
           className="rounded-t-md"
