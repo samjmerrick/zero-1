@@ -25,7 +25,10 @@ function Nav() {
         <div className="flex items-center justify-between">
           <Link href="/" className="z-20">
             <Logo
-              className={isHome ? "text-neutral-200" : "text-neutral-900"}
+              className={twMerge(
+                " max-w-[75px]",
+                isHome ? "text-neutral-200" : "text-neutral-900"
+              )}
             />
           </Link>
 
