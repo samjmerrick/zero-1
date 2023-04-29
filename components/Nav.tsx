@@ -72,7 +72,7 @@ function Nav() {
       </nav>
       {/* Mobile Menu */}
       <motion.div
-        className="absolute z-10 h-screen  w-screen touch-none rounded-t-md  bg-neutral-900 md:hidden"
+        className="fixed z-40 h-screen  w-screen touch-none rounded-t-md  bg-neutral-900 md:hidden"
         variants={{
           open: {
             scale: 1,
