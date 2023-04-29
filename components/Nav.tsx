@@ -73,14 +73,15 @@ function Nav() {
       </nav>
       {/* Mobile Menu */}
       <motion.div
-        className="fixed z-40 h-screen  w-screen touch-none rounded-t-md bg-neutral-900 bg-opacity-40 backdrop-blur-lg md:hidden"
+        className="fixed h-screen w-screen touch-none rounded-t-md bg-neutral-900 bg-opacity-40 backdrop-blur-lg md:hidden"
         variants={{
           open: {
             opacity: 1,
+            zIndex: 40,
           },
           closed: {
             opacity: 0,
-
+            zIndex: -10,
             transition: {
               type: "tween",
               duration: 0.3,
