@@ -28,7 +28,8 @@ function Nav() {
       <nav
         className={twMerge(
           "fixed z-50 w-full border-b border-transparent bg-opacity-20 py-5 backdrop-blur-lg transition-colors ",
-          !top && "border-neutral-700"
+          !top && !menuOpen && "border-neutral-700",
+          menuOpen && "backdrop-blur-none"
         )}
       >
         <Container>
@@ -72,17 +73,14 @@ function Nav() {
       </nav>
       {/* Mobile Menu */}
       <motion.div
-        className="fixed z-40 h-screen  w-screen touch-none rounded-t-md  bg-neutral-900 md:hidden"
+        className="fixed z-40 h-screen  w-screen touch-none rounded-t-md bg-neutral-900 bg-opacity-40 backdrop-blur-lg md:hidden"
         variants={{
           open: {
-            scale: 1,
             opacity: 1,
-            translateY: 0,
           },
           closed: {
-            scale: 0,
             opacity: 0,
-            translateY: "-30%",
+
             transition: {
               type: "tween",
               duration: 0.3,
