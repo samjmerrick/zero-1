@@ -1,132 +1,117 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { mdiMenu, mdiClose } from "@mdi/js";
 import Icon from "@mdi/react";
-import { useRouter } from "next/router";
 import Link from "next/link";
-import { twMerge } from "tailwind-merge";
 
 import Container from "components/layout/Container";
 import Logo from "components/Logo";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
+import { twMerge } from "tailwind-merge";
 
 function Nav() {
   const navigation = [{ name: "Blog", href: "/blog" }];
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const router = useRouter();
-  const isHome = router.pathname == "/";
+  const [top, setTop] = useState(true);
+
+  useEffect(() => {
+    const scrollHandler = () => {
+      window.pageYOffset > 10 ? setTop(false) : setTop(true);
+    };
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, [top]);
 
   return (
-    <nav
-      className={twMerge("top-0 z-10 w-full py-5", isHome && "bg-neutral-900")}
-    >
-      <Container>
-        <div className="flex items-center justify-between">
-          <Link href="/" className="z-20">
-            <Logo
-              className={twMerge(
-                " max-w-[75px]",
-                isHome ? "text-neutral-200" : "text-neutral-900"
-              )}
-            />
-          </Link>
+    <>
+      <nav
+        className={twMerge(
+          "fixed z-50 w-full border-b border-transparent bg-opacity-20 py-5 backdrop-blur-lg transition-colors ",
+          !top && "border-neutral-700"
+        )}
+      >
+        <Container>
+          <div className="flex items-center justify-between">
+            <Link href="/" className="z-20">
+              <Logo className=" max-w-[75px] text-neutral-200" />
+            </Link>
 
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="z-20 md:hidden"
-          >
-            <Icon
-              path={!menuOpen ? mdiMenu : mdiClose}
-              className={twMerge("h-8 w-8", isHome && "text-neutral-300")}
-            />
-          </button>
-
-          <div
-            className="hidden flex-row items-center space-x-12 pt-6 pr-2 text-lg md:flex md:pt-0"
-            id="menu"
-          >
-            {navigation.map((nav) => (
-              <Link
-                key={nav.name}
-                href={nav.href}
-                className={twMerge(
-                  "block text-center transition-colors hover:text-neutral-300 md:inline-block",
-                  isHome
-                    ? "text-neutral-200 hover:text-neutral-300"
-                    : "text-neutral-900 hover:text-neutral-800"
-                )}
-              >
-                {nav.name}
-              </Link>
-            ))}
-            <a
-              className={twMerge(
-                "cursor-pointer rounded-lg  py-2 px-5 text-lg font-semibold transition-colors ",
-                isHome
-                  ? "bg-neutral-200 text-neutral-800 hover:bg-neutral-400"
-                  : "bg-neutral-800 text-neutral-200 hover:bg-neutral-700"
-              )}
-              href="mailto:hello@zero-1.studio"
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="z-20 md:hidden"
             >
-              Contact
-            </a>
+              <Icon
+                path={!menuOpen ? mdiMenu : mdiClose}
+                className="h-8 w-8 text-neutral-300"
+              />
+            </button>
+
+            <div
+              className="hidden flex-row items-center space-x-12 pt-6 pr-2 text-lg md:flex md:pt-0"
+              id="menu"
+            >
+              {navigation.map((nav) => (
+                <Link
+                  key={nav.name}
+                  href={nav.href}
+                  className="block text-center text-neutral-200 transition-colors hover:text-neutral-300 md:inline-block "
+                >
+                  {nav.name}
+                </Link>
+              ))}
+              <a
+                className="cursor-pointer rounded-lg  bg-neutral-200 py-2 px-5 text-lg font-semibold text-neutral-800 transition-colors hover:bg-neutral-400"
+                href="mailto:hello@zero-1.studio"
+              >
+                Contact
+              </a>
+            </div>
           </div>
+        </Container>
+      </nav>
+      {/* Mobile Menu */}
+      <motion.div
+        className="absolute z-10 h-screen  w-screen touch-none rounded-t-md  bg-neutral-900 md:hidden"
+        variants={{
+          open: {
+            scale: 1,
+            opacity: 1,
+            translateY: 0,
+          },
+          closed: {
+            scale: 0,
+            opacity: 0,
+            translateY: "-30%",
+            transition: {
+              type: "tween",
+              duration: 0.3,
+            },
+          },
+        }}
+        initial="closed"
+        animate={menuOpen ? "open" : "closed"}
+      >
+        <div className="flex h-full flex-col justify-center space-y-20">
+          {navigation.map((nav) => (
+            <Link
+              key={nav.name}
+              href={nav.href}
+              onClick={() => setMenuOpen(false)}
+              className="block text-center text-3xl font-semibold text-neutral-100 "
+            >
+              {nav.name}
+            </Link>
+          ))}
+          <a
+            className="mx-4 block rounded-md  bg-neutral-100 py-6 text-center text-3xl font-semibold text-neutral-800"
+            href="mailto:hello@zero-1.studio"
+          >
+            Contact
+          </a>
         </div>
-
-        <motion.div
-          className={twMerge(
-            "absolute top-0 left-0 right-0 bottom-0 z-10 touch-none rounded-t-md  md:hidden",
-            isHome ? "bg-neutral-900" : "bg-neutral-100"
-          )}
-          variants={{
-            open: {
-              scale: 1,
-              opacity: 1,
-              translateY: 0,
-            },
-            closed: {
-              scale: 0,
-              opacity: 0,
-              translateY: "-30%",
-              transition: {
-                type: "tween",
-                duration: 0.3,
-              },
-            },
-          }}
-          initial="closed"
-          animate={menuOpen ? "open" : "closed"}
-        >
-          <div className="flex h-full flex-col justify-center space-y-20">
-            {navigation.map((nav) => (
-              <Link
-                key={nav.name}
-                href={nav.href}
-                onClick={() => setMenuOpen(false)}
-                className={twMerge(
-                  "block text-center text-3xl font-semibold ",
-                  isHome ? "text-neutral-100" : "text-neutral-800"
-                )}
-              >
-                {nav.name}
-              </Link>
-            ))}
-            <a
-              className={twMerge(
-                "mx-4 block rounded-md  py-6 text-center text-3xl font-semibold ",
-                isHome
-                  ? "bg-neutral-100 text-neutral-800"
-                  : "bg-neutral-800 text-neutral-200"
-              )}
-              href="mailto:hello@zero-1.studio"
-            >
-              Contact
-            </a>
-          </div>
-        </motion.div>
-      </Container>
-    </nav>
+      </motion.div>
+    </>
   );
 }
 

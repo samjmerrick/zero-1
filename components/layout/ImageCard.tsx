@@ -15,12 +15,18 @@ function ImageCard(props: {
           props.cardLocation == "Left" && "md:col-start-5 md:col-end-11"
         )}
       >
-        <Image src={props.image} width={1000} height={500} alt="" />
+        <Image
+          src={props.image}
+          width={1000}
+          height={500}
+          alt=""
+          className="rounded-md"
+        />
       </div>
 
       <div
         className={twMerge(
-          "z-10 bg-white p-8 shadow-xl md:col-span-5 md:col-end-11 md:row-span-full md:p-12",
+          " z-10 rounded-xl border border-neutral-600 bg-neutral-800 bg-opacity-60 p-8 text-neutral-300 shadow-xl backdrop-blur-md md:col-span-5 md:col-end-11 md:row-span-full  md:p-12",
           props.cardLocation == "Left" && "md:col-start-1 md:col-end-6"
         )}
       >

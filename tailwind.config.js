@@ -5,7 +5,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Orbitron: ["Orbitron", "sans-serif"],
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };

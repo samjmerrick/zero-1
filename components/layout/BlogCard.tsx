@@ -14,7 +14,7 @@ export default function BlogCard(props: { matter: BlogFrontmatter }) {
 
   return (
     <Link href={`/blog/${matter.slug}`}>
-      <div className=" min-h-full rounded-md bg-white shadow-md transition-all hover:-translate-y-0.5 hover:shadow-xl">
+      <div className=" min-h-full rounded-md border border-neutral-600 bg-neutral-900 ">
         <Image
           src={matter.image}
           className="rounded-t-md"
@@ -23,13 +23,13 @@ export default function BlogCard(props: { matter: BlogFrontmatter }) {
           height={500}
         />
         <div className="py-3 px-6">
-          <p className="text-sm text-neutral-500" id="articleDate">
+          <p className="text-sm text-neutral-300" id="articleDate">
             {formatDate(matter.date) ?? "date"}
           </p>
 
-          <h3 className="py-2 text-2xl font-bold">{matter.title}</h3>
+          <h3 className="py-2 text-2xl font-semibold ">{matter.title}</h3>
 
-          <p className="pb-2">{matter.summary}</p>
+          <p className="pb-2 text-neutral-300">{matter.summary}</p>
         </div>
       </div>
     </Link>

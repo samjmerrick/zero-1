@@ -44,7 +44,7 @@ function Hero() {
   }
 
   return (
-    <div className="bg-neutral-900 py-20 sm:py-32 md:py-40">
+    <div className=" flex min-h-screen items-center bg-gradient-to-b from-gray-800 via-gray-900 to-black">
       <Container>
         <div className="mx-auto flex max-w-3xl flex-col space-y-10 text-left sm:text-center">
           <AnimatedTitle>
@@ -61,13 +61,12 @@ function Hero() {
           </AnimatedTitle>
 
           <motion.p
-            className=" text-xl text-gray-400"
+            className=" text-xl text-gray-300"
             variants={easeIn(1.5)}
             initial="hidden"
             animate="visible"
           >
-            We work with startups, scale-ups and enterprises to build innovative
-            mobile apps and web experiences.
+            We define, design and deliver innovative app and web experiences.
           </motion.p>
         </div>
 
@@ -83,7 +82,7 @@ function Hero() {
           >
             See our work
           </a>
-          <ContactButton color="Light" />
+          <ContactButton />
         </motion.div>
       </Container>
     </div>

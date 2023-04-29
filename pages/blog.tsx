@@ -12,7 +12,7 @@ export default function Blog(props: { posts: BlogFrontmatter[] }) {
       </Head>
 
       <Container>
-        <h2 className="py-20 text-center text-4xl font-bold">
+        <h2 className="mt-20 py-20 text-center text-4xl font-bold">
           Latest Articles
         </h2>
         <div className=" grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">

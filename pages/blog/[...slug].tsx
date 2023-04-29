@@ -33,8 +33,8 @@ export default function Post({ post }) {
         <title>{Metatitle(post.frontMatter.title)}</title>
       </Head>
       <Container>
-        <div className="prose-xl prose mx-auto pt-10">
-          <div className="flex flex-row space-x-2 text-sm text-neutral-500">
+        <div className="prose-xl prose prose-invert  mx-auto pt-32">
+          <div className="flex flex-row space-x-2 text-sm text-neutral-200">
             <p className="">{post.frontMatter.date}</p>
             <p> | </p>
             <p className="">{post.frontMatter.readingTime}</p>
