@@ -1,3 +1,4 @@
+import Card from "components/layout/Card";
 import { StaticImageData } from "next/image";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
@@ -26,11 +27,11 @@ function ImageCard(props: {
 
       <div
         className={twMerge(
-          " z-10 rounded-xl border border-neutral-600 bg-neutral-800 bg-opacity-60 p-8 text-neutral-300 shadow-xl backdrop-blur-md md:col-span-5 md:col-end-11 md:row-span-full  md:p-12",
+          "z-10 md:col-span-5 md:col-end-11 md:row-span-full ",
           props.cardLocation == "Left" && "md:col-start-1 md:col-end-6"
         )}
       >
-        {props.children}
+        <Card className="p-8 md:p-12">{props.children}</Card>
       </div>
     </div>
   );

@@ -38,7 +38,7 @@ function Project(props: { project: ProjectFrontMatter; position: number }) {
               <Label key={tag}>{tag}</Label>
             ))}
           </p>
-          <p className="pb-6">{project.summary}</p>
+          <p className="pb-6 text-neutral-300">{project.summary}</p>
 
           <a
             className="group cursor-pointer text-neutral-300 transition-all hover:font-semibold hover:text-white"
