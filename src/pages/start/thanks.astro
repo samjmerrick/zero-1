@@ -5,7 +5,7 @@ import SectionHead from '../../components/SectionHead.astro';
 
 const site = (await getEntry('settings', 'site'))!.data;
 ---
-<Base title="Thanks" description="Your enquiry has been sent.">
+<Base title="Thanks" description="Your enquiry has been sent." noindex>
   <section class="wrap" style="padding-block: 88px var(--section)">
     <div class="stack" style="--gap: 32px">
       <SectionHead as="h1" index="001" label="Sent" title="Thanks. Your idea just moved from 0 towards 1.">

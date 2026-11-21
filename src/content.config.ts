@@ -101,4 +101,19 @@ const ventures = defineCollection({
   }),
 });
 
-export const collections = { settings, pricing, proof, failures, faq, pressureTest, work, ventures };
+/**
+ * Essays. `draft: true` posts build in dev only, so Sam can review before publishing.
+ * Ghost-drafted posts must stay drafts until Sam has read and approved them.
+ */
+const writing = defineCollection({
+  loader: glob({ base: './src/content/writing', pattern: '**/*.md' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().max(200),
+    date: z.coerce.date(),
+    topic: z.enum(['Ideation', 'Economics', 'Field notes', 'Ventures', 'Method']),
+    draft: z.boolean().default(true),
+  }),
+});
+
+export const collections = { settings, pricing, proof, failures, faq, pressureTest, work, ventures, writing };

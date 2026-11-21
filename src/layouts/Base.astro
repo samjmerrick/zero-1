@@ -6,8 +6,20 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description: string;
+  /** Keep a page out of search results (e.g. the thank-you page). */
+  noindex?: boolean;
+  /** 'article' for essays; everything else is a website page. */
+  type?: 'website' | 'article';
 }
-const { title, description } = Astro.props;
+const { title, description, noindex = false, type = 'website' } = Astro.props;
+const ogImage = new URL('/og.png', Astro.site);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'Organization', '@id': `${Astro.site}#org`, name: 'Zero-1 Studio', url: Astro.site?.toString(), logo: new URL('/favicon.svg', Astro.site).toString(), founder: { '@id': `${Astro.site}#sam` } },
+    { '@type': 'Person', '@id': `${Astro.site}#sam`, name: 'Sam Merrick', url: 'https://samjmerrick.com', jobTitle: 'Founder, Zero-1 Studio', sameAs: ['https://samjmerrick.com', 'https://github.com/samjmerrick'] },
+  ],
+};
 const fullTitle = title === 'Home' ? 'Zero-1 Studio · Find the business worth building' : `${title} · Zero-1 Studio`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -22,7 +34,14 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <meta property="og:locale" content="en_GB" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="theme-color" content="#f4f4f1" media="(prefers-color-scheme: light)" />
@@ -48,5 +67,14 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <slot />
     </main>
     <Footer />
+    <script>
+      // Fill state bits in sequence when they scroll into view (skipped for reduced motion).
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+        }, { threshold: 0.6 });
+        document.querySelectorAll('.bits').forEach((el) => { el.classList.add('will-fill'); io.observe(el); });
+      }
+    </script>
   </body>
 </html>

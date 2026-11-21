@@ -14,4 +14,10 @@ const bits = [0, 1, 2, 3].map((i) => i < n);
   .bits { display: inline-flex; gap: 4px; }
   .bit { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.7; }
   .bit.on { background: var(--signal); border-color: var(--signal); opacity: 1; }
+  /* Scroll-in fill: Base.astro adds .will-fill, then .in-view. */
+  :global(.bits.will-fill) .bit.on { background: transparent; border-color: currentColor; opacity: 0.7; transition: background 240ms ease, border-color 240ms ease, opacity 240ms ease; }
+  :global(.bits.will-fill.in-view) .bit.on { background: var(--signal); border-color: var(--signal); opacity: 1; }
+  :global(.bits.will-fill.in-view) .bit.on:nth-child(2) { transition-delay: 120ms; }
+  :global(.bits.will-fill.in-view) .bit.on:nth-child(3) { transition-delay: 240ms; }
+  :global(.bits.will-fill.in-view) .bit.on:nth-child(4) { transition-delay: 360ms; }
 </style>

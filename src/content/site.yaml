@@ -3,8 +3,8 @@
   available: true
   availabilityText: Available now · one project at a time
   replyPromise: I reply to every enquiry within one working day.
-  email: hello@zero-1.studio # TODO(Sam): confirm the public contact address
-  calLink: "" # TODO(Sam): Cal.com path such as "sammerrick/intro"; empty hides the booking embed
+  email: sam@zero-1.studio
+  calLink: sam-zero1/intro # Cal.com path; empty hides the booking embed
   turnstileSiteKey: "" # Cloudflare Turnstile site key; empty disables the bot check widget
   links:
     - label: samjmerrick.com

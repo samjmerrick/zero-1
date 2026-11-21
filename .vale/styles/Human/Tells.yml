@@ -1,6 +1,6 @@
 extends: existence
 message: "AI-sounding phrase: '%s'."
-level: warning
+level: error
 ignorecase: true
 tokens:
   - unlock
