@@ -7,7 +7,7 @@
 
 ## Home
 
-**Nav chip:** Taking one new project for [MONTH]
+**Nav chip:** Available now · one project at a time
 
 **H1:** Find the business worth building. Then build it.
 
@@ -22,7 +22,7 @@
 - Was on the founding team of **Virgin Red**
 
 **Section: The problem**
-- Eyebrow: Why new products fail
+- Eyebrow: 001 — Why new products stay at 0
 - H2: Building got cheap. Building the right thing didn't.
 - Body: Most new products die for one of four reasons. I check for all four before you write a line of production code.
   1. **There's no real edge.** No data, workflow or distribution advantage, so a competitor (or the next AI model) copies it in a month.
@@ -31,35 +31,37 @@
   4. **The riskiest bet went untested.** Months spent building the easy part.
 
 **Section: The ladder**
-- Eyebrow: How we work
-- H2: Four steps from zero to one. Stop at any of them.
+- Eyebrow: 010 — How we work
+- H2: Four steps from 0 to 1. Stop at any of them.
 - Body: Each stage ends with a decision. Half of each fee counts towards the next stage, so you only climb when the evidence says so.
 - Cards: see Services (title, price, duration, one-line outcome)
 
 **Section: About Sam**
-- H2: You work with me, directly.
+- Eyebrow: 011 — Who you're hiring
+- H2: One person, from 0 to 1.
 - Body: I'm Sam Merrick. By day I lead machine learning teams building computer vision that has to work in the field: offline, on cheap phones, for health workers in Ghana, Bangladesh and Ethiopia. Before that I helped launch Virgin Red and built an LLM ideation tool for creators. Zero-1 is where I help other people do the same.
 - Link: `More about me →`
 
 **Section: Work**
-- H2: Work
+- Eyebrow: 100 — Work
+- H2: Things that made it to 1.
 - Card labels: `Studio project` / `Sam's track record`
 
 **Section: Ventures**
-- Eyebrow: Ventures
-- H2: I build my own products too.
+- Eyebrow: 101 — Ventures
+- H2: I take my own ideas from 0 to 1 too.
 - Body: Every Zero-1 venture goes through the same Sprint → Validation → go/no-go process I sell. Killing an idea counts as a good result.
 - Cards: **Idea Pressure-Tester** (Building): Instant feedback on any business idea, with a paid deep-dive report. · **AI Margin** (Exploring): Model what an AI feature really costs per user, and get warned when margins slip. · **Venture #3** (Validating): Customer interviews under way.
 
 **Section: Pressure-Tester teaser**
-- Eyebrow: Free tool
-- H2: Is your idea a business yet?
+- Eyebrow: 110 — Free tool
+- H2: Is your idea a 0 or a 1?
 - Body: Describe it in a sentence. Get an instant read on your edge, the unit economics, where AI would help (and where it wouldn't), and the one assumption to test first.
 - Input placeholder: e.g. "A subscription service that handles planning applications for UK architects"
 - Button: `Pressure-test it`
 
 **Final CTA**
-- H2: Got an idea? Or a hunch there's one in your business?
+- H2: Your idea is at 0. Let's get it to 1.
 - Body: Tell me about it. I reply to every enquiry within two working days.
 - Button: `Start a project`
 

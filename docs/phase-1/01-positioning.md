@@ -12,7 +12,7 @@ AI is the edge, not the requirement. Most founders today will use AI somewhere, 
 
 The brand is a person, not an agency. Copy is written in the first person ("I"), with "we" reserved for the moment a client joins the work ("we'll test this with your users"). Every page should make it obvious who you're hiring.
 
-- Logo lockup: `Zero-1` wordmark, with "by Sam Merrick" as the descriptor in nav/footer.
+- Logo lockup: the 0/1 mark + `zero/one` wordmark, with "Sam Merrick" as the descriptor in the footer (see 05). The business name stays Zero-1 Studio.
 - Photo of Sam on Home and About. No stock imagery.
 - samjmerrick.com stays the personal CV/research site; zero-1.studio is the commercial front door. Each links to the other.
 
@@ -70,8 +70,7 @@ Alternatives considered: "New businesses, from Zero to One." · "From idea to fi
 - [x] **Ventures:** yes. Zero-1 launches its own products as well as doing client work. See *Zero-1 Ventures: Product Ideas* (https://claude.ai/artifact/F7pbKtQWS1Wor61YofASY2). Shown at `/ventures`.
 - [x] **Photo:** reuse the samjmerrick.com portrait and MediaPipe landmark treatment.
 - [x] **HandDeco:** stays as a studio case study.
-- [x] **Capacity:** up to 1 day per week in total. The site says "one client project at a time", and the booking chip reads "Taking one new project for [MONTH]".
+- [x] **Capacity:** up to 1 day per week in total. The site says "one client project at a time", and the chip reads "Available now · one project at a time".
 
 ### Still open
-- [ ] Booking month for the chip
 - [ ] Simprints contract check for side-business/IP terms (from the ventures doc)

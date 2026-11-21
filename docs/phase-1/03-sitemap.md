@@ -4,7 +4,7 @@
 
 ## Primary nav
 
-`Zero-1` (logo → /) · Approach · Services · Work · Ventures · Writing · **Start a project** (button → /start)
+`zero/one` mark + wordmark (→ /) · Approach · Services · Work · Ventures · Writing · 0/1 theme toggle · **Start a project** (button → /start)
 
 Footer: About · Writing · Ventures · samjmerrick.com · LinkedIn · GitHub · email · © Zero-1 Studio
 
@@ -51,9 +51,9 @@ Footer: About · Writing · Ventures · samjmerrick.com · LinkedIn · GitHub ·
 ## Homepage section order
 
 1. Nav
-2. Hero: headline, subhead, two CTAs, "Taking one new project for [MONTH]" chip
+2. Hero: headline, subhead, two CTAs, "Available now · one project at a time" chip
 3. Proof bar: four facts with numbers
-4. The problem: "Most new products die for one of four reasons"
+4. The problem (001): "Most new products die for one of four reasons"
 5. The ladder: 4 packages with prices, laid out as the 0 → 1 path
 6. About Sam (short): photo, 3 lines, link to /about
 7. Featured work: 2 cards, labelled by track
