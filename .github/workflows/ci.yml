@@ -21,5 +21,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: errata-ai/vale-action@v2.1.1
         with:
-          files: '["src/content", "docs"]'
+          files: src/content
+          # Fail only on house-style errors (British spelling, AI-sounding words).
+          # write-good suggestions show up locally via `npm run lint:prose`.
+          vale_flags: '--minAlertLevel=error'
           fail_on_error: true
