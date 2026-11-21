@@ -14,6 +14,8 @@ Astro (static) on Cloudflare Workers. One server route: `src/pages/api/intake.ts
 | Pressure-Tester questions and advice | `src/content/pressure-test.yaml` |
 | Case studies | `src/content/work/*.md` |
 | Ventures (and their stage) | `src/content/ventures/*.md` |
+| Essays | `src/content/writing/*.md` (set `draft: false` to publish) |
+| Social share image | `public/og.png` (1200×630) |
 | Page headlines and section copy | the page in `src/pages/` |
 | Colours, both themes | `src/styles/tokens.css` |
 
@@ -27,6 +29,7 @@ Schemas for every content file are in `src/content.config.ts`. If a build fails 
 - Every number traces to samjmerrick.com or a client result. Keep "~" where the source has it.
 - Virgin Red, Student Beans, Sixteenth and Simprints were Sam's employers: `track: track-record`, never `studio`.
 - No badges like "Most popular" until they're true.
+- Essays drafted by an AI stay `draft: true` until Sam has read and approved them. Drafts show in `npm run dev` only, and "Writing" appears in the nav once one post is published.
 
 **Brand (0/1):** outline = 0 (not real yet), solid = 1 (shipped). Use the components rather than restyling by hand:
 - `StateBits n={1-4}`: progress dots (1 exploring, 2 validating, 3 building, 4 live)

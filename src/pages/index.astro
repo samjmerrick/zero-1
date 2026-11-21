@@ -5,12 +5,14 @@ import ProofBar from '../components/ProofBar.astro';
 import SectionHead from '../components/SectionHead.astro';
 import StageCard from '../components/StageCard.astro';
 import VentureCard from '../components/VentureCard.astro';
+import { getPosts } from '../lib/writing';
 
 const site = (await getEntry('settings', 'site'))!.data;
 const failures = (await getCollection('failures')).sort((a, b) => a.data.code.localeCompare(b.data.code));
 const stages = (await getCollection('pricing')).sort((a, b) => a.data.order - b.data.order);
 const work = (await getCollection('work', (e) => e.data.featured)).sort((a, b) => a.data.order - b.data.order);
 const ventures = (await getCollection('ventures')).sort((a, b) => a.data.order - b.data.order);
+const posts = (await getPosts()).slice(0, 3);
 ---
 <Base title="Home" description="Sam Merrick’s venture studio. I help founders and teams take ideas from zero to first paying customers, using AI where it earns its place.">
   <section class="wrap hero">
@@ -109,6 +111,22 @@ const ventures = (await getCollection('ventures')).sort((a, b) => a.data.order -
     </div>
   </section>
 
+  {posts.length > 0 && (
+    <section class="rule-top">
+      <div class="wrap section stack" style="--gap: 32px">
+        <SectionHead index="111" label="Writing" title="Notes from 0 to 1." link={{ href: '/writing', text: 'All writing →' }} />
+        <div class="grid" style="--min: 280px; --gap: 32px">
+          {posts.map((p) => (
+            <a href={`/writing/${p.id}`} class="essay-card stack" style="--gap: 10px">
+              <span class="label">{p.data.topic}</span>
+              <span class="h3" style="font-size: 22px">{p.data.title}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <section class="signal-band">
     <div class="wrap section final">
       <div class="stack" style="--gap: 24px; flex: 999 1 480px; min-width: 0; align-items: flex-start">
@@ -137,6 +155,7 @@ const ventures = (await getCollection('ventures')).sort((a, b) => a.data.order -
   .fail-code { font-size: 44px; color: transparent; -webkit-text-stroke-color: var(--ink-2); }
   .about { display: flex; flex-wrap: wrap; gap: 56px; align-items: center; }
   .portrait { flex: 1 1 320px; max-width: 440px; aspect-ratio: 4 / 5; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; }
+  .essay-card { text-decoration: none; border-top: 2px solid var(--ink); padding-top: 20px; }
   .tester { border: 1.5px solid var(--ink); border-radius: var(--radius); padding: clamp(28px, 5vw, 56px); }
   .final { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between; }
   .final-title { font-size: clamp(36px, 5.4vw, 72px); max-width: 14ch; }
