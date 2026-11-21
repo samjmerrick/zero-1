@@ -7,11 +7,11 @@
 
 ## Home
 
-**Nav chip:** Now booking [MONTH] projects
+**Nav chip:** Taking one new project for [MONTH]
 
-**H1:** AI businesses, from Zero to One.
+**H1:** Find the business worth building. Then build it.
 
-**Subhead:** I help founders and teams find the AI business worth building, then build it. Eight years shipping products and machine learning to millions of users, from Virgin to the frontline of global health.
+**Subhead:** I help founders and teams take ideas from zero to first paying customers, using AI where it gives you a real edge and leaving it out where it doesn't. Eight years shipping products and machine learning to millions of users, from Virgin to the frontline of global health.
 
 **CTAs:** `Start a project` · `Pressure-test your idea →`
 
@@ -22,11 +22,11 @@
 - Was on the founding team of **Virgin Red**
 
 **Section: The problem**
-- Eyebrow: Why AI ideas fail
-- H2: AI made prototypes cheap. It didn't make businesses easier.
-- Body: Most AI products die for one of four reasons. I check for all four before you write a line of production code.
-  1. **It's a wrapper.** No data or workflow advantage, so the next model release eats it.
-  2. **The maths doesn't work.** It costs more per user to run than anyone will pay.
+- Eyebrow: Why new products fail
+- H2: Building got cheap. Building the right thing didn't.
+- Body: Most new products die for one of four reasons. I check for all four before you write a line of production code.
+  1. **There's no real edge.** No data, workflow or distribution advantage, so a competitor (or the next AI model) copies it in a month.
+  2. **The maths doesn't work.** It costs more to acquire and serve each customer than they'll ever pay.
   3. **It only works in the demo.** Accuracy falls apart on real users and messy data.
   4. **The riskiest bet went untested.** Months spent building the easy part.
 
@@ -45,11 +45,17 @@
 - H2: Work
 - Card labels: `Studio project` / `Sam's track record`
 
+**Section: Ventures**
+- Eyebrow: Ventures
+- H2: I build my own products too.
+- Body: Every Zero-1 venture goes through the same Sprint → Validation → go/no-go process I sell. Killing an idea counts as a good result.
+- Cards: **Idea Pressure-Tester** (Building): Instant feedback on any business idea, with a paid deep-dive report. · **AI Margin** (Exploring): Model what an AI feature really costs per user, and get warned when margins slip. · **Venture #3** (Validating): Customer interviews under way.
+
 **Section: Pressure-Tester teaser**
 - Eyebrow: Free tool
-- H2: Is your AI idea a business or a wrapper?
-- Body: Describe your idea in a sentence. Get an instant read on defensibility, unit economics and the one assumption to test first.
-- Input placeholder: e.g. "An AI assistant that drafts planning applications for UK architects"
+- H2: Is your idea a business yet?
+- Body: Describe it in a sentence. Get an instant read on your edge, the unit economics, where AI would help (and where it wouldn't), and the one assumption to test first.
+- Input placeholder: e.g. "A subscription service that handles planning applications for UK architects"
 - Button: `Pressure-test it`
 
 **Final CTA**
@@ -75,19 +81,20 @@
 
 **H1:** The Zero → One method
 
-**Intro:** I treat every AI idea as a set of bets, and test the most dangerous one first.
+**Intro:** I treat every idea as a set of bets, and test the most dangerous one first.
 
 | Stage | Question it answers | Decision |
 |---|---|---|
-| 0. Ideate | Where does AI change the economics in your space? | Which concept to back |
+| 0. Ideate | Where is the opportunity, and where does AI change the economics? | Which concept to back |
 | 1. Validate | Will people use it, and does the maths work? | Go / pivot / stop |
 | 2. Build | Can it work reliably for real users? | Launch |
-| 3. Grow | What should the AI do next? | Scale or hand over |
+| 3. Grow | What should the product do next? | Scale or hand over |
 
 **Principles**
 - **Riskiest assumption first.** The interesting tech is rarely the risky part.
 - **Measure, don't hope.** Every AI feature ships with an evaluation.
-- **Cost is a feature.** I model inference cost from day one.
+- **Cost is a feature.** I model unit economics from day one, including inference cost when AI is involved.
+- **AI where it earns its place.** Not every idea needs it, and I'll tell you when yours doesn't.
 - **Field over benchmark.** Real users, real devices, real data.
 
 ---
@@ -100,7 +107,7 @@
 
 Before that I was first technical hire at Sixteenth, where I built Spark Jam, an LLM-powered ideation tool for creators. I led growth at Student Beans and was on the founding team of Virgin Red.
 
-The lesson that runs through all of it: a model is only as good as the product around it. Zero-1 is my studio for helping founders and teams get both right.
+The lesson that runs through all of it: a model is only as good as the product around it. Zero-1 is my studio for helping founders and teams get both right, and for launching a few products of my own.
 
 **Credentials:** BSc Sound & Video Technology (First), Salford · Google Cloud ML · Reforge Growth · Roman Pichler Product Leadership
 

@@ -4,9 +4,9 @@
 
 ## Primary nav
 
-`Zero-1` (logo → /) · Approach · Services · Work · Lab · Writing · **Start a project** (button → /start)
+`Zero-1` (logo → /) · Approach · Services · Work · Ventures · Writing · **Start a project** (button → /start)
 
-Footer: About · Writing · Lab · samjmerrick.com · LinkedIn · GitHub · email · © Zero-1 Studio
+Footer: About · Writing · Ventures · samjmerrick.com · LinkedIn · GitHub · email · © Zero-1 Studio
 
 ## Pages
 
@@ -17,8 +17,9 @@ Footer: About · Writing · Lab · samjmerrick.com · LinkedIn · GitHub · emai
 | `/services` | The four packages, prices, what's included, FAQ | Start a project | 2 |
 | `/work` | Index: two clearly labelled tracks, **Studio projects** and **Sam's track record** | — | 3 |
 | `/work/[slug]` | Case study: Problem → Bet → What was built → Result | Start a project | 3 |
-| `/lab` | Open source, research, experiments, Pressure-Tester | Try the Pressure-Tester | 3 |
-| `/lab/pressure-test` | Interactive AI idea scorer (signature feature) | Get the full report (email) → /start | 4 |
+| `/ventures` | Zero-1's own products with a stage for each (Exploring → Validating → Building → Live), plus open source and research | Try the Pressure-Tester | 3 |
+| `/ventures/[slug]` | Venture write-up: the idea, the riskiest assumption, the evidence, the go/no-go. Each doubles as a case study of the method | Start a project | 3 |
+| `/ventures/pressure-test` | Interactive idea scorer (signature feature) | Get the full report (email) → /start | 4 |
 | `/writing` | Essays index (replaces /blog) | — | 3 |
 | `/writing/[slug]` | Essay (MDX) | Newsletter / Start | 3 |
 | `/about` | Sam: story, philosophy, credentials, field work | Start a project | 2 |
@@ -50,13 +51,14 @@ Footer: About · Writing · Lab · samjmerrick.com · LinkedIn · GitHub · emai
 ## Homepage section order
 
 1. Nav
-2. Hero: headline, subhead, two CTAs, "Now booking: [MONTH]" chip
+2. Hero: headline, subhead, two CTAs, "Taking one new project for [MONTH]" chip
 3. Proof bar: four facts with numbers
-4. The problem: "Most AI ideas die for one of four reasons"
+4. The problem: "Most new products die for one of four reasons"
 5. The ladder: 4 packages with prices, laid out as the 0 → 1 path
 6. About Sam (short): photo, 3 lines, link to /about
 7. Featured work: 2 cards, labelled by track
-8. Pressure-Tester teaser
-9. Writing: 3 latest
-10. Final CTA
-11. Footer
+8. Ventures: 3 cards with stage chips (Pressure-Tester · AI Margin · Venture #3, not named until validated)
+9. Pressure-Tester teaser
+10. Writing: 3 latest
+11. Final CTA
+12. Footer

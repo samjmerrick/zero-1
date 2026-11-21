@@ -1,6 +1,6 @@
 # Zero-1 Studio
 
-Source for [zero-1.studio](https://www.zero-1.studio/), Sam Merrick's AI venture studio: AI businesses, from Zero to One.
+Source for [zero-1.studio](https://www.zero-1.studio/), Sam Merrick's venture studio: find the business worth building, then build it.
 
 ## Status
 
@@ -13,7 +13,7 @@ Design canvas (Home, Services, Style tile): https://claude.ai/artifact/G5p2eTr2y
 | [01 Positioning](docs/phase-1/01-positioning.md) | One-liner, audiences, proof points, voice, taglines |
 | [02 Services & Pricing](docs/phase-1/02-services-and-pricing.md) | The four-stage ladder with public prices |
 | [03 Sitemap](docs/phase-1/03-sitemap.md) | Routes, nav, redirects, homepage section order |
-| [04 Copy Deck](docs/phase-1/04-copy-deck.md) | Page copy for Home, Services, Approach, About, Start |
+| [04 Copy Deck](docs/phase-1/04-copy-deck.md) | Page copy for Home (incl. Ventures), Services, Approach, About, Start |
 | [05 Visual Direction](docs/phase-1/05-visual-direction.md) | "Lab notebook" concept, tokens, type, components |
 
 ## Roadmap
