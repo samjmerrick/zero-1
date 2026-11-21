@@ -4,7 +4,7 @@
 
 ## Concept: 0/1
 
-The name is the brand system. **One rule runs everything: an outline is a 0 (an idea, not yet real), and a solid shape is a 1 (shipped, proven, real).** Every graphic device follows it, which makes the site feel unlike a generic AI agency and keeps the visual language honest.
+The name is the brand system. **One rule runs everything: an outline is a 0 (an idea, not yet real), and a solid shape is a 1 (shipped, proven, real).** Every graphic device follows it, which makes the site feel unlike a generic AI agency and keeps the visual language truthful.
 
 | Device | Rule | Where |
 |---|---|---|

@@ -1,0 +1,6 @@
+extends: occurrence
+message: "'real' appears often; vary or cut it."
+level: suggestion
+scope: raw
+max: 3
+token: '\breal\b'

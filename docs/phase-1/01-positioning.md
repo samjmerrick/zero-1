@@ -20,7 +20,7 @@ The brand is a person, not an agency. Copy is written in the first person ("I"),
 
 Building got cheap. Building the right thing didn't. Most new products die for one of four reasons:
 
-1. **There's no real edge.** No data, workflow or distribution advantage, so a competitor (or the next AI model) copies it.
+1. **Nothing sets it apart.** No data, workflow or distribution advantage, so a competitor (or the next AI model) copies it.
 2. **The unit economics don't work.** Acquiring and serving each customer costs more than they pay. With AI, inference cost makes this worse.
 3. **It works on the demo, not in the field.** Accuracy collapses on real users, real devices, real data.
 4. **Nobody tested the riskiest assumption first.** Months spent building the easy part.
@@ -56,10 +56,17 @@ Zero-1 exists to kill bad ideas cheaply and ship good ones properly. That goes f
 
 Words we use: *ship, test, field, real users, unit economics, riskiest assumption, go/no-go, evaluation.*
 
+### House style (enforced by Vale, see `.vale.ini`)
+
+- **British English only:** -ise not -ize (optimise, organisation), colour, programme, enquiry, licence (noun), maths, "excluding VAT" not "ex-VAT", "against" not "vs".
+- **No unbacked claims:** every number traces to samjmerrick.com or a client result. Use "~" where the source does. No "most popular" until it's true.
+- **Sound like a person:** cut "unlock", "harness", "leverage", "seamless", "robust", "empower", "journey", "landscape", "delve", "not just X, but Y". Use "real" at most once per page.
+- **Plain forms:** "for example" not "e.g." in customer copy, and no "ASAP".
+
 ## Tagline
 
 **H1:** "Find the business worth building. Then build it." ← chosen
-**Subhead:** "I help founders and teams take ideas from zero to first paying customers, using AI where it gives you a real edge and leaving it out where it doesn't."
+**Subhead:** "I help founders and teams take ideas from zero to first paying customers, using AI where it earns its place and leaving it out where it doesn't."
 
 The Zero → One idea now lives in the name and the 0→1 line motif, so the headline doesn't need to repeat it.
 

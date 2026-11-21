@@ -1,0 +1,25 @@
+extends: existence
+message: "AI-sounding phrase: '%s'."
+level: warning
+ignorecase: true
+tokens:
+  - unlock
+  - harness
+  - leverage
+  - cutting-edge
+  - seamless(ly)?
+  - revolutioni[sz]e
+  - game-?changer
+  - delve
+  - robust
+  - empower
+  - elevate
+  - in today's
+  - it's not just
+  - not just .{1,30}, but
+  - whether you're
+  - journey
+  - landscape
+  - tailored
+  - dive into
+  - honest(ly)?

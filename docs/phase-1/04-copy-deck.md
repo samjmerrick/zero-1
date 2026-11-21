@@ -11,7 +11,7 @@
 
 **H1:** Find the business worth building. Then build it.
 
-**Subhead:** I help founders and teams take ideas from zero to first paying customers, using AI where it gives you a real edge and leaving it out where it doesn't. Eight years shipping products and machine learning to millions of users, from Virgin to the frontline of global health.
+**Subhead:** I help founders and teams take ideas from zero to first paying customers, using AI where it earns its place and leaving it out where it doesn't. Eight years shipping products and machine learning to millions of users, from Virgin to the frontline of global health.
 
 **CTAs:** `Start a project` · `Pressure-test your idea →`
 
@@ -25,9 +25,9 @@
 - Eyebrow: 001 — Why new products stay at 0
 - H2: Building got cheap. Building the right thing didn't.
 - Body: Most new products die for one of four reasons. I check for all four before you write a line of production code.
-  1. **There's no real edge.** No data, workflow or distribution advantage, so a competitor (or the next AI model) copies it in a month.
-  2. **The maths doesn't work.** It costs more to acquire and serve each customer than they'll ever pay.
-  3. **It only works in the demo.** Accuracy falls apart on real users and messy data.
+  1. **Nothing sets it apart.** No data, workflow or distribution advantage, so a competitor (or the next AI model) copies it in a month.
+  2. **The maths doesn't work.** It costs more to win and serve each customer than they'll ever pay.
+  3. **It only works in the demo.** It falls apart once paying customers and messy data arrive.
   4. **The riskiest bet went untested.** Months spent building the easy part.
 
 **Section: The ladder**
@@ -57,7 +57,7 @@
 - Eyebrow: 110 — Free tool
 - H2: Is your idea a 0 or a 1?
 - Body: Describe it in a sentence. Get an instant read on your edge, the unit economics, where AI would help (and where it wouldn't), and the one assumption to test first.
-- Input placeholder: e.g. "A subscription service that handles planning applications for UK architects"
+- Input placeholder: For example, a subscription service that handles planning applications for UK architects
 - Button: `Pressure-test it`
 
 **Final CTA**
@@ -75,7 +75,7 @@
 
 (Package details: see `02-services-and-pricing.md`.)
 
-**Footnote:** Prices in GBP, ex-VAT. Larger or regulated projects are quoted individually.
+**Footnote:** Prices in GBP, excluding VAT. Larger or regulated projects are quoted individually.
 
 ---
 
@@ -89,7 +89,7 @@
 |---|---|---|
 | 0. Ideate | Where is the opportunity, and where does AI change the economics? | Which concept to back |
 | 1. Validate | Will people use it, and does the maths work? | Go / pivot / stop |
-| 2. Build | Can it work reliably for real users? | Launch |
+| 2. Build | Does it work reliably for paying customers? | Launch |
 | 3. Grow | What should the product do next? | Scale or hand over |
 
 **Principles**
@@ -123,9 +123,9 @@ The lesson that runs through all of it: a model is only as good as the product a
 
 **Fields**
 1. What's the idea or problem? *(textarea)* — hint: "A sentence or two is fine."
-2. Where are you? *(radio)* — Just an idea · I've validated demand · I have a prototype · I have a product and want AI in it
+2. Where are you? *(radio)* — Only an idea · I've validated demand · I have a prototype · I have a product and want AI in it
 3. Budget band *(radio)* — Under £5k · £5–15k · £15–50k · £50k+
-4. When do you want to start? *(radio)* — ASAP · Within 3 months · Just exploring
+4. When do you want to start? *(radio)* — As soon as possible · Within 3 months · Just exploring
 5. Your name + email
 
 **Button:** `Continue to booking`

@@ -15,7 +15,7 @@ Footer: About · Writing · Ventures · samjmerrick.com · LinkedIn · GitHub ·
 | `/` | Positioning, proof, ladder, featured work | Start a project / Pressure-test your idea | 2 |
 | `/approach` | The Zero → One method in 4 stages, with what happens at each decision point | See pricing | 2 |
 | `/services` | The four packages, prices, what's included, FAQ | Start a project | 2 |
-| `/work` | Index: two clearly labelled tracks, **Studio projects** and **Sam's track record** | — | 3 |
+| `/work` | Index: two labelled tracks, **Studio projects** and **Sam's track record** | — | 3 |
 | `/work/[slug]` | Case study: Problem → Bet → What was built → Result | Start a project | 3 |
 | `/ventures` | Zero-1's own products with a stage for each (Exploring → Validating → Building → Live), plus open source and research | Try the Pressure-Tester | 3 |
 | `/ventures/[slug]` | Venture write-up: the idea, the riskiest assumption, the evidence, the go/no-go. Each doubles as a case study of the method | Start a project | 3 |

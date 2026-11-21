@@ -2,7 +2,7 @@
 
 > Phase 1 deliverable. Status: **prices confirmed by Sam.** Capacity: up to 1 day/week in total, so one client project at a time.
 
-Pricing is shown publicly as "from" prices in GBP, ex-VAT. Showing it is a filter: it saves calls with people who can't afford the work, and reassures people who can.
+Pricing is shown publicly as "from" prices in GBP, excluding VAT. Showing it is a filter: it saves calls with people who can't afford the work, and reassures people who can.
 
 ## The ladder
 
@@ -11,7 +11,7 @@ Each stage ends with a decision, so a client can stop at any rung without wasted
 | # | Offer | Price | Duration | Outcome |
 |---|---|---|---|---|
 | 0→ | **Ideation Sprint** | **£3,500** fixed | 2 weeks | 3 ranked business concepts, each with a feasibility read and the riskiest assumption named |
-| →Proof | **Validation & Prototype** | **from £12,000** | 4–6 weeks | A working prototype in front of real users, a unit-economics model, and a written go/no-go |
+| →Proof | **Validation & Prototype** | **from £12,000** | 4–6 weeks | A working prototype in front of your target customers, a unit-economics model and a written go/no-go |
 | →1 | **MVP Build** | **from £35,000** | 8–12 weeks | A production MVP, measured from day one, launched to first users |
 | ∞ | **Fractional Product Lead** | **£4,000 / month** | Rolling, 3-month minimum | Sam as your part-time product lead, 2 days a month |
 
@@ -43,14 +43,14 @@ For founders and teams with a domain, a hunch, or a list of ideas.
 
 ### Validation & Prototype — from £12,000
 For one concept you want evidence for before you commit.
-- Working prototype on real data (not a Figma mock)
+- Working prototype built on your data (not a Figma mock)
 - Build approach chosen and tested on your data (AI or not)
 - Unit economics: cost per customer (including inference, if AI is used) and the price at which it's profitable
 - 5–10 user sessions with your target customers
 - Go / pivot / no-go recommendation with the evidence
 
 ### MVP Build — from £35,000
-For a validated concept that's ready for real users.
+For a validated concept that's ready for its first customers.
 - Production app (web or mobile)
 - Quality measured from day one: product analytics, plus an evaluation harness for any AI features
 - Guardrails, privacy and data handling designed in
@@ -69,6 +69,6 @@ For teams that have engineers but need senior product leadership, including on A
 - **Do you work with non-technical founders?** Yes. That's the most common case.
 - **Who owns the IP?** You do, on full payment.
 - **Who actually does the work?** I lead every project and do the product and ML work myself. Trusted contract engineers handle most of the build stages. You always deal with me.
-- **Does my idea need to use AI?** No. I'll use AI where it gives you a real edge in cost, quality or speed, and tell you plainly when it doesn't.
+- **Does my idea need to use AI?** No. I'll use AI where it makes a measurable difference to cost, quality or speed, and tell you plainly when it doesn't.
 - **When it is AI, which models do you use?** Whatever's right for the job, from hosted LLMs like Claude to small open-source models running on-device. I'll show you the cost trade-off.
 - **Can we skip the sprint?** Yes, if you already have a clear concept, start at Validation.
