@@ -1,0 +1,23 @@
+---
+/** Light is 0, dark is 1. Remembers the choice; otherwise follows the system. */
+---
+<button type="button" class="toggle mono" data-theme-toggle aria-label="Switch to dark mode">0</button>
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+  const root = document.documentElement;
+  const sync = () => {
+    const dark = root.dataset.theme === 'dark';
+    if (!btn) return;
+    btn.textContent = dark ? '1' : '0';
+    btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+  };
+  sync();
+  btn?.addEventListener('click', () => {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch {}
+    sync();
+  });
+</script>
+<style>
+  .toggle { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--rule); background: transparent; color: var(--ink); font-size: 14px; cursor: pointer; }
+</style>

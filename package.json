@@ -1,0 +1,22 @@
+{
+  "name": "zero-1",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler types && astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "wrangler types && astro check",
+    "lint:prose": "vale --glob=*.{md,mdx,yaml} src/content docs",
+    "deploy": "astro build && wrangler d1 migrations apply zero-1 --remote && wrangler deploy"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^14.4.9",
+    "astro": "^7.4.13"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.166.0"
+  }
+}

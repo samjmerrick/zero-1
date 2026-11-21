@@ -1,0 +1,25 @@
+---
+import { getEntry } from 'astro:content';
+const site = (await getEntry('settings', 'site'))!.data;
+---
+<footer class="footer">
+  <div class="wrap inner">
+    <span class="brand">zero<span class="accent">/</span>one <span class="who">· Sam Merrick</span></span>
+    <div class="links">
+      <a href="/about">About</a>
+      <a href="/ventures">Ventures</a>
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+      {site.links.map((l) => <a href={l.href}>{l.label}</a>)}
+      <a href="/privacy">Privacy</a>
+    </div>
+    <span class="mono small egg" title="“zero” in binary">01111010 01100101 01110010 01101111 · © {new Date().getFullYear()} Zero-1 Studio</span>
+  </div>
+</footer>
+<style>
+  .footer { background: var(--foot-bg); color: var(--foot-muted); }
+  .inner { display: flex; flex-wrap: wrap; gap: 24px 40px; justify-content: space-between; align-items: center; padding-block: 48px; font-size: 15px; }
+  .brand { color: var(--foot-fg); font-weight: 700; letter-spacing: -0.04em; font-size: 20px; }
+  .who { font-weight: 400; letter-spacing: 0; font-size: 15px; color: var(--foot-muted); }
+  .links { display: flex; flex-wrap: wrap; gap: 12px 28px; color: var(--foot-fg); }
+  .egg { font-size: 13px; }
+</style>

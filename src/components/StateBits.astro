@@ -1,0 +1,17 @@
+---
+/**
+ * Four dots, filled from the left: 0 hollow → 1 solid.
+ * 1 exploring · 2 validating · 3 building · 4 live (also stage number and scores).
+ */
+interface Props { n: number; label?: string }
+const { n, label } = Astro.props;
+const bits = [0, 1, 2, 3].map((i) => i < n);
+---
+<span class="bits" role={label ? 'img' : undefined} aria-label={label} aria-hidden={label ? undefined : 'true'}>
+  {bits.map((on) => <span class:list={['bit', { on }]}></span>)}
+</span>
+<style>
+  .bits { display: inline-flex; gap: 4px; }
+  .bit { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.7; }
+  .bit.on { background: var(--signal); border-color: var(--signal); opacity: 1; }
+</style>

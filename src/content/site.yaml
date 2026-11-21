@@ -1,0 +1,13 @@
+# Site-wide settings. Edit freely; the schema is in src/content.config.ts.
+- id: site
+  available: true
+  availabilityText: Available now · one project at a time
+  replyPromise: I reply to every enquiry within one working day.
+  email: hello@zero-1.studio # TODO(Sam): confirm the public contact address
+  calLink: "" # TODO(Sam): Cal.com path such as "sammerrick/intro"; empty hides the booking embed
+  turnstileSiteKey: "" # Cloudflare Turnstile site key; empty disables the bot check widget
+  links:
+    - label: samjmerrick.com
+      href: https://samjmerrick.com
+    - label: GitHub
+      href: https://github.com/samjmerrick

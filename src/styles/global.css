@@ -1,0 +1,71 @@
+@import './tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+a:hover { opacity: 0.75; }
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { margin: 0; font-weight: 700; }
+p { margin: 0; }
+
+.skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--paper); padding: 10px 16px; border-radius: 999px; z-index: 10; }
+.skip:focus { left: 8px; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: var(--gutter); }
+.section { padding-block: var(--section); }
+.band { background: var(--surface); border-block: 1px solid var(--rule); }
+.inverted { background: var(--inv-bg); color: var(--inv-fg); --outline: var(--inv-fg); }
+.inverted .muted { color: var(--inv-muted); }
+.signal-band { background: var(--signal); color: var(--on-signal); --outline: #111110; }
+.rule-top { border-top: 1px solid var(--rule); }
+
+.h1 { font-size: var(--fs-h1); line-height: 1; letter-spacing: -0.045em; }
+.h2 { font-size: var(--fs-h2); line-height: 1.04; letter-spacing: -0.04em; }
+.h3 { font-size: 24px; line-height: 1.2; letter-spacing: -0.02em; font-weight: 600; }
+.accent { color: var(--signal); }
+.lede { font-size: var(--fs-lede); line-height: 1.5; color: var(--ink-2); max-width: 46ch; }
+.muted { color: var(--ink-2); }
+.small { font-size: 15px; }
+.mono { font-family: var(--font-mono); }
+.label { font-family: var(--font-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-2); }
+.stack { display: flex; flex-direction: column; gap: var(--gap, 16px); }
+.row { display: flex; flex-wrap: wrap; gap: var(--gap, 12px); align-items: center; }
+.between { justify-content: space-between; align-items: flex-end; }
+.grid { display: grid; gap: var(--gap, 20px); grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min, 260px)), 1fr)); }
+.prose { max-width: 64ch; }
+.prose h2 { font-size: 28px; letter-spacing: -0.03em; margin-top: 40px; margin-bottom: 12px; }
+.prose p, .prose ul { margin-bottom: 16px; color: var(--ink-2); }
+
+/* Buttons: pill. Signal = the one main CTA per view. */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px; border-radius: 999px; font: inherit; font-size: 17px; font-weight: 500; text-decoration: none; border: 1px solid transparent; cursor: pointer; }
+.btn-signal { background: var(--signal); color: var(--on-signal); font-weight: 600; }
+.btn-ink { background: var(--ink); color: var(--paper); }
+.btn-outline { border-color: currentColor; background: transparent; color: inherit; }
+.signal-band .btn-ink { background: #111110; color: #f4f4f1; }
+
+.card { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); padding: 28px; }
+.card-link { text-decoration: none; display: flex; flex-direction: column; }
+.chip { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; border: 1px solid currentColor; border-radius: 999px; padding: 3px 10px; }
+.chip-solid { background: var(--signal); color: var(--on-signal); border-color: var(--signal); }
+
+/* 0/1 type treatments */
+.outline-text { color: transparent; -webkit-text-stroke: 1.5px var(--outline, var(--ink)); }
+.code { font-family: var(--font-mono); font-weight: 500; line-height: 1; }
+
+.list-plain { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .fill-in { animation: fill-in 900ms ease-out 300ms both; }
+  @keyframes fill-in { from { color: transparent; } to { color: var(--signal); } }
+}

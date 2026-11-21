@@ -1,0 +1,16 @@
+- id: no-edge
+  code: "00"
+  title: Nothing sets it apart.
+  body: No data, workflow or distribution advantage, so a competitor (or the next AI model) copies it in a month.
+- id: maths
+  code: "01"
+  title: The maths doesn’t work.
+  body: It costs more to win and serve each customer than they’ll ever pay.
+- id: demo
+  code: "10"
+  title: It only works in the demo.
+  body: It falls apart once paying customers and messy data arrive.
+- id: untested
+  code: "11"
+  title: The riskiest bet went untested.
+  body: Months spent building the easy part.

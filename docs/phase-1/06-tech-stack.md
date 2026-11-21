@@ -1,6 +1,6 @@
 # 06 — Tech Stack
 
-> Phase 1 deliverable. Status: **recommended, for Sam's sign-off**.
+> Phase 1 deliverable. Status: **approved and built in Phase 2**. The Pressure-Tester is a questionnaire scored in the browser, so there's no LLM or API key.
 > Brief: whatever is cleanest for **ongoing LLM editing** and **easy hosting**. Not tied to the old site's Next.js.
 
 ## Recommendation: Astro + Cloudflare
@@ -10,13 +10,12 @@
 | Framework | **Astro 5** (static by default, one server route where needed) | Pages are plain HTML-like `.astro` files. No React state, no hydration bugs, ships zero JS unless a component asks for it |
 | Content | **Astro content collections**: Markdown/MDX for prose, YAML for structured data, each with a Zod schema | Copy lives apart from layout, so an LLM edits a `.md` or `.yaml` file and can't break the page. A schema typo fails the build loudly instead of shipping |
 | Styling | **Plain CSS with design tokens** (`tokens.css` custom properties) + a small set of component styles | One file holds the 0/1 palette and both themes. Dark mode is a `data-theme` attribute swap, with no utility-class soup for a model to misread |
-| Interactivity | Two small islands: theme toggle (vanilla JS) and Pressure-Tester (Preact or vanilla) | Smallest possible JS surface |
+| Interactivity | Two small vanilla-JS scripts: theme toggle and Pressure-Tester scoring | Smallest possible JS surface |
 | Hosting | **Cloudflare Workers** (static assets + Astro Cloudflare adapter) | The domain is already on Cloudflare (DNS and email protection), so no DNS move. Free tier covers this traffic. Every branch gets a preview URL |
-| API routes | Astro server endpoints on the same Worker: `/api/pressure-test`, `/api/intake` | One deploy and one platform, with no separate backend |
-| Data | **Cloudflare D1** (SQLite) for intake + Pressure-Tester leads | Same platform, one binding, SQL you can read. Replaces the earlier Supabase idea to keep it to one vendor |
-| Abuse protection | **Cloudflare Turnstile** + per-IP rate limit (Workers rate-limiting binding) + monthly spend cap on the LLM key | The Pressure-Tester is a public LLM endpoint, so it needs all three |
-| LLM | **Claude API** (Sonnet tier) via `@anthropic-ai/sdk`, structured JSON output | Model ID is kept in one config value, so it's easy to upgrade |
-| Email | **Resend** | Intake confirmations and the full Pressure-Tester report |
+| API routes | One Astro server endpoint on the same Worker: `/api/intake` | One deploy and one platform, with no separate backend |
+| Data | **Cloudflare D1** (SQLite) for enquiries | Same platform, one binding, SQL you can read. Replaces the earlier Supabase idea to keep it to one vendor |
+| Abuse protection | Honeypot field, plus optional **Cloudflare Turnstile** on the enquiry form | Enough for a contact form |
+| Email | **Resend** (optional) | Notifies Sam of each new enquiry |
 | Booking | **Cal.com** embed on `/start` | No custom calendar code |
 | Analytics | **Cloudflare Web Analytics** (cookieless) | Free, no cookie banner. Add Plausible later if funnels are needed |
 | CI | GitHub Actions: `astro check` + build + link check on every PR; Cloudflare deploys `main` | An LLM's edit is verified before it's live |
@@ -67,7 +66,6 @@ zero-1/
 
 - [ ] Cloudflare account access for the zero-1.studio zone
 - [ ] Create Worker + D1 database; connect GitHub repo for deploys
-- [ ] Anthropic API key with a monthly spend limit (Worker secret)
 - [ ] Resend account + verify zero-1.studio sending domain
 - [ ] Cal.com event type for "Intro call (30 min)"
 - [ ] Turnstile site key

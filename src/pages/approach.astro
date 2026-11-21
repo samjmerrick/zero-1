@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import StateBits from '../components/StateBits.astro';
+
+const stages = (await getCollection('pricing')).sort((a, b) => a.data.order - b.data.order);
+const questions: Record<string, { question: string; decision: string }> = {
+  '00': { question: 'Where is the opportunity, and where does AI change the economics?', decision: 'Which concept to back' },
+  '01': { question: 'Will people use it, and does the maths work?', decision: 'Go, pivot or stop' },
+  '10': { question: 'Does it work reliably for paying customers?', decision: 'Launch' },
+  '11': { question: 'What should the product do next?', decision: 'Scale or hand over' },
+};
+const principles = [
+  { title: 'Riskiest assumption first.', body: 'The interesting technology is rarely the risky part. I find the bet that would sink the idea and test that one first.' },
+  { title: 'Measure, don’t hope.', body: 'Every feature ships with a way to tell whether it works: product analytics, and evaluations for anything that uses AI.' },
+  { title: 'Cost is a feature.', body: 'I model unit economics from day one, including running costs when AI is involved.' },
+  { title: 'AI where it earns its place.', body: 'Not every idea needs it, and I’ll tell you when yours doesn’t.' },
+  { title: 'Field over benchmark.', body: 'Paying customers, everyday devices and messy data are the test. A demo isn’t.' },
+];
+---
+<Base title="Approach" description="The Zero to One method: four stages, each ending in a decision, with the riskiest assumption tested first.">
+  <section class="wrap" style="padding-block: 88px 56px">
+    <SectionHead as="h1" index="001" label="Approach" title="The 0 → 1 method">
+      <p class="lede">I treat every idea as a set of bets, and test the most dangerous one first.</p>
+    </SectionHead>
+  </section>
+
+  <section class="wrap" aria-label="Stages">
+    <ol class="steps">
+      {stages.map(({ data }) => (
+        <li class="step">
+          <div class="row" style="--gap: 16px">
+            <span class="code accent" style="font-size: 32px">{data.code}</span>
+            <StateBits n={data.order} />
+          </div>
+          <h2 class="h3">{data.name}</h2>
+          <p class="muted">{questions[data.code].question}</p>
+          <p class="label">Decision: <span style="color: var(--ink)">{questions[data.code].decision}</span></p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="wrap section stack" style="--gap: 40px">
+    <SectionHead index="010" label="Principles" title="How I make the calls." />
+    <div class="grid" style="--min: 280px">
+      {principles.map((p) => (
+        <div class="card stack" style="--gap: 10px">
+          <h3 class="h3" style="font-size: 20px">{p.title}</h3>
+          <p class="small muted">{p.body}</p>
+        </div>
+      ))}
+    </div>
+    <div class="row"><a href="/services" class="btn btn-signal">See pricing</a><a href="/ventures/pressure-test" class="btn btn-outline">Pressure-test your idea →</a></div>
+  </section>
+</Base>
+<style>
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+  .step { display: flex; flex-direction: column; gap: 14px; padding: 28px; border-top: 2px solid var(--signal); background: var(--surface); border-radius: 0 0 var(--radius) var(--radius); }
+</style>

@@ -1,0 +1,80 @@
+---
+import { getEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/SectionHead.astro';
+
+const site = (await getEntry('settings', 'site'))!.data;
+const stages = [
+  { value: 'idea', label: 'Only an idea' },
+  { value: 'demand', label: 'I’ve validated demand' },
+  { value: 'prototype', label: 'I have a prototype' },
+  { value: 'product', label: 'I have a product and want to grow it or add AI' },
+];
+const budgets = ['Under £5k', '£5–15k', '£15–50k', '£50k+'];
+const timings = ['As soon as possible', 'Within 3 months', 'Just exploring'];
+---
+<Base title="Start a project" description="Five quick questions, then pick a time to talk.">
+  {site.turnstileSiteKey && <script slot="head" src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline></script>}
+  <section class="wrap" style="padding-block: 88px var(--section)">
+    <div class="layout">
+      <div class="stack" style="--gap: 24px; flex: 1 1 320px">
+        <SectionHead as="h1" index="000" label="Start a project" title="Tell me where you are.">
+          <p class="lede">Five quick questions. {site.replyPromise}</p>
+        </SectionHead>
+        <p class="small muted">Prefer email? <a href={`mailto:${site.email}`}>{site.email}</a></p>
+      </div>
+
+      <form method="post" action="/api/intake" class="card form stack" style="--gap: 24px">
+        <p class="small error" id="form-error" role="alert" hidden>Something went wrong. Check the fields and try again, or email me.</p>
+        <div class="field">
+          <label for="idea">What’s the idea or problem?</label>
+          <p class="hint" id="idea-hint">A sentence or two is fine.</p>
+          <textarea id="idea" name="idea" rows="4" required maxlength="2000" aria-describedby="idea-hint"></textarea>
+        </div>
+        <fieldset class="field">
+          <legend>Where are you?</legend>
+          {stages.map((s, i) => <label class="opt"><input type="radio" name="stage" value={s.value} required checked={i === 0} />{s.label}</label>)}
+        </fieldset>
+        <fieldset class="field">
+          <legend>Budget</legend>
+          <div class="inline">{budgets.map((b, i) => <label class="opt"><input type="radio" name="budget" value={b} required checked={i === 0} />{b}</label>)}</div>
+        </fieldset>
+        <fieldset class="field">
+          <legend>When do you want to start?</legend>
+          <div class="inline">{timings.map((t, i) => <label class="opt"><input type="radio" name="timing" value={t} required checked={i === 0} />{t}</label>)}</div>
+        </fieldset>
+        <div class="two">
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required maxlength="120" /></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="200" /></div>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="company_website">Leave this empty</label><input id="company_website" name="company_website" tabindex="-1" autocomplete="off" /></div>
+        <input type="hidden" name="source" id="source" value="" />
+        {site.turnstileSiteKey && <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey}></div>}
+        <p class="small muted">I’ll only use your details to reply. See the <a href="/privacy">privacy notice</a>.</p>
+        <div><button type="submit" class="btn btn-signal">Send</button></div>
+      </form>
+    </div>
+  </section>
+</Base>
+<script>
+  const params = new URLSearchParams(location.search);
+  const source = document.getElementById('source') as HTMLInputElement | null;
+  if (source) source.value = params.get('from') || (params.get('stage') ? `stage-${params.get('stage')}` : '');
+  if (params.get('error')) (document.getElementById('form-error') as HTMLElement).hidden = false;
+</script>
+<style>
+  .layout { display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start; }
+  .form { flex: 999 1 520px; min-width: 0; }
+  .field { display: flex; flex-direction: column; gap: 8px; border: 0; margin: 0; padding: 0; min-width: 0; }
+  label, legend { font-weight: 500; }
+  legend { margin-bottom: 8px; padding: 0; }
+  .hint { font-size: 14px; color: var(--ink-2); }
+  input:not([type='radio']), textarea { font: inherit; font-size: 16px; color: var(--ink); background: var(--paper); border: 1px solid var(--ink-2); border-radius: 12px; padding: 12px 14px; min-height: 48px; width: 100%; }
+  textarea { resize: vertical; }
+  .opt { display: flex; gap: 10px; align-items: center; font-weight: 400; font-size: 16px; min-height: 44px; }
+  .opt input { accent-color: var(--signal); width: 18px; height: 18px; }
+  .inline { display: flex; flex-wrap: wrap; gap: 4px 24px; }
+  .two { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .error { color: var(--ink); border-left: 3px solid var(--signal); padding-left: 12px; }
+</style>

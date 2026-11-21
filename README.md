@@ -2,25 +2,51 @@
 
 Source for [zero-1.studio](https://www.zero-1.studio/), Sam Merrick's venture studio: find the business worth building, then build it.
 
-## Status
+Astro (static pages) on Cloudflare Workers, with one server route for the enquiry form, which stores to D1. **Editing guide for people and LLMs: [CLAUDE.md](CLAUDE.md).**
 
-**Phase 1: Foundation** (positioning, copy, sitemap, visual direction). No application code yet.
+## Run it
 
-Design canvas (Home, Services, Brand system): https://claude.ai/artifact/G5p2eTr2yCqFfu5DKd1wff
+```bash
+npm install
+npx wrangler d1 migrations apply zero-1 --local
+npm run dev
+```
+
+## Deploy (first time)
+
+1. `npx wrangler login`
+2. `npx wrangler d1 create zero-1`, then paste the printed `database_id` into `wrangler.jsonc`
+3. `npm run deploy` (builds, applies D1 migrations remotely, deploys the Worker)
+4. In the Cloudflare dashboard: Workers → zero-1 → Settings → Domains, add `zero-1.studio` and `www.zero-1.studio`
+5. Optional:
+   - Bot check: create a Turnstile widget, put the site key in `src/content/site.yaml` and run `npx wrangler secret put TURNSTILE_SECRET_KEY`
+   - Enquiry emails: `npx wrangler secret put RESEND_API_KEY` and set `NOTIFY_EMAIL` in `wrangler.jsonc`
+   - Booking: set `calLink` in `src/content/site.yaml`
+   - Analytics: enable Cloudflare Web Analytics for the zone
+
+After that, connect the GitHub repo in Workers → zero-1 → Settings → Builds so `main` deploys automatically and each branch gets a preview URL.
+
+## Pages
+
+`/` · `/services` · `/approach` · `/about` · `/work` (+ case studies) · `/ventures` (+ venture pages) · `/ventures/pressure-test` · `/start` → `/api/intake` → `/start/thanks` · `/privacy`
+
+## Planning docs
 
 | Doc | Contents |
 |---|---|
-| [01 Positioning](docs/phase-1/01-positioning.md) | One-liner, audiences, proof points, voice, taglines |
-| [02 Services & Pricing](docs/phase-1/02-services-and-pricing.md) | The four-stage ladder with public prices |
-| [03 Sitemap](docs/phase-1/03-sitemap.md) | Routes, nav, redirects, homepage section order |
-| [04 Copy Deck](docs/phase-1/04-copy-deck.md) | Page copy for Home (incl. Ventures), Services, Approach, About, Start |
-| [05 Visual Direction](docs/phase-1/05-visual-direction.md) | "0/1" brand system, light + dark tokens, type, components |
-| [06 Tech Stack](docs/phase-1/06-tech-stack.md) | Astro + Cloudflare, chosen for LLM editing and easy hosting |
+| [01 Positioning](docs/phase-1/01-positioning.md) | One-liner, audiences, proof points, voice, house style |
+| [02 Services & Pricing](docs/phase-1/02-services-and-pricing.md) | The four-stage ladder, capacity |
+| [03 Sitemap](docs/phase-1/03-sitemap.md) | Routes, nav, redirects |
+| [04 Copy Deck](docs/phase-1/04-copy-deck.md) | Page copy |
+| [05 Visual Direction](docs/phase-1/05-visual-direction.md) | The 0/1 brand system, light and dark tokens |
+| [06 Tech Stack](docs/phase-1/06-tech-stack.md) | Why Astro + Cloudflare |
 
-## Roadmap
+Design canvas: https://claude.ai/artifact/G5p2eTr2yCqFfu5DKd1wff
 
-1. **Foundation**: this phase
-2. **Core build**: Astro + content collections on Cloudflare Workers; Home, Services, Approach, About, Start (D1 + Cal.com), light/dark
-3. **Proof**: Work, Lab, Writing (MDX)
-4. **Signature feature**: Idea Pressure-Tester (Claude API, Turnstile + rate-limited)
-5. **Launch**: analytics, SEO, redirects, launch posts
+## Status
+
+- [x] Phase 1: Foundation
+- [x] Phase 2: Core build (this branch)
+- [ ] Phase 3: Writing (MDX essays), portrait and screenshots, case-study detail
+- [ ] Phase 4: Pressure-Tester paid report experiment, AI Margin calculator
+- [ ] Phase 5: Launch (domain cutover, analytics, launch posts)
