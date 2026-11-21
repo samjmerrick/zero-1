@@ -1,0 +1,56 @@
+# Pressure-Tester questions. One per dimension; each option scores 1–4 dots.
+- id: edge
+  order: 1
+  dimension: Your edge
+  question: Why would customers pick you over what they use today?
+  options:
+    - { label: "I’m not sure yet", score: 1 }
+    - { label: "It’s cheaper or more convenient", score: 2 }
+    - { label: "I know this industry and its problem first-hand", score: 3 }
+    - { label: "I have customers, data or distribution others don’t", score: 4 }
+  advice: Write down the one thing you have that a competitor can’t buy. If you can’t name it, that’s the first thing to find.
+  goodNews: You have a reason to win that comes from you, not the technology.
+- id: defensibility
+  order: 2
+  dimension: Defensibility
+  question: If a well-funded competitor copied it next month, what would you still have?
+  options:
+    - { label: "Not much", score: 1 }
+    - { label: "A head start", score: 2 }
+    - { label: "Customer relationships and a brand", score: 3 }
+    - { label: "Data, integrations or a network that grow with use", score: 4 }
+  advice: A head start fades fast. Look for something that gets stronger the more customers use it.
+  goodNews: Something compounds as you grow, which makes you harder to copy.
+- id: economics
+  order: 3
+  dimension: Unit economics
+  question: Do you know what each customer would pay, and what they’d cost you?
+  options:
+    - { label: "No idea yet", score: 1 }
+    - { label: "I have a rough guess at the price", score: 2 }
+    - { label: "I know the price and roughly what each customer costs to serve", score: 3 }
+    - { label: "People have committed to paying, and the margins work", score: 4 }
+  advice: Put a price on it and work out the cost to win and serve one customer, including any AI running costs. Do this before you build.
+  goodNews: The maths is grounded in something more than hope.
+- id: ai
+  order: 4
+  dimension: Where AI helps
+  question: What role would AI play in your product?
+  options:
+    - { label: "It’s the whole product, built on the same models anyone can use", score: 1 }
+    - { label: "I’m not sure, but it feels like it should use AI", score: 2 }
+    - { label: "It doesn’t need AI", score: 4 }
+    - { label: "It speeds up a workflow I know well, using data or know-how I have", score: 4 }
+  advice: If AI is the whole product, the model provider is your competitor. Decide which part of the job only you can do well.
+  goodNews: AI is either doing a specific job or staying out of the way. Both are good answers.
+- id: evidence
+  order: 5
+  dimension: Riskiest bet tested
+  question: What have you already tested with potential customers?
+  options:
+    - { label: "Nothing yet", score: 1 }
+    - { label: "I’ve talked it through with friends and colleagues", score: 2 }
+    - { label: "I’ve interviewed target customers about the problem", score: 3 }
+    - { label: "People have pre-ordered, signed a letter of intent or used a prototype", score: 4 }
+  advice: Name the assumption that would sink the idea if it were wrong, then test that one first with five target customers.
+  goodNews: You have evidence from customers, not only opinions.

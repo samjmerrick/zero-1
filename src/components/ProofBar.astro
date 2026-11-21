@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+const items = (await getCollection('proof')).sort((a, b) => a.data.order - b.data.order);
+---
+<section aria-label="Track record" class="band">
+  <div class="wrap grid" style="--min: 240px; --gap: 28px 40px; padding-block: 36px">
+    {items.map(({ data }) => (
+      <div class="stack" style="--gap: 8px">
+        <span class="fig">
+          {data.before && <><span class="outline-text">{data.before}</span> → </>}<span class="accent">{data.after}</span>
+        </span>
+        <span class="small muted">{data.label}</span>
+      </div>
+    ))}
+  </div>
+</section>
+<style>
+  .fig { font-size: 34px; font-weight: 700; letter-spacing: -0.04em; line-height: 1.1; }
+</style>

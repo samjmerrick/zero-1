@@ -1,0 +1,23 @@
+---
+/** Section heading with its binary index (001, 010 …), an eyebrow label and an optional link. */
+interface Props { index: string; label: string; title: string; link?: { href: string; text: string }; as?: 'h1' | 'h2' }
+const { index, label, title, link, as: Tag = 'h2' } = Astro.props;
+---
+<div class="head">
+  <span class="index mono" aria-hidden="true">{index}</span>
+  <div class="body">
+    <div class="text stack">
+      <p class="label">{label}</p>
+      <Tag class={Tag === 'h1' ? 'h1' : 'h2'} set:html={title} />
+      <slot />
+    </div>
+    {link && <a href={link.href} class="more">{link.text}</a>}
+  </div>
+</div>
+<style>
+  .head { display: flex; flex-wrap: wrap; gap: 16px 64px; align-items: flex-start; }
+  .index { font-size: 15px; color: var(--signal); padding-top: 10px; min-width: 3ch; }
+  .body { flex: 999 1 560px; min-width: 0; display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: flex-end; }
+  .text { max-width: 780px; }
+  .more { font-size: 17px; }
+</style>

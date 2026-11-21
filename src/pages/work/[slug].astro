@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const work = await getCollection('work');
+  return work.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const studio = entry.data.track === 'studio';
+---
+<Base title={`${entry.data.title} · ${entry.data.org}`} description={entry.data.summary}>
+  <article class="wrap" style="padding-block: 88px var(--section)">
+    <div class="stack" style="--gap: 20px; max-width: 64ch">
+      <a href="/work" class="small">← All work</a>
+      <span class:list={['chip', { 'chip-solid': studio }]}>{studio ? 'Studio project' : 'Sam’s track record'}</span>
+      <h1 class="h1" style="font-size: clamp(40px, 5.5vw, 68px)">{entry.data.title}</h1>
+      <p class="lede">{entry.data.summary}</p>
+      {entry.data.tags.length > 0 && <p class="label">{entry.data.tags.join(' · ')}</p>}
+      {!studio && <p class="small muted">Work I led as an employee of {entry.data.org}, before Zero-1.</p>}
+      <div class="prose"><Content /></div>
+      <div class="row"><a href="/start" class="btn btn-signal">Start a project</a></div>
+    </div>
+  </article>
+</Base>

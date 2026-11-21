@@ -1,0 +1,18 @@
+# Every figure must trace to samjmerrick.com or a client result. Keep "~" where the source uses it.
+- id: infant-biometrics
+  order: 1
+  before: 40%
+  after: 90%
+  label: Match rate on a $6m ML programme I led at Simprints
+- id: virgin-red
+  order: 2
+  after: +30%
+  label: Engagement from ML reward targeting I introduced on Virgin Red’s founding team
+- id: student-beans
+  order: 3
+  after: ~50%
+  label: Higher conversion after the growth rebuild I led at Student Beans
+- id: simface
+  order: 4
+  after: 20%+
+  label: Lower deployment costs with the open-source on-device models I shipped

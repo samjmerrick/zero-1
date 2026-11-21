@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import StateBits from './StateBits.astro';
+
+interface Props { venture: CollectionEntry<'ventures'>; number: number }
+const { venture, number } = Astro.props;
+const { data } = venture;
+const level = { exploring: 1, validating: 2, building: 3, live: 4 }[data.stage];
+const href = data.public ? `/ventures/${venture.id}` : undefined;
+const Tag = href ? 'a' : 'div';
+---
+<Tag href={href} class:list={['venture', { hidden: !data.public }]}>
+  <span class="row" style="--gap: 10px">
+    <StateBits n={level} />
+    <span class="label" style="color: inherit">{data.stage}</span>
+  </span>
+  <h3 class="h3">{data.public ? data.name : `Venture #${number}`}</h3>
+  <p class="small muted">{data.summary}</p>
+</Tag>
+<style>
+  .venture { display: flex; flex-direction: column; gap: 16px; padding: 28px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper); text-decoration: none; }
+  .hidden { border: 1.5px dashed var(--ink-2); background: transparent; }
+</style>

@@ -1,0 +1,16 @@
+---
+/** The 0/1 mark: a hollow 0 (ring) and a solid 1 (signal bar). */
+interface Props { size?: number }
+const { size = 24 } = Astro.props;
+const w0 = Math.round(size * 0.75);
+const stroke = Math.max(2, Math.round(size / 8));
+const w1 = Math.max(4, Math.round(size / 4));
+---
+<span class="mark" aria-hidden="true" style={`--h:${size}px;--w0:${w0}px;--s:${stroke}px;--w1:${w1}px`}>
+  <span class="zero"></span><span class="one"></span>
+</span>
+<style>
+  .mark { display: inline-flex; align-items: center; gap: calc(var(--s) + 1px); }
+  .zero { width: var(--w0); height: var(--h); border: var(--s) solid currentColor; border-radius: 50%; }
+  .one { width: var(--w1); height: var(--h); background: var(--signal); }
+</style>

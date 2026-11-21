@@ -1,0 +1,74 @@
+# The four stages. Prices in GBP excluding VAT.
+- id: ideation-sprint
+  order: 1
+  code: "00"
+  name: Ideation Sprint
+  move: 0 → Idea
+  duration: 2 weeks
+  price: 3500
+  from: false
+  priceNote: fixed price
+  summary: Three ranked business concepts, each with a feasibility read and its riskiest assumption named.
+  audience: For founders and teams with a domain, a hunch or a list of ideas.
+  includes:
+    - Kick-off workshop on your domain and assets
+    - "Opportunity map: where the gaps are, and where AI changes the economics"
+    - 3 concepts scored on edge, defensibility, cost and feasibility
+    - Riskiest-assumption test plan
+    - Readout and written report
+  cta: Book a sprint
+- id: validation
+  order: 2
+  code: "01"
+  name: Validation & Prototype
+  move: Idea → Proof
+  duration: 4–6 weeks
+  price: 12000
+  from: true
+  priceNote: from
+  summary: A working prototype in front of your target customers, a unit-economics model and a written go/no-go.
+  audience: For one concept you want evidence on before you commit.
+  includes:
+    - Working prototype built on your data
+    - Build approach chosen and tested on your data
+    - "Unit economics: cost per customer against price"
+    - 5–10 sessions with target customers
+    - Go / pivot / no-go, with evidence
+  cta: Start validation
+  recommended: true
+- id: mvp-build
+  order: 3
+  code: "10"
+  name: MVP Build
+  move: Proof → 1
+  duration: 8–12 weeks
+  price: 35000
+  from: true
+  priceNote: from
+  summary: A production MVP, measured from day one, launched to your first customers.
+  audience: For a validated concept that’s ready for its first customers.
+  includes:
+    - Production web or mobile app
+    - "Quality measured from day one: analytics, plus evals for any AI"
+    - Guardrails, privacy and data handling
+    - Launch and first-customer feedback loop
+    - Handover docs, or continue on Fractional
+  cta: Discuss a build
+- id: fractional
+  order: 4
+  code: "11"
+  name: Fractional Product Lead
+  move: 1 → ∞
+  duration: 3-month minimum
+  price: 4000
+  from: false
+  per: month
+  priceNote: per month · 2 days a month
+  summary: "Me as your part-time product lead, two days a month: strategy, AI decisions, hiring and hands-on leadership."
+  audience: For teams with engineers who need senior product leadership, including on AI.
+  includes:
+    - Product strategy and roadmap ownership
+    - AI build-or-buy and vendor decisions
+    - Hiring help for product and ML roles
+    - Hands-on leadership with your team
+  cta: Talk about fractional

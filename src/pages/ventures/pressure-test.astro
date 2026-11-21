@@ -1,0 +1,115 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/SectionHead.astro';
+
+const questions = (await getCollection('pressureTest')).sort((a, b) => a.data.order - b.data.order);
+const payload = questions.map((q) => ({ id: q.id, dimension: q.data.dimension, advice: q.data.advice, goodNews: q.data.goodNews }));
+---
+<Base title="Pressure-Tester" description="Five questions, two minutes: a free check on whether your business idea is a 0 or a 1.">
+  <section class="wrap" style="padding-block: 88px 40px">
+    <SectionHead as="h1" index="110" label="Free tool · Pressure-Tester" title="Is your idea a 0 or a 1?">
+      <p class="lede">Five questions, two minutes. Nothing you enter leaves your browser.</p>
+    </SectionHead>
+  </section>
+
+  <section class="wrap" style="padding-bottom: var(--section)">
+    <form id="pt" class="stack" style="--gap: 20px; max-width: 820px" novalidate>
+      {questions.map((q, i) => (
+        <fieldset class="q card">
+          <legend class="stack" style="--gap: 6px">
+            <span class="label"><span class="accent">{(i + 1).toString(2).padStart(3, '0')}</span> · {q.data.dimension}</span>
+            <span class="h3 qtext">{q.data.question}</span>
+          </legend>
+          <div class="options">
+            {q.data.options.map((o) => (
+              <label class="opt">
+                <input type="radio" name={q.id} value={o.score} required />
+                <span>{o.label}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      ))}
+      <p class="small muted" id="pt-error" role="alert" hidden>Answer all five questions to see your result.</p>
+      <div><button type="submit" class="btn btn-signal">See my result</button></div>
+    </form>
+    <noscript><p class="muted">The Pressure-Tester needs JavaScript to score your answers.</p></noscript>
+
+    <section id="pt-result" class="result" hidden aria-live="polite" tabindex="-1">
+      <p class="label">Your result</p>
+      <div class="verdict">
+        <span class="vglyph" id="pt-glyph" aria-hidden="true">0</span>
+        <div class="stack" style="--gap: 8px">
+          <h2 class="h2" id="pt-title"></h2>
+          <p class="muted" id="pt-summary"></p>
+        </div>
+      </div>
+      <ol class="dims" id="pt-dims"></ol>
+      <div class="card stack" style="--gap: 12px">
+        <p class="label">Test this first</p>
+        <p id="pt-first"></p>
+      </div>
+      <div class="row">
+        <a href="/start?from=pressure-test" class="btn btn-signal">Run a proper Ideation Sprint</a>
+        <button type="button" class="btn btn-outline" id="pt-reset">Start again</button>
+      </div>
+    </section>
+  </section>
+  <script type="application/json" id="pt-data" set:html={JSON.stringify(payload)} />
+</Base>
+
+<script>
+  type Dim = { id: string; dimension: string; advice: string; goodNews: string };
+  const data: Dim[] = JSON.parse(document.getElementById('pt-data')!.textContent || '[]');
+  const form = document.getElementById('pt') as HTMLFormElement;
+  const result = document.getElementById('pt-result') as HTMLElement;
+  const err = document.getElementById('pt-error') as HTMLElement;
+  const $ = (id: string) => document.getElementById(id)!;
+
+  const dots = (n: number) => [0, 1, 2, 3].map((i) => `<span class="pt-bit${i < n ? ' on' : ''}"></span>`).join('');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const scores = data.map((d) => Number((form.elements.namedItem(d.id) as RadioNodeList).value || 0));
+    if (scores.some((s) => !s)) { err.hidden = false; return; }
+    err.hidden = true;
+    const total = scores.reduce((a, b) => a + b, 0);
+    let title: string; let summary: string; let glyph: string;
+    if (total >= 17) { title = 'Looks like a 1 in the making.'; summary = 'You have an edge, a reason to stay ahead and some evidence. The next step is proving it with paying customers.'; glyph = '1'; }
+    else if (total >= 11) { title = 'Somewhere between 0 and 1.'; summary = 'There’s something here, but at least one weak spot could sink it. Fix that before you build more.'; glyph = '0→1'; }
+    else { title = 'Still a 0, and that’s fine.'; summary = 'Most ideas start here. Spend a week on the weakest area below before you spend money on building.'; glyph = '0'; }
+    $('pt-title').textContent = title;
+    $('pt-summary').textContent = summary;
+    const g = $('pt-glyph'); g.textContent = glyph; g.classList.toggle('solid', glyph === '1');
+    $('pt-dims').innerHTML = data.map((d, i) => `
+      <li class="dim"><div class="dim-head"><span class="pt-bits" role="img" aria-label="${scores[i]} out of 4">${dots(scores[i])}</span><strong>${d.dimension}</strong></div>
+      <p>${scores[i] <= 2 ? d.advice : d.goodNews}</p></li>`).join('');
+    const weakest = scores.indexOf(Math.min(...scores));
+    $('pt-first').textContent = `${data[weakest].dimension}: ${data[weakest].advice}`;
+    form.hidden = true; result.hidden = false; result.focus();
+  });
+  $('pt-reset').addEventListener('click', () => { form.reset(); result.hidden = true; form.hidden = false; form.querySelector('input')?.focus(); });
+</script>
+
+<style>
+  .q { margin: 0; display: flex; flex-direction: column; gap: 16px; }
+  legend { padding: 0; margin-bottom: 16px; float: left; width: 100%; }
+  .qtext { font-size: 22px; }
+  .options { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); clear: both; }
+  .opt { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border: 1px solid var(--rule); border-radius: 12px; cursor: pointer; font-size: 16px; min-height: 48px; }
+  .opt:has(input:checked) { border-color: var(--signal); box-shadow: inset 0 0 0 1px var(--signal); }
+  .opt input { accent-color: var(--signal); margin-top: 4px; width: 18px; height: 18px; flex: none; }
+  .result { display: flex; flex-direction: column; gap: 28px; max-width: 820px; }
+  .result[hidden] { display: none; }
+  .verdict { display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: center; }
+  .vglyph { font-weight: 700; font-size: clamp(96px, 14vw, 160px); line-height: 0.85; letter-spacing: -0.06em; color: transparent; -webkit-text-stroke: 2.5px var(--ink); }
+  .vglyph.solid { color: var(--signal); -webkit-text-stroke: 0; }
+  .dims { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  :global(.dim) { padding: 18px 0; border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; gap: 6px; }
+  :global(.dim p) { color: var(--ink-2); font-size: 16px; }
+  :global(.dim-head) { display: flex; gap: 14px; align-items: center; }
+  :global(.pt-bits) { display: inline-flex; gap: 4px; }
+  :global(.pt-bit) { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid var(--ink-2); }
+  :global(.pt-bit.on) { background: var(--signal); border-color: var(--signal); }
+</style>

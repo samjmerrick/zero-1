@@ -1,0 +1,52 @@
+/*
+ * 0/1 design tokens. Light is "0", dark is "1".
+ * Rule: outline = 0 (not real yet), solid = 1 (shipped, proven).
+ * Text on --signal is always --on-signal. Never use --signal for body text on light paper.
+ */
+:root,
+:root[data-theme='light'] {
+  --paper: #f4f4f1;
+  --surface: #ffffff;
+  --ink: #111110;
+  --ink-2: #55554f;
+  --rule: #d9d9d3;
+  --inv-bg: #111110;
+  --inv-fg: #f4f4f1;
+  --inv-muted: #b5b5ae;
+  --inv-rule: #3a3a37;
+  --foot-bg: #111110;
+  --foot-fg: #f4f4f1;
+  --foot-muted: #b5b5ae;
+  --signal: #ff5b1f;
+  --on-signal: #111110;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --paper: #0d0d0c;
+  --surface: #161615;
+  --ink: #f2f2ee;
+  --ink-2: #a3a39c;
+  --rule: #2c2c29;
+  --inv-bg: #f2f2ee;
+  --inv-fg: #0d0d0c;
+  --inv-muted: #4a4a45;
+  --inv-rule: #c9c9c2;
+  --foot-bg: #000000;
+  --foot-fg: #f2f2ee;
+  --foot-muted: #a3a39c;
+  color-scheme: dark;
+}
+
+:root {
+  --font-sans: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --wrap: 1240px;
+  --gutter: 24px;
+  --radius: 16px;
+  --section: clamp(72px, 10vw, 112px);
+  --fs-h1: clamp(44px, 6.4vw, 84px);
+  --fs-h2: clamp(32px, 4.5vw, 54px);
+  --fs-lede: 21px;
+  --fs-body: 18px;
+}

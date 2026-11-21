@@ -1,0 +1,4 @@
+# Old zero-1.studio URLs (Cloudflare static asset redirects)
+/lab /ventures 301
+/blog / 301
+/blog/* / 301

@@ -1,0 +1,23 @@
+---
+import { getEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/SectionHead.astro';
+
+const site = (await getEntry('settings', 'site'))!.data;
+---
+<Base title="Thanks" description="Your enquiry has been sent.">
+  <section class="wrap" style="padding-block: 88px var(--section)">
+    <div class="stack" style="--gap: 32px">
+      <SectionHead as="h1" index="001" label="Sent" title="Thanks. Your idea just moved from 0 towards 1.">
+        <p class="lede">{site.replyPromise} {site.calLink ? 'If you’d rather talk sooner, pick a time below.' : ''}</p>
+      </SectionHead>
+      {site.calLink && (
+        <iframe class="cal" title="Book an intro call" src={`https://cal.com/${site.calLink}?embed=true&theme=auto`} loading="lazy"></iframe>
+      )}
+      <div class="row"><a href="/ventures/pressure-test" class="btn btn-outline">Try the Pressure-Tester while you wait →</a></div>
+    </div>
+  </section>
+</Base>
+<style>
+  .cal { width: 100%; min-height: 680px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); }
+</style>

@@ -1,0 +1,24 @@
+- id: non-technical
+  order: 1
+  q: Do you work with non-technical founders?
+  a: Yes. That’s the most common case.
+- id: need-ai
+  order: 2
+  q: Does my idea need to use AI?
+  a: No. I’ll use AI where it makes a measurable difference to cost, quality or speed, and tell you plainly when it doesn’t.
+- id: who
+  order: 3
+  q: Who actually does the work?
+  a: I lead every project and do the product and ML work myself. Trusted contract engineers handle most of the build stages. You always deal with me.
+- id: ip
+  order: 4
+  q: Who owns the IP?
+  a: You do, on full payment.
+- id: models
+  order: 5
+  q: When it is AI, which models do you use?
+  a: Whatever’s right for the job, from hosted LLMs like Claude to small open-source models running on-device. I’ll show you the cost trade-off.
+- id: skip
+  order: 6
+  q: Can we skip the sprint?
+  a: Yes. If you already have a clear concept, start at Validation.

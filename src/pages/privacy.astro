@@ -1,0 +1,23 @@
+---
+import { getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const site = (await getEntry('settings', 'site'))!.data;
+---
+<Base title="Privacy" description="How Zero-1 Studio handles your information.">
+  <article class="wrap" style="padding-block: 88px var(--section)">
+    <div class="prose stack" style="--gap: 0">
+      <h1 class="h1" style="font-size: clamp(40px, 5vw, 64px); margin-bottom: 24px">Privacy</h1>
+      <p>Zero-1 Studio is run by Sam Merrick in the UK. This notice explains what the site collects and why.</p>
+      <h2>Enquiries</h2>
+      <p>When you use the Start a project form, I store your name, email address and answers so I can reply. They’re kept in a database hosted by Cloudflare. I don’t sell or share them, and I delete enquiries that don’t lead to work after 12 months.</p>
+      <h2>Pressure-Tester</h2>
+      <p>Your answers are scored in your browser and are never sent to me or anyone else.</p>
+      <h2>Analytics and cookies</h2>
+      <p>The site uses Cloudflare Web Analytics, which doesn’t use cookies or track you across sites. Your light or dark theme choice is saved in your browser’s local storage. Fonts load from Google Fonts.</p>
+      <h2>Your rights</h2>
+      <p>You can ask to see, correct or delete anything I hold about you by emailing <a href={`mailto:${site.email}`}>{site.email}</a>. You can also complain to the Information Commissioner’s Office (ico.org.uk).</p>
+      <p class="small">Last updated: November 2026.</p>
+    </div>
+  </article>
+</Base>

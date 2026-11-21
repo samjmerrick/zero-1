@@ -1,0 +1,146 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProofBar from '../components/ProofBar.astro';
+import SectionHead from '../components/SectionHead.astro';
+import StageCard from '../components/StageCard.astro';
+import VentureCard from '../components/VentureCard.astro';
+
+const site = (await getEntry('settings', 'site'))!.data;
+const failures = (await getCollection('failures')).sort((a, b) => a.data.code.localeCompare(b.data.code));
+const stages = (await getCollection('pricing')).sort((a, b) => a.data.order - b.data.order);
+const work = (await getCollection('work', (e) => e.data.featured)).sort((a, b) => a.data.order - b.data.order);
+const ventures = (await getCollection('ventures')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title="Home" description="Sam Merrick’s venture studio. I help founders and teams take ideas from zero to first paying customers, using AI where it earns its place.">
+  <section class="wrap hero">
+    <div class="hero-text stack" style="--gap: 28px">
+      {site.available && (
+        <p class="avail mono"><span class="dot" aria-hidden="true"></span>{site.availabilityText}</p>
+      )}
+      <h1 class="h1">Find the business worth building. <span class="accent">Then build it.</span></h1>
+      <p class="lede">I help founders and teams take ideas from zero to first paying customers, using AI where it earns its place and leaving it out where it doesn’t.</p>
+      <div class="row">
+        <a href="/start" class="btn btn-signal">Start a project</a>
+        <a href="/ventures/pressure-test" class="btn btn-outline">Pressure-test your idea →</a>
+      </div>
+    </div>
+    <div class="glyphs" aria-hidden="true">
+      <div class="glyph"><span class="big outline-text zero">0</span><span class="label">Idea</span></div>
+      <span class="arrow mono">→</span>
+      <div class="glyph"><span class="big one fill-in">1</span><span class="label">Paying customers</span></div>
+    </div>
+  </section>
+
+  <ProofBar />
+
+  <section class="wrap section stack" style="--gap: 48px">
+    <SectionHead index="001" label="Why new products stay at 0" title="Building got cheap. Building the right thing didn’t.">
+      <p class="muted">Most new products die for one of four reasons. I check for all four before you write a line of production code.</p>
+    </SectionHead>
+    <div class="grid failures" style="--min: 260px; --gap: 1px">
+      {failures.map(({ data }) => (
+        <div class="failure stack" style="--gap: 14px">
+          <span class="code outline-text fail-code" aria-hidden="true">{data.code}</span>
+          <h3 class="h3" style="font-size: 22px">{data.title}</h3>
+          <p class="small muted">{data.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="inverted">
+    <div class="wrap section stack" style="--gap: 56px">
+      <SectionHead index="010" label="How we work" title="Four steps from 0 to 1. Stop at any of them." link={{ href: '/services', text: 'See full pricing →' }}>
+        <p class="muted">Each stage ends with a decision. Half of each fee counts towards the next, so you only climb when the evidence says so.</p>
+      </SectionHead>
+      <div class="grid" style="--min: 250px; --gap: 16px">
+        {stages.map(({ data }) => <StageCard stage={data} inverted />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section about">
+    <div class="portrait" role="img" aria-label="Portrait of Sam Merrick (to be added)">
+      <span class="label">Portrait to come</span>
+    </div>
+    <div class="stack" style="--gap: 20px; flex: 999 1 420px; min-width: 0">
+      <span class="mono accent" aria-hidden="true" style="font-size: 15px">011</span>
+      <p class="label">Who you’re hiring</p>
+      <h2 class="h2">One person, from 0 to 1.</h2>
+      <p class="muted" style="max-width: 56ch">I’m Sam Merrick. By day I lead machine learning teams building computer vision that has to work in the field: offline, on cheap phones, for health workers in Ghana, Bangladesh and Ethiopia. Before that I helped launch Virgin Red, led growth at Student Beans, and built an LLM ideation tool for creators. No account managers, no hand-offs. You work with me.</p>
+      <a href="/about" style="font-size: 17px; font-weight: 500">More about me →</a>
+    </div>
+  </section>
+
+  <section class="rule-top">
+    <div class="wrap section stack" style="--gap: 40px">
+      <SectionHead index="100" label="Work" title="Things that made it to 1." link={{ href: '/work', text: 'All work →' }} />
+      <div class="grid" style="--min: 300px">
+        {work.map((w) => (
+          <a href={`/work/${w.id}`} class="card card-link stack" style="--gap: 10px">
+            <span class:list={['chip', { 'chip-solid': w.data.track === 'studio' }]}>{w.data.track === 'studio' ? 'Studio project' : 'Sam’s track record'}</span>
+            <h3 class="h3" style="font-size: 22px">{w.data.title} · {w.data.org}</h3>
+            <p class="small muted">{w.data.summary}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap section stack" style="--gap: 40px">
+      <SectionHead index="101" label="Ventures" title="I take my own ideas from 0 to 1 too." link={{ href: '/ventures', text: 'All ventures →' }}>
+        <p class="muted">Every Zero-1 venture goes through the same Sprint → Validation → go/no-go process I sell. Killing an idea counts as a good result.</p>
+      </SectionHead>
+      <div class="grid" style="--min: 280px">
+        {ventures.map((v, i) => <VentureCard venture={v} number={i + 1} />)}
+      </div>
+      <p class="label">●○○○ Exploring · ●●○○ Validating · ●●●○ Building · ●●●● Live</p>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="tester stack" style="--gap: 24px">
+      <p class="label"><span class="accent">110</span> · Free tool · Pressure-Tester</p>
+      <h2 class="h2" style="max-width: 22ch">Is your idea a 0 or a 1?</h2>
+      <p class="muted" style="max-width: 60ch">Five questions, two minutes. Get a read on your edge, the unit economics, where AI would help (and where it wouldn’t), and the one assumption to test first.</p>
+      <div><a href="/ventures/pressure-test" class="btn btn-signal">Pressure-test your idea</a></div>
+    </div>
+  </section>
+
+  <section class="signal-band">
+    <div class="wrap section final">
+      <div class="stack" style="--gap: 24px; flex: 999 1 480px; min-width: 0; align-items: flex-start">
+        <h2 class="h2 final-title">Your idea is at 0. Let’s get it to 1.</h2>
+        <p style="font-size: 20px; max-width: 44ch">Tell me about it. {site.replyPromise}</p>
+        <a href="/start" class="btn btn-ink">Start a project</a>
+      </div>
+      <div class="final-glyphs" aria-hidden="true"><span class="outline-text">0</span><span>1</span></div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { display: flex; flex-wrap: wrap; gap: 48px; align-items: center; padding-block: 72px 88px; }
+  .hero-text { flex: 999 1 520px; min-width: 0; }
+  .avail { display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; border: 1px solid var(--rule); border-radius: 999px; padding: 8px 16px 8px 12px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--signal); }
+  .glyphs { flex: 1 1 380px; display: flex; align-items: flex-end; justify-content: center; gap: 8px; font-weight: 700; line-height: 0.78; letter-spacing: -0.06em; }
+  .glyph { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+  .big { font-size: clamp(160px, 22vw, 320px); }
+  .zero { -webkit-text-stroke-width: 3px; }
+  .one { color: var(--signal); }
+  .arrow { font-size: 40px; color: var(--ink-2); padding-bottom: 120px; letter-spacing: 0; }
+  .failures { background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
+  .failure { background: var(--paper); padding: 32px 28px; }
+  .fail-code { font-size: 44px; color: transparent; -webkit-text-stroke-color: var(--ink-2); }
+  .about { display: flex; flex-wrap: wrap; gap: 56px; align-items: center; }
+  .portrait { flex: 1 1 320px; max-width: 440px; aspect-ratio: 4 / 5; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; }
+  .tester { border: 1.5px solid var(--ink); border-radius: var(--radius); padding: clamp(28px, 5vw, 56px); }
+  .final { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between; }
+  .final-title { font-size: clamp(36px, 5.4vw, 72px); max-width: 14ch; }
+  .final-glyphs { flex: 1 1 260px; display: flex; justify-content: center; font-weight: 700; font-size: clamp(140px, 16vw, 240px); line-height: 0.8; letter-spacing: -0.06em; }
+  .final-glyphs .outline-text { -webkit-text-stroke-width: 3px; }
+  @media (max-width: 640px) { .arrow { padding-bottom: 80px; } }
+</style>

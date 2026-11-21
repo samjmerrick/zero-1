@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import VentureCard from '../../components/VentureCard.astro';
+
+const ventures = (await getCollection('ventures')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title="Ventures" description="Zero-1’s own products, each taken through the same Sprint, Validation and go/no-go process the studio sells.">
+  <section class="wrap" style="padding-block: 88px var(--section)">
+    <div class="stack" style="--gap: 40px">
+      <SectionHead as="h1" index="101" label="Ventures" title="I take my own ideas from 0 to 1 too.">
+        <p class="lede">Every Zero-1 venture goes through the same Sprint → Validation → go/no-go process I sell. Killing an idea counts as a good result, and I’ll write up the ones that die as well as the ones that live.</p>
+      </SectionHead>
+      <div class="grid" style="--min: 280px">
+        {ventures.map((v, i) => <VentureCard venture={v} number={i + 1} />)}
+      </div>
+      <p class="label">●○○○ Exploring · ●●○○ Validating · ●●●○ Building · ●●●● Live</p>
+    </div>
+  </section>
+</Base>

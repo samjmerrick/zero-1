@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/SectionHead.astro';
+
+const all = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+const tracks = [
+  { key: 'studio', title: 'Studio projects', intro: 'Work done by Zero-1 for clients.' },
+  { key: 'track-record', title: 'Sam’s track record', intro: 'Before Zero-1: work I led as an employee. These companies were my employers, not studio clients.' },
+] as const;
+---
+<Base title="Work" description="Zero-1 studio projects, and the products and ML work Sam led before starting the studio.">
+  <section class="wrap" style="padding-block: 88px 24px">
+    <SectionHead as="h1" index="100" label="Work" title="Things that made it to 1." />
+  </section>
+  {tracks.map((t) => (
+    <section class="wrap" style="padding-block: 40px">
+      <div class="stack" style="--gap: 24px">
+        <div class="stack" style="--gap: 6px"><h2 class="h3">{t.title}</h2><p class="small muted">{t.intro}</p></div>
+        <div class="grid" style="--min: 300px">
+          {all.filter((w) => w.data.track === t.key).map((w) => (
+            <a href={`/work/${w.id}`} class="card card-link stack" style="--gap: 10px">
+              <span class:list={['chip', { 'chip-solid': w.data.track === 'studio' }]}>{w.data.org}</span>
+              <h3 class="h3" style="font-size: 22px">{w.data.title}</h3>
+              <p class="small muted">{w.data.summary}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+  <div style="padding-bottom: var(--section)"></div>
+</Base>

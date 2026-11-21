@@ -1,0 +1,28 @@
+extends: substitution
+message: "British English: use '%s' instead of '%s'."
+level: error
+ignorecase: true
+swap:
+  '\b(organ|optim|real|recogn|priorit|custom|minim|maxim|summar|categor|personal|standard|util|visual|emphas|apolog|author|capital|central|character|critic|final|special|stabil|subsid|synchron|monet|productis?)iz(e|es|ed|ing|ation|ations)\b': $1is$2
+  '\banalyz(e|es|ed|ing)\b': analys$1
+  color: colour
+  colors: colours
+  favor: favour
+  favorite: favourite
+  behavior: behaviour
+  center: centre
+  program: programme
+  catalog: catalogue
+  license: licence
+  defense: defence
+  fulfill: fulfil
+  enroll: enrol
+  traveled: travelled
+  modeled: modelled
+  modeling: modelling
+  labeled: labelled
+  canceled: cancelled
+  gray: grey
+  math: maths
+  ex-VAT: excluding VAT
+  ASAP: as soon as possible

@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import StageCard from '../components/StageCard.astro';
+
+const stages = (await getCollection('pricing')).sort((a, b) => a.data.order - b.data.order);
+const faq = (await getCollection('faq')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title="Services & pricing" description="Four fixed-scope stages from idea to paying customers, with public prices: Ideation Sprint £3,500, Validation from £12,000, MVP Build from £35,000, Fractional Product Lead £4,000 a month.">
+  <section class="wrap" style="padding-block: 88px 56px">
+    <SectionHead as="h1" index="00→11" label="Services & pricing" title={'Fixed scope. Public prices. <span class="accent">Clear decisions.</span>'}>
+      <p class="lede">Start where you are. Every stage ends with a go/no-go, and half of each fee counts towards the next.</p>
+    </SectionHead>
+  </section>
+
+  <section class="wrap" aria-label="Stages">
+    <div class="grid" style="--min: 265px; --gap: 16px">
+      {stages.map(({ data }) => <StageCard stage={data} detailed />)}
+    </div>
+    <p class="small muted" style="margin-top: 24px; font-size: 14px">Prices in GBP, excluding VAT. Half of each stage’s fee is credited against the next if booked within 30 days. Larger or regulated projects are quoted individually. I take on one client project at a time.</p>
+  </section>
+
+  <section class="wrap section faq">
+    <div class="stack" style="flex: 1 1 300px">
+      <p class="label">FAQ</p>
+      <h2 class="h2">Questions people ask first.</h2>
+    </div>
+    <dl class="faq-list">
+      {faq.map(({ data }) => (
+        <div class="item">
+          <dt class="h3" style="font-size: 20px">{data.q}</dt>
+          <dd class="small muted">{data.a}</dd>
+        </div>
+      ))}
+    </dl>
+  </section>
+
+  <section class="signal-band">
+    <div class="wrap section row between" style="--gap: 24px; align-items: center">
+      <h2 class="h2" style="max-width: 18ch">Not sure where to start? Tell me where you are.</h2>
+      <a href="/start" class="btn btn-ink">Start a project</a>
+    </div>
+  </section>
+</Base>
+<style>
+  .faq { display: flex; flex-wrap: wrap; gap: 48px; }
+  .faq-list { flex: 999 1 560px; min-width: 0; margin: 0; border-top: 1px solid var(--rule); }
+  .item { padding: 24px 0; border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; gap: 8px; }
+  dd { margin: 0; }
+</style>

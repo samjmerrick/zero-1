@@ -1,0 +1,53 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import StateBits from './StateBits.astro';
+
+interface Props { stage: CollectionEntry<'pricing'>['data']; detailed?: boolean; inverted?: boolean }
+const { stage, detailed = false, inverted = false } = Astro.props;
+const price = `£${stage.price.toLocaleString('en-GB')}`;
+---
+<article class:list={['stage', { detailed, inverted, recommended: stage.recommended && detailed }]}>
+  <div class="top">
+    <span class:list={['code', { 'outline-text': detailed && !inverted }]}>{stage.code}</span>
+    <StateBits n={stage.order} />
+  </div>
+  <div class="row between" style="--gap: 8px; align-items: center">
+    <span class="label sub">{stage.move} · {stage.duration}</span>
+    {detailed && stage.recommended && <span class="chip chip-solid">Recommended</span>}
+  </div>
+  <h3 class="h3 name">{stage.name}</h3>
+  {detailed ? (
+    <>
+      <div class="price">{price}<span class="note">{stage.priceNote}</span></div>
+      <p class="small sub">{stage.audience}</p>
+      <ul class="list-plain small includes">{stage.includes.map((i) => <li>{i}</li>)}</ul>
+      <a href={`/start?stage=${stage.code}`} class:list={['btn', stage.recommended ? 'btn-signal' : 'btn-outline']}>{stage.cta}</a>
+    </>
+  ) : (
+    <>
+      <p class="small sub grow">{stage.summary}</p>
+      <div class="foot">
+        <span class="price-sm">{stage.from && <span class="sub from">from </span>}{price}{stage.per && <span class="sub from"> / {stage.per}</span>}</span>
+      </div>
+    </>
+  )}
+</article>
+<style>
+  .stage { display: flex; flex-direction: column; gap: 16px; border: 1px solid var(--rule); border-radius: var(--radius); padding: 28px; background: var(--surface); }
+  .stage.inverted { background: transparent; border-color: var(--inv-rule); }
+  .stage.inverted:last-child { border-color: var(--signal); }
+  .stage.recommended { border: 2px solid var(--signal); padding: 27px; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .code { font-family: var(--font-mono); font-weight: 500; font-size: 28px; line-height: 1; color: var(--signal); }
+  .detailed .code { font-size: 40px; }
+  .detailed .code.outline-text { color: transparent; -webkit-text-stroke-color: var(--ink); }
+  .sub { color: var(--ink-2); }
+  .inverted .sub, .inverted .label { color: var(--inv-muted); }
+  .grow, .includes { flex: 1 1 auto; }
+  .includes { padding-top: 18px; border-top: 1px solid var(--rule); }
+  .price { font-size: 44px; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+  .note { display: block; margin-top: 8px; font-size: 14px; font-weight: 400; letter-spacing: 0; color: var(--ink-2); }
+  .foot { border-top: 1px solid var(--inv-rule); padding-top: 16px; }
+  .price-sm { font-size: 28px; font-weight: 700; letter-spacing: -0.03em; }
+  .from { font-size: 15px; font-weight: 400; letter-spacing: 0; }
+</style>
