@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Portrait from '../components/Portrait.astro';
 import SectionHead from '../components/SectionHead.astro';
 
 const roles = [
@@ -18,9 +19,9 @@ const credentials = [
 ---
 <Base title="About" description="Sam Merrick leads machine learning teams building computer vision for global health, and runs Zero-1 Studio.">
   <section class="wrap about">
-    <div class="portrait" role="img" aria-label="Portrait of Sam Merrick (to be added)"><span class="label">Portrait to come</span></div>
+    <Portrait eager />
     <div class="stack" style="--gap: 24px; flex: 999 1 480px; min-width: 0">
-      <SectionHead as="h1" index="011" label="About" title="Hi, I’m Sam." />
+      <div class="stack" style="--gap: 12px"><p class="label"><span class="accent">011</span> · About</p><h1 class="h1">Hi, I’m Sam.</h1></div>
       <div class="prose stack">
         <p>I’ve spent eight years building products, and the last few leading machine learning teams. At Simprints I lead a team building biometric recognition for global health. It runs fully offline on low-cost Android phones, so health workers can be sure who they’re treating. We took infant recognition from around 40% to around 90% accuracy, open-sourced our face recognition library, and published privacy research with the International Committee of the Red Cross.</p>
         <p>Before that I was first technical hire at Sixteenth, where I built Spark Jam, an LLM-powered ideation tool for creators. I led growth at Student Beans and was on the founding team of Virgin Red.</p>
@@ -60,7 +61,6 @@ const credentials = [
 </Base>
 <style>
   .about { display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start; padding-block: 88px var(--section); }
-  .portrait { flex: 1 1 320px; max-width: 420px; aspect-ratio: 4 / 5; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; }
   .roles { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
   .role { display: grid; grid-template-columns: minmax(120px, 180px) 1fr; gap: 16px 32px; padding: 24px 0; border-bottom: 1px solid var(--rule); }
   @media (max-width: 560px) { .role { grid-template-columns: 1fr; } }

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /start/thanks
 
-Sitemap: https://www.zero-1.studio/sitemap-index.xml
+Sitemap: https://zero-1.studio/sitemap-index.xml

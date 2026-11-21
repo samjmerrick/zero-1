@@ -17,7 +17,7 @@ npm run dev
 1. `npx wrangler login`
 2. ~~Create the D1 database~~ Done: `zero-1` (WEUR), tables created, id already in `wrangler.jsonc`
 3. `npm run deploy` (builds, applies D1 migrations remotely, deploys the Worker)
-4. In the Cloudflare dashboard: Workers → zero-1 → Settings → Domains, add `zero-1.studio` and `www.zero-1.studio`
+4. Done: `zero-1.studio` is attached as a Custom Domain. Still to do: point `www.zero-1.studio` at it (see "www" below)
 5. Optional:
    - Bot check: create a Turnstile widget, put the site key in `src/content/site.yaml` and run `npx wrangler secret put TURNSTILE_SECRET_KEY`
    - Enquiry emails: `npx wrangler secret put RESEND_API_KEY` and set `NOTIFY_EMAIL` in `wrangler.jsonc`
@@ -50,3 +50,10 @@ Design canvas: https://claude.ai/artifact/G5p2eTr2yCqFfu5DKd1wff
 - [ ] Phase 3: Writing (MDX essays), portrait and screenshots, case-study detail
 - [ ] Phase 4: Pressure-Tester paid report experiment, AI Margin calculator
 - [ ] Phase 5: Launch (domain cutover, analytics, launch posts)
+
+## www
+
+The canonical address is `https://zero-1.studio`. To make `www.zero-1.studio` work too, in the Cloudflare dashboard for the zone:
+
+1. DNS → Records → Add record: type `CNAME`, name `www`, target `zero-1.studio`, Proxied (orange cloud) on.
+2. Rules → Redirect Rules → Create from template → "Redirect from WWW to root". This keeps the path and returns a 301.

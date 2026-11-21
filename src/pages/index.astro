@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import Portrait from '../components/Portrait.astro';
 import ProofBar from '../components/ProofBar.astro';
 import SectionHead from '../components/SectionHead.astro';
 import StageCard from '../components/StageCard.astro';
@@ -63,9 +64,7 @@ const posts = (await getPosts()).slice(0, 3);
   </section>
 
   <section class="wrap section about">
-    <div class="portrait" role="img" aria-label="Portrait of Sam Merrick (to be added)">
-      <span class="label">Portrait to come</span>
-    </div>
+    <Portrait />
     <div class="stack" style="--gap: 20px; flex: 999 1 420px; min-width: 0">
       <span class="mono accent" aria-hidden="true" style="font-size: 15px">011</span>
       <p class="label">Who you’re hiring</p>
@@ -154,7 +153,6 @@ const posts = (await getPosts()).slice(0, 3);
   .failure { background: var(--paper); padding: 32px 28px; }
   .fail-code { font-size: 44px; color: transparent; -webkit-text-stroke-color: var(--ink-2); }
   .about { display: flex; flex-wrap: wrap; gap: 56px; align-items: center; }
-  .portrait { flex: 1 1 320px; max-width: 440px; aspect-ratio: 4 / 5; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; }
   .essay-card { text-decoration: none; border-top: 2px solid var(--ink); padding-top: 20px; }
   .tester { border: 1.5px solid var(--ink); border-radius: var(--radius); padding: clamp(28px, 5vw, 56px); }
   .final { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between; }
