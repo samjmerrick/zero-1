@@ -15,7 +15,7 @@ npm run dev
 ## Deploy (first time)
 
 1. `npx wrangler login`
-2. `npx wrangler d1 create zero-1`, then paste the printed `database_id` into `wrangler.jsonc`
+2. ~~Create the D1 database~~ Done: `zero-1` (WEUR), tables created, id already in `wrangler.jsonc`
 3. `npm run deploy` (builds, applies D1 migrations remotely, deploys the Worker)
 4. In the Cloudflare dashboard: Workers → zero-1 → Settings → Domains, add `zero-1.studio` and `www.zero-1.studio`
 5. Optional:

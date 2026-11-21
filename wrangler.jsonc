@@ -8,8 +8,7 @@
     {
       "binding": "DB",
       "database_name": "zero-1",
-      // Replace with the id printed by: npx wrangler d1 create zero-1
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_id": "1880323d-35a7-406c-b3a9-fb103ea1aba2",
       "migrations_dir": "migrations"
     }
   ],
